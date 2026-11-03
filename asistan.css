@@ -10,22 +10,22 @@ html:not(.js) .apply-form{display:none}
 .monna{display:block;width:auto;height:54px;flex:none}
 
 /* Başvuru formu */
-/* Koyu sayfada kaybolmasın: krem kart, beyaz çerçeveli alanlar */
-.apply-form{--ikincil:#51574c;display:grid;gap:22px;padding:clamp(24px,3vw,36px);background:var(--paper);color:var(--bg)}
+/* Sayfadan bir ton açık yeşil kart, içinde koyu alanlar */
+.apply-form{--ikincil:#c6ccbf;display:grid;gap:22px;padding:clamp(24px,3vw,36px);background:#223f36;color:var(--paper)}
 .apply-row{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:22px}
-.apply-field label{display:block;margin-bottom:8px;font-size:15px;font-weight:500;color:var(--bg)}
-.apply-field input,.apply-field textarea{display:block;width:100%;padding:12px 14px;border:1px solid #6f7a70;border-radius:0;background:#fff;color:var(--bg);font:17px/1.5 var(--sans);transition:border-color .2s}
+.apply-field label{display:block;margin-bottom:8px;font-size:15px;font-weight:500;color:var(--paper)}
+.apply-field input,.apply-field textarea{display:block;width:100%;padding:12px 14px;border:1px solid #6f8d80;border-radius:0;background:var(--bg);color:var(--paper);color-scheme:dark;font:17px/1.5 var(--sans);transition:border-color .2s}
 .apply-field textarea{resize:vertical;min-height:120px}
 .apply-field ::placeholder{color:var(--ikincil);opacity:1}
-.apply-field input:hover,.apply-field textarea:hover{border-color:var(--bg)}
-.apply-field input:focus,.apply-field textarea:focus{outline:2px solid var(--bg);outline-offset:1px;border-color:var(--bg)}
+.apply-field input:hover,.apply-field textarea:hover{border-color:var(--paper)}
+.apply-field input:focus,.apply-field textarea:focus{outline:2px solid var(--paper);outline-offset:1px;border-color:var(--paper)}
 .apply-trap{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
 .apply-foot{display:flex;flex-wrap:wrap;align-items:center;gap:12px 24px}
-.apply-form .apply-foot button{border:0;cursor:pointer;background:var(--bg);color:var(--paper)}.apply-form .apply-foot button:hover{background:#2a4a40;color:var(--paper)}.apply-foot button:disabled{opacity:.6;cursor:wait}
-.apply-form .apply-foot button:focus-visible{outline:2px solid var(--bg);outline-offset:3px}
+.apply-form .apply-foot button{border:0;cursor:pointer;background:var(--paper);color:var(--bg)}.apply-form .apply-foot button:hover{background:var(--accent);color:var(--bg)}.apply-foot button:disabled{opacity:.6;cursor:wait}
+.apply-form .apply-foot button:focus-visible{outline:2px solid var(--paper);outline-offset:3px}
 .apply-foot p{flex:1 1 200px;margin:0;font-size:14px;line-height:1.45;color:var(--ikincil)}
 .apply-status{min-height:1.5em;margin:-10px 0 0;font-size:15px}.apply-status a{text-decoration:underline}.apply-status:empty{display:none}
-.apply-done{padding:48px 28px;background:var(--paper);color:var(--bg)}.apply-done:focus{outline:0}.apply-done h3{margin:0 0 10px;font:400 clamp(30px,3vw,42px)/1.12 var(--serif);color:var(--bg)}.apply-done p{margin:0;font-size:17px;color:#51574c}
+.apply-done{padding:48px 28px;background:#223f36;color:var(--paper)}.apply-done:focus{outline:0}.apply-done h3{margin:0 0 10px;font:400 clamp(30px,3vw,42px)/1.12 var(--serif);color:var(--paper)}.apply-done p{margin:0;font-size:17px;color:var(--muted)}
 @media(prefers-reduced-motion:reduce){.apply-field input,.apply-field textarea{transition:none}}
 
 /* Monna sohbeti */
