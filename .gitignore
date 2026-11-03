@@ -1,0 +1,11 @@
+# Yerel ayarlar
+.claude/
+
+# Sadece bu bilgisayarda kalan çalışma notları
+BASLAMADAN_OKU.txt
+SECIM_GEREKCELERI.txt
+TEST_NOTLARI.txt
+MEDYA_KAYNAKLARI.json
+
+# Sitede kullanılmayan Instagram görselleri
+medya/ig-*.jpg
