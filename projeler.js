@@ -107,14 +107,14 @@ window.MON_PROJECTS = [
     "alt": "Pembe kemerli mekânda çilekli Frutibon yiyen üç arkadaş"
   },
   {
-    "id": "melty",
+    "id": "melty", "gorselOnly": true,
     "name": "MELTY",
     "title": "Bir kare de kendine.",
     "tag": "Konsept marka",
     "duration": "12 sn",
     "idea": "Bir fotoğraf kabinindeki küçük mola. Dudak balmı, kadife perde ve fotoğraf şeridiyle gündelik bir ürün kişisel bir anın parçası oluyor.",
-    "role": "Karakter ve mekân tasarımı, AI destekli sahne ve hareket üretimi, kurgu.",
-    "outputs": "12 saniyelik film, dokuz karelik kampanya görsel serisi. Format: dikey film, 4:5 görsel seri.",
+    "role": "Karakter ve mekân tasarımı, AI destekli görsel üretimi.",
+    "outputs": "Dokuz karelik kampanya görsel serisi. Format: 4:5.",
     "status": "Konsept marka çalışması. Ticari müşteri işi değildir.",
     "stills": [
       ["melty-gorsel-dunya", "MELTY × mon görsel serisi", 1000, 1250]
@@ -122,14 +122,14 @@ window.MON_PROJECTS = [
     "alt": "Pembe fotoğraf kabininde MELTY dudak balmı"
   },
   {
-    "id": "luma",
+    "id": "luma", "gorselOnly": true,
     "name": "LUMA",
     "title": "Işık iz bırakır.",
     "tag": "Konsept marka",
     "duration": "40 sn",
-    "idea": "Gümüşün yüzeyi, atölyedeki dokunuş ve takının kullanımı. Yakın planlarla malzemeyi, portrelerle ürünün kişisel tarafını anlatan bir film.",
-    "role": "AI destekli sahne üretimi ve altı sahneyi bir araya getiren film kurgusu.",
-    "outputs": "40 saniyelik film, dokuz karelik kampanya görsel serisi. Format: dikey film, 4:5 görsel seri.",
+    "idea": "Gümüşün yüzeyi, atölyedeki dokunuş ve takının kullanımı. Yakın planlarla malzemeyi, portrelerle ürünün kişisel tarafını anlatan bir çalışma.",
+    "role": "AI destekli sahne ve görsel üretimi.",
+    "outputs": "Dokuz karelik kampanya görsel serisi. Format: 4:5.",
     "status": "Konsept marka çalışması. Ticari müşteri işi değildir.",
     "stills": [
       ["luma-pano", "LUMA × mon görsel serisi", 1000, 1250]

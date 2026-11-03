@@ -18,12 +18,12 @@ def gorsel(s):
 
 
 for i, p in enumerate(projeler):
-    videolar = p.get('films') or [[p['id'], p['title'], p['duration']]]
+    videolar = [] if p.get('gorselOnly') else p.get('films') or [[p['id'], p['title'], p['duration']]]
     filmler = ''.join(
         f'<figure class="detail-film film-player"><div class="film-frame"><video controls playsinline preload="none" poster="../medya/{v}-kapak.jpg" '
         f'src="../medya/{v}.mp4" aria-label="{e(p["name"])}: {e(ad)}"></video><button type="button" class="film-play"><span aria-hidden="true">▶</span> '
         f'Filmi izle <small>{e(sure)}</small></button></div><figcaption>{e(ad)}</figcaption><p class="media-error" role="status" hidden></p></figure>'
-        for v, ad, sure in videolar)
+        for v, ad, sure in videolar) or f'<figure class="detail-film"><div class="film-frame"><img src="../medya/{p["id"]}-kapak.jpg" alt="{e(p["alt"], quote=True)}" width="720" height="1280"></div></figure>'
     bilgiler = ''.join(f'<div><dt>{k}</dt><dd>{e(v)}</dd></div>' for k, v in (
         ('Amaç ve fikir', p['idea']), ('MON’un üstlendiği işler', p['role']),
         ('Üretilen çıktılar ve formatlar', p['outputs']), ('Statü', p['status'])))
@@ -35,7 +35,7 @@ for i, p in enumerate(projeler):
     sonraki = projeler[(i + 1) % len(projeler)]
     aciklama = e(p['idea'], quote=True)
     baslik = e(f'{p["name"]} | Mon Digital')
-    kapak = videolar[0][0]
+    kapak = videolar[0][0] if videolar else p['id']
     sayfa = f'''<!doctype html>
 <html lang="tr">
 <head>
@@ -61,7 +61,7 @@ for i, p in enumerate(projeler):
 {diziler}{galeri}
 <a class="next-project" href="{sonraki["id"]}.html"><span>Sıradaki proje: {e(sonraki["name"])}</span><span aria-hidden="true">↗</span></a>
 </main>
-<footer class="site-footer"><span>Mon Digital</span><a href="mailto:hello@mondigital.ai">hello@mondigital.ai</a></footer>
+<footer class="site-footer"><address>Mon Digital<br>Zekeriyaköy, Sarıyer, İstanbul</address><a href="mailto:hello@mondigital.ai">hello@mondigital.ai</a></footer>
 <script src="../ortak.js"></script>
 </body>
 </html>

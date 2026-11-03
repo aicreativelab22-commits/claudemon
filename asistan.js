@@ -12,7 +12,7 @@ if (form) {
  const yedek = veri => {
   durum.textContent = 'Şu an gönderemedik. ';
   const a = document.createElement('a');
-  a.href = mailLink('Mon Digital proje görüşmesi', `${veri.mesaj}\n\n${veri.isim}`);
+  a.href = mailLink('Mon Digital proje görüşmesi', [veri.mesaj, veri.isim, veri.eposta].filter(Boolean).join('\n\n'));
   a.textContent = 'Mesajınızı e-postayla iletin';
   durum.append(a);
  };
@@ -26,7 +26,7 @@ if (form) {
    if (yanit.ok) {
     const kutu = document.createElement('div');
     kutu.className = 'apply-done';kutu.tabIndex = -1;kutu.setAttribute('role', 'status');
-    kutu.innerHTML = '<h3>Aldık, teşekkürler.</h3><p>Mesajınız bize ulaştı. Yazdığınız adresten size döneceğiz.</p>';
+    kutu.innerHTML = '<h3>Aldık, teşekkürler.</h3><p>Yazdığınız adresten size döneceğiz.</p>';
     form.replaceWith(kutu);kutu.focus();
     return;
    }

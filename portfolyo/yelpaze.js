@@ -1,4 +1,4 @@
-// Yelpaze: projeleri sayfadan okur, alt alta filmlerin yerine tek sahne kurar. JavaScript yoksa sayfa alt alta düzende kalır.
+// Yelpaze: projeleri sayfadan okur, sayfanın başına tek sahne kurar. Seçilen proje alttaki listenin başına geçer, diğerleri sırasında kalır.
 (() => {
 'use strict';
 const open = document.querySelector('.open');
@@ -9,13 +9,13 @@ if (!open || !index) return;
 const SIRA = ['mentos', 'happy-to-wear', 'quinzell', 'kremi', 'luma', 'frutibon', 'dal', 'melty'];
 const siraNo = id => { const i = SIRA.indexOf(id); return i < 0 ? SIRA.length : i; };
 const projects = [...document.querySelectorAll('.work')].map(section => {
-  const film = section.querySelector(':scope > .film');
+  const film = section.querySelector(':scope > .film, :scope > .still');
   const video = film && film.querySelector('video');
-  const poster = film && film.querySelector('.poster');
-  if (!video || !poster) return null;
+  const poster = film && film.querySelector('img');
+  if (!poster) return null;
   return {
     id: section.id, section, film,
-    src: video.getAttribute('src'), about: video.getAttribute('aria-label') || '',
+    src: video ? video.getAttribute('src') : '', about: video ? video.getAttribute('aria-label') || '' : '',
     cover: poster.getAttribute('src'), alt: poster.getAttribute('alt') || '',
     name: section.querySelector('.name').textContent.trim(),
     kind: section.querySelector('.kind').textContent.trim(),
@@ -25,6 +25,8 @@ const projects = [...document.querySelectorAll('.work')].map(section => {
 const N = projects.length;
 if (N < 3) return;
 
+const order = [...document.querySelectorAll('.work')];
+const listParent = order[0].parentNode, listEnd = order[order.length - 1].nextElementSibling;
 const wrap = i => ((i % N) + N) % N;
 const az = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
 const el = (tag, cls, html) => { const e = document.createElement(tag); if (cls) e.className = cls; if (html) e.innerHTML = html; return e; };
@@ -115,6 +117,7 @@ const closeFilm = () => {
 };
 const openFilm = () => {
   const p = projects[cur];
+  if (!p.src) return;
   filmOn = true;
   // modal-open ipek zeminin çizimini durdurur: film oynarken arkada hareket kalmaz.
   document.body.classList.add('y-film', 'modal-open');
@@ -134,24 +137,17 @@ const show = (i, keepUrl) => {
   const p = projects[cur];
   nameEl.textContent = p.name; kindEl.textContent = p.kind; moreEl.href = '#' + p.id;
   projects.forEach((x, j) => {
-    x.section.hidden = j !== cur;
     if (x.link) x.link.setAttribute('aria-current', j === cur ? 'true' : 'false');
   });
+  [p.section, ...order.filter(x => x !== p.section)].forEach(x => listParent.insertBefore(x, listEnd));
+  playBtn.hidden = !p.src;
+  document.body.classList.toggle('y-filmsiz', !p.src);
   if (!keepUrl) history.replaceState(null, '', '#' + p.id);
   apply(true);
 };
 
-// Sıradaki projeye geçiş metnin sonunda da dursun: okuyan kişi yukarı dönmek zorunda kalmaz.
-projects.forEach((p, i) => {
-  const b = el('button', 'button quiet y-sonraki');
-  b.type = 'button';
-  b.textContent = `Sonraki proje: ${projects[wrap(i + 1)].name}`;
-  b.addEventListener('click', () => { show(i + 1); stage.scrollIntoView({ behavior: az ? 'auto' : 'smooth', block: 'center' }); });
-  p.section.append(b);
-});
-
-// Sayfayı ancak her şey hazırken değiştir: filmler sahneye geçer, yeri boşalan figürler kalkar.
-projects.forEach(p => { p.film.remove(); if (p.link) index.append(p.link); });
+// Sayfayı ancak her şey hazırken değiştir.
+projects.forEach(p => { if (p.link) index.append(p.link); });
 const skip = document.querySelector('.skip');
 if (skip) skip.setAttribute('href', '#filmler');
 document.body.classList.add('yelpaze');

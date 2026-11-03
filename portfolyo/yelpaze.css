@@ -1,4 +1,4 @@
-/* Yelpaze: alt alta filmlerin yerine tek sahne. Seçilen film önde, diğerleri iki yanında arkaya doğru dizilir; altta yalnız seçilen projenin metni kalır. */
+/* Yelpaze: sayfanın başında tek sahne. Seçilen film önde, diğerleri iki yanında arkaya doğru dizilir; alttaki listede seçilen proje başa geçer. */
 .yelpaze .index{display:flex;flex-wrap:wrap;gap:0 4px;margin:0}
 .yelpaze .index img,.yelpaze .index small{display:none}
 .yelpaze .open{overflow-x:clip}
@@ -39,11 +39,13 @@
 .y-ok:hover{background:rgba(240,238,230,.14)}
 .y-durum{margin:8px 0 0;font-size:14px}
 .y-durum:empty{display:none}
-.y-sonraki{margin-top:40px;cursor:pointer;font:inherit;font-weight:500;border:0}
-.yelpaze .work[hidden]{display:none}
 .yelpaze .index{display:none}
+/* Filmi şimdilik kaldırılan projeler: yelpazede oynat işareti yok, listede film yerine görsel */
+.y-izle[hidden],.y-filmsiz .y-isaret{display:none}
+.still{margin-top:28px;width:84%;max-width:calc(74svh*.5625)}
+.still img{display:block;width:100%;height:auto}
 @media(max-width:899px){
-.y-sonraki{order:9;align-self:flex-start}
+.still{order:4;margin-top:20px}
 }
 @media(min-width:900px){
 .yelpaze .open{padding-top:124px;padding-bottom:64px}
@@ -52,16 +54,7 @@
 .y-alt{flex-wrap:nowrap;gap:16px;padding-right:150px}
 .y-bilgi{flex:0 0 190px;display:block}
 .yelpaze .index{display:flex;flex:1 1 auto;justify-content:center}
-.yelpaze .work{display:block;--col:calc(100vw - var(--gutter)*2 - 18px);--cap:min(24svh,13vw)}
-.yelpaze .work:not(#mentos),.yelpaze .work{padding-block:9svh}
-.yelpaze .text{display:block;min-height:0}
-.yelpaze .text>div{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);column-gap:var(--gap);margin-top:32px}
-.yelpaze .text>div>*{grid-column:2}
-.yelpaze .text>div>.title{grid-column:1;grid-row:1}
-.yelpaze .text>div>.kind{grid-column:1;grid-row:2;margin-top:10px}
-.yelpaze .text>div>.idea{grid-row:1/span 3;margin-top:0}
-.yelpaze .text>div>dl{grid-row:4}
-.yelpaze .text>div>.status{grid-column:2}
+.still{margin:0;width:100%;max-width:none;align-self:start}
 }
 @media(prefers-reduced-motion:reduce){.y-panel,.y-sinema,.y-panel::after{transition:none}}
 @media(forced-colors:active){.y-izle{border:1px solid ButtonText}}

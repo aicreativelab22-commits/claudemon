@@ -16,9 +16,9 @@ export default async function handler(req, res) {
   const isim = temiz(veri.isim);
   const eposta = temiz(veri.eposta);
   const mesaj = temiz(veri.mesaj);
-  if (isim.length < 2 || isim.length > 100) return json(res, 400, { hata: 'isim' });
+  if (isim.length > 100) return json(res, 400, { hata: 'isim' });
   if (eposta.length > 200 || !EPOSTA.test(eposta)) return json(res, 400, { hata: 'eposta' });
-  if (mesaj.length < 5 || mesaj.length > 2000) return json(res, 400, { hata: 'mesaj' });
+  if (mesaj.length > 2000) return json(res, 400, { hata: 'mesaj' });
 
   const anahtar = process.env.RESEND_API_KEY;
   if (!anahtar) return json(res, 503, { hata: 'kapali' });
@@ -32,8 +32,8 @@ export default async function handler(req, res) {
         from: process.env.FORM_FROM || 'Mon Digital Site <site@mondigital.ai>',
         to: [process.env.FORM_TO || 'hello@mondigital.ai'],
         reply_to: eposta,
-        subject: `Yeni başvuru: ${isim.replace(/\s+/g, ' ')}`,
-        text: `Ad: ${isim}\nE-posta: ${eposta}\n\n${mesaj}`,
+        subject: `Yeni başvuru: ${isim.replace(/\s+/g, ' ') || eposta}`,
+        text: `Ad: ${isim || 'yazılmadı'}\nE-posta: ${eposta}\n\n${mesaj || 'Mesaj yazılmadı, yalnızca e-posta bıraktı.'}`,
       }),
     });
     if (!yanit.ok) {
