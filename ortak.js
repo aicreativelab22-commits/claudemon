@@ -1,4 +1,4 @@
-// Ana sayfa, proje ve hizmetler sayfalarında ortak: video oynatıcı, karar noktaları, telefon menüsü.
+// Ana sayfa, proje ve hizmetler sayfalarında ortak: video oynatıcı, telefon menüsü.
 (() => {
 'use strict';
 const SLOW_MS=15000;
@@ -47,10 +47,6 @@ window.MON_initPlayers(document);
 // Aynı anda tek video çalışır; sekme gizlenince durur.
 document.addEventListener('play',e=>{if(!e.target.matches('.film-teaser'))document.querySelectorAll('video:not(.film-teaser)').forEach(v=>{if(v!==e.target)v.pause()})},true);
 document.addEventListener('visibilitychange',()=>{if(document.hidden)document.querySelectorAll('video').forEach(v=>v.pause())});
-document.addEventListener('click',e=>{
- const d=e.target.closest('[data-decision]');
- if(d)d.closest('.decisions').querySelectorAll('[data-decision]').forEach(el=>el.setAttribute('aria-pressed',String(el.dataset.decision===d.dataset.decision)));
-});
 const toggle=document.querySelector('.menu-toggle'),nav=document.querySelector('#ana-menu');
 if(toggle&&nav){
  const set=open=>{toggle.setAttribute('aria-expanded',String(open));toggle.textContent=open?'Kapat':'Menü';nav.classList.toggle('open',open)};

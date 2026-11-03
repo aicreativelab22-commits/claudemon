@@ -35,7 +35,7 @@ main,.site-header,.site-footer{max-width:1680px;margin-inline:auto}
 .detail-back{display:inline-flex;align-items:center;min-height:44px;font-size:16px}.detail-back:hover{color:var(--accent)}
 
 /* Açılış: büyük başlık ve Mentos filmi */
-.hero{position:relative;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:48px;align-items:center;padding:20px var(--gutter) 48px;--film-h:min(calc(100svh - 196px),600px)}
+.hero{position:relative;display:grid;grid-template-columns:minmax(0,52fr) minmax(0,48fr);gap:48px;align-items:center;padding:20px var(--gutter) 48px;--film-h:min(calc(100svh - 196px),600px)}
 .silk{position:absolute;z-index:-1;top:calc(var(--header-h)*-1);bottom:0;left:calc(50% - 50vw);right:calc(50% - 50vw);background:radial-gradient(90% 70% at 78% 8%,#1f3a32 0,transparent 70%),radial-gradient(70% 60% at 62% 92%,#1b332b 0,transparent 75%),var(--bg);-webkit-mask-image:linear-gradient(#000 78%,transparent);mask-image:linear-gradient(#000 78%,transparent);pointer-events:none}
 .silk canvas{display:block;width:100%;height:100%;opacity:0;transition:opacity 1.8s ease}.silk canvas.on{opacity:1}
 @media(forced-colors:active){.silk{display:none}}
@@ -46,7 +46,7 @@ main{position:relative;z-index:0}
 .intro{font-size:18px;line-height:1.6;max-width:31em;color:var(--paper);margin-bottom:32px}
 .primary{display:inline-flex;align-items:center;gap:22px;min-height:52px;padding:0 22px;background:var(--paper);color:var(--bg);font-size:16px;font-weight:500;transition:background .2s}.primary:hover{background:var(--accent)}
 .hero-actions{display:flex;flex-wrap:wrap;align-items:center;gap:12px 28px}
-.hero-film{margin:0;width:calc(var(--film-h)*9/16);min-width:0}
+.hero-film{margin:0;width:calc(var(--film-h)*9/16);min-width:0;justify-self:center}
 .hero-film .film-frame{height:var(--film-h)}
 .hero-film figcaption{padding-top:10px;font-size:15px}.hero-film figcaption a{display:flex;flex-wrap:wrap;align-items:baseline;gap:0 10px;min-height:44px}.hero-film figcaption strong{font:400 22px/1.3 var(--serif)}.hero-film figcaption span{color:var(--muted);font-size:14px}.hero-film figcaption a:hover strong{color:var(--accent)}
 
@@ -190,18 +190,6 @@ body.modal-open{overflow:hidden}
 .detail-gallery.compact img{aspect-ratio:2/3;object-fit:cover;object-position:50% 20%}
 .next-project{display:flex;justify-content:space-between;align-items:center;min-height:56px;margin-top:36px;border-top:1px solid var(--line);font-size:16px}.next-project:hover{color:var(--accent)}
 
-/* Yaratıcı kararlar */
-.decisions{display:grid;grid-template-columns:minmax(0,320px) minmax(0,1fr);gap:48px;align-items:center;margin-top:36px;padding-top:32px;border-top:1px solid var(--line)}
-.decision-media{position:relative}.decision-media img{width:100%;aspect-ratio:9/16;object-fit:cover}
-.decision-spot{position:absolute;width:44px;height:44px;margin:-22px 0 0 -22px;padding:0;border:1px solid #fff;border-radius:50%;background:rgba(20,36,31,.72);color:#fff;font-size:14px;transition:background .2s,color .2s}
-.decision-spot[aria-pressed=true]{background:var(--accent);border-color:var(--accent);color:var(--bg)}
-.decisions h2,.decisions h3{font:500 15px/1.4 var(--sans);letter-spacing:0;color:var(--accent);margin-bottom:12px}
-.decision-list{list-style:none;padding:0;margin:0}
-.decision-row{display:grid;grid-template-columns:24px 1fr;gap:2px 8px;width:100%;padding:13px 0 13px 14px;border:0;border-left:2px solid var(--line);background:none;color:var(--muted);text-align:left;transition:border-color .2s,color .2s}
-.decision-row span{font-size:14px;padding-top:5px;color:var(--accent)}
-.decision-row strong{font:400 21px/1.3 var(--serif);color:var(--paper)}
-.decision-row small{grid-column:2;font-size:16px;line-height:1.55}
-.decision-row[aria-pressed=true]{border-left-color:var(--accent);color:var(--paper)}
 
 /* Orta ekran */
 @media(max-width:1180px){
@@ -215,7 +203,7 @@ body.modal-open{overflow:hidden}
 @media(max-width:960px){
 .hero{grid-template-columns:minmax(0,1fr);--film-h:auto}
 .hero h1{font-size:clamp(44px,9.4vw,88px)}
-.hero-film{width:auto;max-width:440px}.hero-film .film-frame{height:auto}
+.hero-film{width:auto;max-width:440px;justify-self:stretch}.hero-film .film-frame{height:auto}
 .feature-link,.work-feature.flip .feature-link{grid-template-columns:minmax(0,1fr)}.work-feature.flip .feature-frames{order:0}
 .more-work{grid-template-columns:minmax(0,1fr);gap:28px}
 .process-chain{grid-template-columns:repeat(2,minmax(0,1fr));max-width:480px}
@@ -227,7 +215,6 @@ body.modal-open{overflow:hidden}
 .contact{grid-template-columns:minmax(0,1fr)}
 .detail-layout,.detail-layout.many{grid-template-columns:minmax(0,1fr);gap:28px}
 .detail-layout:not(.many) .film-list{max-width:420px}
-.decisions{grid-template-columns:minmax(0,1fr);gap:24px}.decision-media{max-width:320px}
 }
 
 /* Telefon */

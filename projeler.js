@@ -23,14 +23,6 @@ window.MON_PROJECTS = [
     "role": "Sahne tasarımı, AI destekli görsel ve hareket üretimi, kurgu.",
     "outputs": "16 saniyelik film, dokuz karelik kampanya görsel serisi. Format: dikey film, 4:5 görsel seri.",
     "status": "Konsept marka çalışması. Ticari müşteri işi değildir.",
-    "decisions": {
-      "image": "dal-kare",
-      "items": [
-        [50, 46, "Metal gövde", "Mat metal ambalaj ve zeytin yeşili kapak, ürüne tek bakışta tanınan bir imza veriyor."],
-        [70, 22, "Yaprak gölgesi", "Duvara düşen zeytin dalı gölgesi, ürünü doğaya bağlıyor; sahne zeytinliğin içinde gibi hissettiriyor."],
-        [62, 82, "Yeşil mermer", "Damarlı yeşil mermer zeytinin rengini tekrar ediyor; ürünle yarışan başka bir renk kalmıyor."]
-      ]
-    },
     "stills": [
       ["dal-pano", "DAL × mon görsel serisi", 1000, 1250]
     ],
@@ -47,14 +39,6 @@ window.MON_PROJECTS = [
     "outputs": "20 saniyelik film. Format: dikey, 9:16.",
     "status": "Bağımsız konsept çalışması. Kremi ile iş birliği veya müşteri ilişkisi iddiası taşımaz.",
     "credit": "Müzik: “Bossa Antigua”, Kevin MacLeod (incompetech.com), CC BY 4.0 lisansı (creativecommons.org/licenses/by/4.0). Film için kısaltıldı; ses düzeyi ve giriş/çıkış yumuşatmaları düzenlendi.",
-    "decisions": {
-      "image": "kremi-kapak",
-      "items": [
-        [37, 32, "Akış", "Tüpün üstünden akan krem, ürünün kıvamını tek bakışta gösteriyor."],
-        [14, 45, "Ton adı", "Her tonun adı kadrajın iki yanında küçük duruyor; ilgi ürünün renginde kalıyor."],
-        [58, 77, "Metal uç", "Metal uç, ürünün nasıl kullanıldığını söylemeden anlatıyor; film sonra dudak üzerindeki sonuca gidiyor."]
-      ]
-    },
     "stills": [],
     "alt": "Krem fonda kırmızı Kremi dudak balmı tüpü"
   },
@@ -132,14 +116,6 @@ window.MON_PROJECTS = [
     "role": "Karakter ve mekân tasarımı, AI destekli sahne ve hareket üretimi, kurgu.",
     "outputs": "12 saniyelik film, dokuz karelik kampanya görsel serisi. Format: dikey film, 4:5 görsel seri.",
     "status": "Konsept marka çalışması. Ticari müşteri işi değildir.",
-    "decisions": {
-      "image": "melty-kapak",
-      "items": [
-        [14, 12, "Kadife perde", "Bordo kadife perde fotoğraf kabinini tek kadrajda anlatıyor ve pembe ürünü öne çıkarıyor."],
-        [80, 38, "Yüzün yanında", "Tüp kameraya bir poz gibi tutuluyor; ürün reklam objesi değil, anın parçası oluyor."],
-        [33, 65, "Sıcak doku", "Krem triko ve bordo çanta askısı perdeyle aynı paletten geliyor; sahneye nostaljik bir sıcaklık katıyor."]
-      ]
-    },
     "stills": [
       ["melty-gorsel-dunya", "MELTY × mon görsel serisi", 1000, 1250]
     ],
