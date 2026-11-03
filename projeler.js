@@ -61,10 +61,10 @@ window.MON_PROJECTS = [
   {
     "id": "happy-to-wear",
     "name": "HAPPY TO WEAR",
-    "title": "Gün değişir, ışıltın kalır.",
+    "title": "Bir kombin, sabahtan akşama.",
     "tag": "Müşteri işi",
     "duration": "15 sn",
-    "idea": "Günün ilk ışığından akşama, aynı şehirde tek bir kombin. Bej trençkot ve altın payetli etek her saatte yeni bir ışıkla buluşuyor; ürün aynı kalırken hissettirdiği değişiyor.",
+    "idea": "Bej trençkot ve altın payetli eteği şehrin değişen ışığında yeniden yorumladık. Happy to Wear için 15 saniyelik bir moda filmi.",
     "role": "Marka ürünlerinden sahne tasarımı, AI destekli görsel ve hareket üretimi, film kurgusu.",
     "outputs": "15 saniyelik moda filmi. Format: dikey, 9:16.",
     "status": "Müşteri işi. Happy to Wear için hazırlandı.",
@@ -74,10 +74,10 @@ window.MON_PROJECTS = [
   {
     "id": "quinzell",
     "name": "QUINZELL",
-    "title": "Hayalet modelden moda filmine.",
+    "title": "Üretmeden önce görün.",
     "tag": "Müşteri işi",
     "duration": "3 film",
-    "idea": "Hayalet model fotoğrafından yola çıkıp ürünü model üzerinde göstermek, renk seçeneklerini açmak ve aynı görselleri harekete taşımak. Model giydirme, renk çalışması ve video üretimi tek süreçte ilerliyor.",
+    "idea": "Ürün fotoğraflarından model görselleri ve renk alternatifleri oluşturduk. Quinzell ekibi bu görsellerle üretim seçeneklerini değerlendiriyor; aynı çalışma üç kısa moda filmiyle tamamlanıyor.",
     "role": "Hayalet model fotoğraflarından ürünü model üzerinde görselleştirme, renk alternatifleri geliştirme ve görselleri videoya dönüştürme.",
     "outputs": "Üç kısa moda filmi, model üzerinde ürün görselleri ve renk alternatifleri. Format: dikey film, dikey görsel.",
     "status": "Müşteri işi. Quinzell için hazırlandı.",
@@ -90,19 +90,19 @@ window.MON_PROJECTS = [
       {
         "title": "Lacivert-krem takım",
         "items": [
-          ["quinzell-u1-manken", "Hayalet model", 640, 853],
-          ["quinzell-u1-model", "Model üzerinde", 640, 960],
-          ["quinzell-u1-renk1", "Model ve renk alternatifi: adaçayı", 640, 960],
-          ["quinzell-u1-renk2", "Model ve renk alternatifi: bordo", 640, 960]
+          ["quinzell-u1-manken", "Kaynak fotoğraf: hayalet model", 640, 853],
+          ["quinzell-u1-model", "Üretilen görsel: model üzerinde", 640, 960],
+          ["quinzell-u1-renk1", "Üretilen görsel: adaçayı renk alternatifi", 640, 960],
+          ["quinzell-u1-renk2", "Üretilen görsel: bordo renk alternatifi", 640, 960]
         ]
       },
       {
         "title": "Şeritli eşofman takımı",
         "items": [
-          ["quinzell-u2-manken", "Hayalet model", 640, 853],
-          ["quinzell-u2-model", "Model üzerinde", 640, 960],
-          ["quinzell-u2-renk1", "Renk alternatifi: bordo", 640, 960],
-          ["quinzell-u2-renk2", "Renk alternatifi: lacivert", 640, 960]
+          ["quinzell-u2-manken", "Kaynak fotoğraf: hayalet model", 640, 853],
+          ["quinzell-u2-model", "Üretilen görsel: model üzerinde", 640, 960],
+          ["quinzell-u2-renk1", "Üretilen görsel: bordo renk alternatifi", 640, 960],
+          ["quinzell-u2-renk2", "Üretilen görsel: lacivert renk alternatifi", 640, 960]
         ]
       }
     ],

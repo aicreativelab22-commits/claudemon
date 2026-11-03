@@ -48,8 +48,7 @@ const ILETISIM = document.querySelector('#iletisim') ? '#iletisim' : 'index.html
 
 const kok = document.createElement('div');
 kok.className = 'chat';
-kok.innerHTML = `<div class="chat-hello" hidden><button type="button" class="chat-hello-open"></button><button type="button" class="chat-hello-close" aria-label="Karşılamayı kapat">×</button></div>
-<button type="button" class="chat-open" aria-expanded="false" aria-controls="chat-panel">${YUZ}<span><strong>Monna’ya sorun</strong><small>Yapay zekâ robotu</small></span></button>
+kok.innerHTML = `<button type="button" class="chat-open" aria-expanded="false" aria-controls="chat-panel" aria-label="Monna ile sohbeti aç">${YUZ}<span>Monna</span></button>
 <section class="chat-panel" id="chat-panel" role="dialog" aria-label="Monna ile sohbet" hidden>
 <header class="chat-head">${YUZ}<div><strong>Monna</strong><small>Mon Digital’in yapay zekâ asistanı</small></div><button type="button" class="chat-close" aria-label="Sohbeti kapat">×</button></header>
 <div class="chat-log" role="log" aria-live="polite" tabindex="0"></div>
@@ -76,40 +75,7 @@ const hataGoster = (p, metin) => {
  const a = document.createElement('a');a.href = mailLink('Mon Digital proje görüşmesi');a.textContent = MAIL;
  p.append(a);
 };
-// Konuşma bulutu: ara sıra açılır, tıklayınca sohbet başlar. Kapatınca veya sohbet açılınca oturum boyunca susar.
-const SOZLER = ['Merhaba, ben Monna! Yapay zekâ robotuyum, aklınızda ne varsa sorun.', 'Nereden başlayacağınızı bilmiyor musunuz? Birlikte bakalım.', 'Ürününüz için ne yapılabilir, merak ediyor musunuz?', 'İşler ve hizmetler hakkında soru sorabilirsiniz.', 'Bir şey sormak isterseniz buradayım.'];
-const ILK_SOZ = 1200, ARALIK = 50000, SURE = 8000;
-const selam = kok.querySelector('.chat-hello'), selamMetni = kok.querySelector('.chat-hello-open');
-const altSahne = document.querySelector('.closing-mark');
-let altBulut = null, altGorunur = false, sira = 0, sustu = false, kapanis = 0;
-try { sustu = sessionStorage.getItem('monna-sus') === '1'; sira = Number(sessionStorage.getItem('monna-sira')) || 0; } catch {}
-if (altSahne) {
- altBulut = document.createElement('button');
- altBulut.type = 'button';altBulut.className = 'chat-say';altBulut.hidden = true;
- altSahne.append(altBulut);
- if ('IntersectionObserver' in window) new IntersectionObserver(([g]) => { altGorunur = g.isIntersecting; }, { threshold: .4 }).observe(altSahne);
-}
-const bulutlariKapat = () => { clearTimeout(kapanis);selam.hidden = true;if (altBulut) altBulut.hidden = true; };
-const selamiKapat = () => {
- sustu = true;bulutlariKapat();
- try { sessionStorage.setItem('monna-sus', '1'); } catch {}
-};
-function konus() {
- if (sustu || !panel.hidden || document.hidden) return;
- const asagida = kok.classList.contains('is-tucked');
- const hedef = asagida ? (altGorunur ? altBulut : null) : selam;
- if (!hedef) return;
- bulutlariKapat();
- (hedef === selam ? selamMetni : hedef).textContent = SOZLER[sira % SOZLER.length];
- sira += 1;
- try { sessionStorage.setItem('monna-sira', String(sira)); } catch {}
- hedef.hidden = false;
- kapanis = setTimeout(bulutlariKapat, SURE);
-}
-setTimeout(konus, ILK_SOZ);
-setInterval(konus, ARALIK);
 function ayarla(acik, odak = true) {
- if (acik) selamiKapat();
  panel.hidden = !acik;
  kok.classList.toggle('is-open', acik);
  ac.setAttribute('aria-expanded', String(acik));
@@ -176,9 +142,6 @@ async function sor(metin) {
 
 ac.addEventListener('click', () => ayarla(panel.hidden));
 kok.querySelector('.chat-close').addEventListener('click', () => ayarla(false));
-selamMetni.addEventListener('click', () => ayarla(true));
-if (altBulut) altBulut.addEventListener('click', () => ayarla(true));
-kok.querySelector('.chat-hello-close').addEventListener('click', selamiKapat);
 document.querySelectorAll('[data-open-chat]').forEach(b => b.addEventListener('click', () => ayarla(true)));
 panel.addEventListener('keydown', e => { if (e.key === 'Escape') ayarla(false); });
 sohbetFormu.addEventListener('submit', e => {
@@ -193,7 +156,37 @@ girdi.addEventListener('keydown', e => {
 });
 panel.addEventListener('click', e => { if (e.target.closest('.chat-note a')) ayarla(false, false); });
 
-// Form veya sayfa sonu görünürken açma düğmesi çekilir; üst üste binmez.
+// Düğme, siteye girişten 30 saniye sonra görünür; sayfa değişse de süre baştan başlamaz.
+const BEKLEME = 30000;
+let giris = Date.now();
+try {
+ const kayitli = Number(sessionStorage.getItem('monna-giris'));
+ if (kayitli) giris = kayitli; else sessionStorage.setItem('monna-giris', String(giris));
+} catch {}
+setTimeout(() => kok.classList.add('is-ready'), Math.max(0, BEKLEME - (Date.now() - giris)));
+
+// Düğme bir videonun üstüne denk gelirse gizlenir, video ekrandan çıkınca geri gelir.
+const videolar = document.querySelectorAll('.film-frame,.film');
+if (videolar.length) {
+ let bekliyor = false;
+ const denetle = () => {
+  bekliyor = false;
+  const d = ac.getBoundingClientRect();
+  if (!d.width) return;
+  const a = 8;
+  const biniyor = [...videolar].some(v => {
+   const k = v.getBoundingClientRect();
+   return k.left < d.right + a && k.right > d.left - a && k.top < d.bottom + a && k.bottom > d.top - a;
+  });
+  kok.classList.toggle('is-over-film', biniyor);
+ };
+ const iste = () => { if (!bekliyor) { bekliyor = true; requestAnimationFrame(denetle); } };
+ addEventListener('scroll', iste, { passive: true });
+ addEventListener('resize', iste);
+ denetle();
+}
+
+// Telefonda form veya sayfa sonu görünürken açma düğmesi çekilir; alanların üstüne binmez.
 const hedefler = document.querySelectorAll('.contact,.end,.site-footer');
 if (hedefler.length && 'IntersectionObserver' in window) {
  const gorunen = new Set();

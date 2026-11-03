@@ -1,14 +1,13 @@
 /* Başvuru formu ve Monna sohbeti. Ana sayfa, hizmetler ve portfolyo kullanır; portfolyo/ altında aynı kopyası durur. */
-.chat,.chat-say,.apply-form,.apply-done{--bg:#14241f;--panel:#1b332d;--paper:#f0eee6;--muted:#c6ccbf;--line:#3d5a50;--accent:#d3b679;--serif:'Bodoni Moda',Georgia,'Times New Roman',serif;--sans:'Instrument Sans',Arial,Helvetica,sans-serif}
+.chat,.apply-form,.apply-done{--bg:#14241f;--panel:#1b332d;--paper:#f0eee6;--muted:#c6ccbf;--line:#3d5a50;--accent:#d3b679;--serif:'Bodoni Moda',Georgia,'Times New Roman',serif;--sans:'Instrument Sans',Arial,Helvetica,sans-serif}
 /* Portfolyo sayfasının genel kuralları farklı; bu bileşenler kendi temelini taşır. */
-.chat [hidden],.chat-say[hidden]{display:none!important}
+.chat [hidden]{display:none!important}
 .chat{color:var(--paper);font:16px/1.65 var(--sans)}
-:where(.chat button,.chat-say){font:inherit;color:inherit;cursor:pointer}
+:where(.chat button){font:inherit;color:inherit;cursor:pointer}
 .apply-form button{font:inherit;cursor:pointer}
 .chat a{color:inherit}
 html:not(.js) .apply-form{display:none}
 .monna{display:block;width:auto;height:54px;flex:none}
-@keyframes monna-bob{50%{transform:translateY(-4px)}}
 
 /* Başvuru formu */
 .apply-form{display:grid;gap:22px;padding:28px;background:var(--panel)}
@@ -28,16 +27,12 @@ html:not(.js) .apply-form{display:none}
 /* Monna sohbeti */
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
 .chat{position:fixed;right:20px;bottom:20px;z-index:20;display:flex;flex-direction:column;align-items:flex-end}
-.chat-open{display:inline-flex;align-items:center;gap:12px;min-height:72px;padding:6px 24px 6px 14px;border:2px solid var(--accent);border-radius:40px;background:var(--bg);text-align:left;box-shadow:0 10px 32px rgba(0,0,0,.45);transition:background .2s,transform .25s,opacity .25s,visibility .25s}.chat-open:hover{background:var(--panel)}
-.chat-open .monna{height:60px;animation:monna-bob 2.8s ease-in-out infinite}
-.chat-open span{line-height:1.25}.chat-open strong{display:block;font-size:16px;font-weight:500}.chat-open small{display:block;font-size:13px;color:var(--muted)}
-.chat.is-tucked:not(.is-open) .chat-open,.chat.is-tucked .chat-hello{transform:translateY(16px);opacity:0;visibility:hidden}
-.chat-hello{position:relative;display:flex;align-items:flex-start;width:min(264px,calc(100vw - 32px));margin-bottom:12px;background:var(--paper);color:var(--bg);box-shadow:0 10px 32px rgba(0,0,0,.45);transition:transform .25s,opacity .25s,visibility .25s}
-.chat-hello::after{content:"";position:absolute;right:44px;bottom:-8px;width:16px;height:16px;background:var(--paper);transform:rotate(45deg)}
-.chat-hello-open{flex:1;min-width:0;padding:14px 0 14px 16px;border:0;background:none;color:inherit;font-size:15px;line-height:1.45;text-align:left}
-.chat-hello-close{flex:none;width:44px;height:44px;border:0;background:none;color:inherit;font-size:22px;line-height:1}
-.chat-hello a:focus-visible,.chat-hello button:focus-visible{outline-color:var(--bg);outline-offset:-3px}
-.chat.is-open .chat-hello{display:none}
+.chat-open{display:inline-flex;align-items:center;gap:8px;min-height:48px;padding:4px 16px 4px 8px;border:1px solid var(--line);border-radius:24px;background:var(--bg);font-size:15px;box-shadow:0 4px 16px rgba(0,0,0,.3);transition:border-color .2s}.chat-open:hover{border-color:var(--paper)}
+.chat-open .monna{height:38px}
+/* 30 saniye dolana kadar ve video üstündeyken görünmez; yer kaplaması ölçüm için korunur. */
+.chat:not(.is-ready):not(.is-open) .chat-open,.chat.is-over-film:not(.is-open) .chat-open{visibility:hidden}
+/* Form ve sayfa sonu görünürken düğme küçülür; yazıların üstüne binmez. */
+.chat.is-tucked .chat-open{justify-content:center;width:48px;padding:4px}.chat.is-tucked .chat-open span{display:none}
 .chat.is-open .chat-open{display:none}
 .chat-panel{display:flex;flex-direction:column;width:min(384px,calc(100vw - 40px));height:min(580px,calc(100dvh - 40px));border:1px solid var(--line);background:var(--bg);box-shadow:0 16px 48px rgba(0,0,0,.5)}
 .chat-head{display:flex;align-items:center;gap:10px;padding:10px 8px 10px 14px;border-bottom:1px solid var(--line)}.chat-head>div{flex:1;min-width:0;line-height:1.25}.chat-head strong{display:block;font:400 21px/1.2 var(--serif)}.chat-head small{font-size:13px;color:var(--muted)}
@@ -55,16 +50,10 @@ html:not(.js) .apply-form{display:none}
 .chat-form button{min-height:44px;padding:0 14px;border:0;background:var(--paper);color:var(--bg);font-size:15px;font-weight:500}.chat-form button:hover{background:var(--accent)}.chat-form button:disabled{opacity:.6;cursor:wait}
 .chat-note{padding:0 14px 10px;font-size:13px;line-height:1.4;color:var(--muted)}.chat-note a{text-decoration:underline}
 
-/* Monna'nın ara sıra açılan konuşma bulutu */
-.chat-say{position:absolute;z-index:3;left:66%;top:2%;width:clamp(150px,19vw,250px);padding:12px 14px;border:0;background:var(--paper);color:var(--bg);font-size:15px;line-height:1.4;text-align:left;box-shadow:0 10px 32px rgba(0,0,0,.45);animation:chat-say .3s ease-out}
-.chat-say::before{content:"";position:absolute;left:-7px;top:22px;width:14px;height:14px;background:var(--paper);transform:rotate(45deg)}
-.chat-hello:not([hidden]){animation:chat-say .3s ease-out}
-@keyframes chat-say{from{opacity:0;transform:translateY(8px)}}
-
 @media(max-width:700px){
 .apply-form{padding:20px}.apply-row{grid-template-columns:minmax(0,1fr)}
-.chat{right:12px;bottom:12px}.chat-open{min-height:64px;padding:4px 18px 4px 10px;gap:8px}.chat-open .monna{height:50px}.chat-open strong{font-size:15px}
+.chat{right:12px;bottom:12px}.chat-open{justify-content:center;width:48px;padding:4px}.chat-open span{display:none}
+.chat.is-tucked:not(.is-open) .chat-open{visibility:hidden}
 .chat.is-open{right:0;bottom:0;left:0}.chat-panel{width:100%;height:100dvh;border:0}
-.chat-say{left:auto;right:0;top:auto;bottom:calc(100% + 12px);width:240px;font-size:14px}.chat-say::before{left:70px;top:auto;bottom:-7px}
 }
-@media(prefers-reduced-motion:reduce){.chat *,.chat-say,.closing-monna img{animation:none!important;transition:none!important}}
+@media(prefers-reduced-motion:reduce){.chat *{animation:none!important;transition:none!important}}
