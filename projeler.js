@@ -7,7 +7,7 @@ window.MON_PROJECTS = [
     "tag": "Hibrit üretim",
     "duration": "34 sn",
     "idea": "Şehir hiç durmaz; Mentos da. İstanbul’un sokaklarından sahiline uzanan bu filmde marka, günün akışına küçük bir ferahlık anı olarak katılıyor.",
-    "role": "Sette mümkün olmayan sahneleri ve efektleri AI üretimle ekledik. Gerçek çekimi İstanbul’da Afternoon Film Pro yaptı.",
+    "role": "Kamera kaydetti, hayal gücü devam etti. Çekim ortağımızla birlikte yaptığımız çalışmada gerçekle başladık, sınırları yapay zekâyla açtık.",
     "outputs": "34 saniyelik reklam filmi. Format: dikey, 9:16.",
     "status": "Afternoon Film Pro ile ortak üretim. Mentos için hazırlandı.",
     "stills": [],
