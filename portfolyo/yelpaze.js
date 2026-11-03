@@ -1,4 +1,4 @@
-// Yelpaze: projeleri sayfadan okur, sayfanın başına tek sahne kurar. Seçilen proje alttaki listenin başına geçer, diğerleri sırasında kalır.
+// Yelpaze: projeleri sayfadan okur, sayfanın başına tek sahne kurar. Seçim yalnızca sahneyi değiştirir: alttaki ızgara ve proje bölümleri yerinde kalır.
 (() => {
 'use strict';
 const open = document.querySelector('.open');
@@ -18,15 +18,12 @@ const projects = [...document.querySelectorAll('.work')].map(section => {
     src: video ? video.getAttribute('src') : '', about: video ? video.getAttribute('aria-label') || '' : '',
     cover: poster.getAttribute('src'), alt: poster.getAttribute('alt') || '',
     name: section.querySelector('.name').textContent.trim(),
-    kind: section.querySelector('.kind').textContent.trim(),
-    link: index.querySelector(`a[href="#${section.id}"]`)
+    kind: section.querySelector('.kind').textContent.trim()
   };
 }).filter(Boolean).sort((a, b) => siraNo(a.id) - siraNo(b.id));
 const N = projects.length;
 if (N < 3) return;
 
-const order = [...document.querySelectorAll('.work')];
-const listParent = order[0].parentNode, listEnd = order[order.length - 1].nextElementSibling;
 const wrap = i => ((i % N) + N) % N;
 const az = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
 const el = (tag, cls, html) => { const e = document.createElement(tag); if (cls) e.className = cls; if (html) e.innerHTML = html; return e; };
@@ -36,7 +33,7 @@ stage.id = 'filmler';
 stage.tabIndex = 0;
 stage.setAttribute('role', 'group');
 stage.setAttribute('aria-roledescription', 'galeri');
-stage.setAttribute('aria-label', 'Filmler. Sol ve sağ ok tuşlarıyla gezilir.');
+stage.setAttribute('aria-label', 'Projeler. Sol ve sağ ok tuşlarıyla gezilir.');
 const world = el('div', 'y-dunya');
 world.append(el('div', 'y-golge'));
 const panels = projects.map((p, i) => {
@@ -62,6 +59,14 @@ const bar = el('div', 'y-alt');
 const info = el('div', 'y-bilgi', '<strong></strong><span class="y-tur"></span><a>Projeyi incele</a>');
 info.setAttribute('aria-live', 'polite');
 const nameEl = info.querySelector('strong'), kindEl = info.querySelector('.y-tur'), moreEl = info.querySelector('a');
+const names = el('nav', 'y-adlar');
+names.setAttribute('aria-label', 'Proje seçici');
+projects.forEach(p => {
+  p.link = el('a');
+  p.link.href = '#' + p.id;
+  p.link.textContent = p.name;
+  names.append(p.link);
+});
 const actions = el('div', 'y-eylem');
 const playBtn = el('button', 'y-izle', '<i></i><span>Filmi izle</span>');
 playBtn.type = 'button';
@@ -129,42 +134,40 @@ const openFilm = () => {
   apply(false);
   video.focus({ preventScroll: true });
 };
-const show = (i, keepUrl) => {
+const show = i => {
   const n = wrap(i);
   if (filmOn) closeFilm();
   note.textContent = '';
   cur = n;
   const p = projects[cur];
   nameEl.textContent = p.name; kindEl.textContent = p.kind; moreEl.href = '#' + p.id;
+  moreEl.textContent = p.src ? 'Projeyi incele' : 'Görselleri incele';
   projects.forEach((x, j) => {
-    if (x.link) x.link.setAttribute('aria-current', j === cur ? 'true' : 'false');
+    x.link.setAttribute('aria-current', j === cur ? 'true' : 'false');
   });
-  [p.section, ...order.filter(x => x !== p.section)].forEach(x => listParent.insertBefore(x, listEnd));
   playBtn.hidden = !p.src;
   document.body.classList.toggle('y-filmsiz', !p.src);
-  if (!keepUrl) history.replaceState(null, '', '#' + p.id);
   apply(true);
 };
 
 // Sayfayı ancak her şey hazırken değiştir.
-projects.forEach(p => { if (p.link) index.append(p.link); });
 const skip = document.querySelector('.skip');
 if (skip) skip.setAttribute('href', '#filmler');
 document.body.classList.add('yelpaze');
-open.append(stage, bar);
-bar.append(info, index, actions);
-open.append(note);
+open.insertBefore(stage, index);
+open.insertBefore(bar, index);
+open.insertBefore(note, index);
+bar.append(info, names, actions);
 
 const startId = location.hash.slice(1);
 const startAt = projects.findIndex(p => p.id === startId);
 measure();
-show(startAt < 0 ? 0 : startAt, true);
-if (startAt >= 0) addEventListener('load', () => stage.scrollIntoView({ block: 'center' }), { once: true });
+show(startAt < 0 ? 0 : startAt);
 
 playBtn.addEventListener('click', () => { if (filmOn) { closeFilm(); apply(false); } else openFilm(); });
 prev.addEventListener('click', () => show(cur - 1));
 next.addEventListener('click', () => show(cur + 1));
-index.addEventListener('click', e => {
+names.addEventListener('click', e => {
   const a = e.target.closest('a');
   if (!a) return;
   const i = projects.findIndex(p => p.link === a);
@@ -174,7 +177,7 @@ index.addEventListener('click', e => {
 });
 addEventListener('hashchange', () => {
   const i = projects.findIndex(p => p.id === location.hash.slice(1));
-  if (i >= 0 && i !== cur) { show(i, true); stage.scrollIntoView({ block: 'center' }); }
+  if (i >= 0 && i !== cur) show(i);
 });
 stage.addEventListener('keydown', e => {
   if (e.target === video) return;
@@ -195,7 +198,8 @@ stage.addEventListener('click', e => {
   const d = e.target.closest && e.target.closest('.y-panel');
   if (!d) return;
   const i = +d.dataset.sira;
-  if (i === cur) { if (!filmOn) openFilm(); } else show(i);
+  if (i !== cur) show(i);
+  else if (!filmOn) { if (projects[cur].src) openFilm(); else moreEl.click(); }
 });
 video.addEventListener('ended', () => { if (filmOn) { closeFilm(); apply(false); } });
 video.addEventListener('error', () => {

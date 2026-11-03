@@ -82,21 +82,21 @@ main{position:relative;z-index:0}
 .feature-link:hover .feature-frames img{filter:brightness(1.06)}
 .feature-copy h3{font-size:clamp(38px,3.8vw,58px);line-height:1.08;margin:8px 0 2px}
 .feature-line{font:italic 400 clamp(21px,1.8vw,26px)/1.3 var(--serif)}
-.flip .feature-copy h3{font-size:clamp(30px,3.2vw,46px);line-height:1.12}
 .feature-story{max-width:30em;margin:14px 0 20px;font-size:16px;color:var(--muted)}
 .feature-copy .work-foot{justify-content:flex-start;gap:24px;font-size:15px}.feature-copy .work-go{font-size:16px}
 
-/* Stüdyo çalışmaları ve portfolyo bağlantısı */
-.more-work{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.6fr);gap:48px;align-items:center;padding:72px var(--gutter)}
-.more-copy p{max-width:24em;margin:16px 0 28px;font-size:16px;color:var(--muted)}
+/* Portfolyoya geçiş: üç proje ve tek bağlantı */
+.more-work{padding:72px var(--gutter)}
+.more-work>h2{margin-bottom:32px}
+.more-work>.primary{margin-top:32px}
 .more-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
 .work-card{min-width:0}
-.work-card>a{display:flex;flex-direction:column;height:100%}
-.work-image{aspect-ratio:4/5;overflow:hidden;background:var(--ink);margin-bottom:14px}
+.work-card>a{display:block;height:100%}
+.work-image{aspect-ratio:1/1;overflow:hidden;background:var(--ink);margin-bottom:12px}
 .work-image img{width:100%;height:100%;object-fit:cover;object-position:var(--focus,50% 50%);transition:filter .2s}
 .work-card>a:hover .work-image img{filter:brightness(1.08)}
-.work-card h3{font-size:26px;line-height:1.15;margin:4px 0 2px}
-.work-line{font-size:16px;line-height:1.4;color:var(--muted);margin-bottom:12px}
+.work-card h3{font-size:26px;line-height:1.15;margin-bottom:4px}
+.work-card>a:hover h3{color:var(--accent)}
 
 /* Quinzell süreci */
 .fashion-story{display:grid;grid-template-columns:minmax(300px,1fr) minmax(0,800px);grid-template-rows:auto auto 1fr;column-gap:56px;padding:72px var(--gutter);background:var(--panel)}
@@ -107,7 +107,6 @@ main{position:relative;z-index:0}
 .process-chain a{display:block}
 .process-chain img{width:100%;aspect-ratio:2/3;object-fit:cover;object-position:50% 20%;background:var(--ink)}
 .chain-colors>.chain-media{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.story-facts{grid-column:1;margin:24px 0 0}.story-facts>div{padding:12px 0;border-top:1px solid var(--line)}.story-facts dt{font-size:14px;color:var(--accent)}.story-facts dd{margin:2px 0 0;font-size:16px;line-height:1.5}
 .chain-media{position:relative;display:block}
 .chain-label{position:absolute;z-index:1;left:6px;top:6px;padding:2px 8px;background:var(--bg);color:var(--paper);font-size:13px;line-height:1.5}.chain-label.source{background:var(--paper);color:var(--bg)}
 .process-chain li:not(:last-child) .chain-media::after{content:"→";position:absolute;z-index:1;top:50%;right:-18px;width:24px;height:24px;border-radius:50%;background:var(--paper);color:var(--bg);font-size:14px;line-height:24px;text-align:center;transform:translateY(-50%)}
@@ -179,6 +178,8 @@ body.modal-open{overflow:hidden}
 .facts dt{font-size:14px;color:var(--accent);margin-bottom:3px}
 .facts dd{margin:0;font-size:16px;line-height:1.65}
 .credit-note{font-size:14px;line-height:1.6;color:var(--muted);padding-top:14px;border-top:1px solid var(--line);margin-bottom:20px}
+.chain-flow{margin-top:36px;font-size:16px;line-height:1.5}.chain-flow span{color:var(--accent)}
+.chain-flow+.detail-chain{margin-top:16px}
 .detail-chain{margin-top:36px;padding-top:24px;border-top:1px solid var(--line)}
 .detail-chain h2,.detail-chain h3{font-size:26px;line-height:1.2;margin-bottom:16px}
 .detail-gallery{display:grid;grid-template-columns:minmax(0,560px);gap:20px;margin-top:36px}
@@ -204,7 +205,6 @@ body.modal-open{overflow:hidden}
 .hero h1{font-size:clamp(44px,9.4vw,88px)}
 .hero-film{width:auto;max-width:440px;justify-self:stretch}.hero-film .film-frame{height:auto}
 .feature-link,.work-feature.flip .feature-link{grid-template-columns:minmax(0,1fr)}.work-feature.flip .feature-frames{order:0}
-.more-work{grid-template-columns:minmax(0,1fr);gap:28px}
 .process-chain{grid-template-columns:repeat(2,minmax(0,1fr));max-width:480px}
 .process-chain li .chain-media::after{display:none!important}
 .how-start{grid-template-columns:minmax(0,1fr)}
@@ -233,11 +233,12 @@ body.modal-open{overflow:hidden}
 .film-play{bottom:14px;min-height:48px;padding:0 16px}
 .section-heading{display:block;margin-bottom:20px}.section-heading>p{margin-top:10px}
 .selected,.fashion-story,.more-work,.offers,.about{padding-block:48px}
+.more-work>h2{margin-bottom:20px}.more-work>.primary{margin-top:24px}
 .selected>h2{margin-bottom:20px}
 .feature-link{padding:12px;gap:18px}.feature-frames{gap:6px}
 .more-grid{gap:10px}
 .work-image{margin-bottom:10px}
-.work-card h3{font-size:22px}.work-line{font-size:14px}.work-tag{font-size:13px}
+.work-card h3{font-size:22px}.work-tag{font-size:13px}
 .work-foot{flex-wrap:wrap;gap:2px 10px;font-size:13px}
 .chain-colors>.chain-media{gap:10px}.process-chain{gap:24px 10px}
 .offer-grid,.services-page .offer-grid{grid-template-columns:minmax(0,1fr)}

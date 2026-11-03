@@ -24,6 +24,7 @@ for i, p in enumerate(projeler):
         f'src="../medya/{v}.mp4" aria-label="{e(p["name"])}: {e(ad)}"></video><button type="button" class="film-play"><span aria-hidden="true">▶</span> '
         f'Filmi izle <small>{e(sure)}</small></button></div><figcaption>{e(ad)}</figcaption><p class="media-error" role="status" hidden></p></figure>'
         for v, ad, sure in videolar) or f'<figure class="detail-film"><div class="film-frame"><img src="../medya/{p["id"]}-kapak.jpg" alt="{e(p["alt"], quote=True)}" width="720" height="1280"></div></figure>'
+    akis = ('<p class="chain-flow">' + '<span aria-hidden="true"> → </span>'.join(e(a) for a in p['flow']) + '</p>') if p.get('flow') else ''
     bilgiler = ''.join(f'<div><dt>{k}</dt><dd>{e(v)}</dd></div>' for k, v in (
         ('Amaç ve fikir', p['idea']), ('MON’un üstlendiği işler', p['role']),
         ('Üretilen çıktılar ve formatlar', p['outputs']), ('Statü', p['status'])))
@@ -58,7 +59,7 @@ for i, p in enumerate(projeler):
 <main class="detail">
 <div class="detail-head"><p class="work-tag">{e(p["tag"])}</p><h1>{e(p["name"])}</h1><p class="detail-line">{e(p["title"])}</p></div>
 <div class="detail-layout{" many" if p.get("films") else ""}"><div class="film-list">{filmler}</div><div class="detail-copy"><dl class="facts">{bilgiler}</dl>{kredi}<a class="text-link" href="{MAIL}">Böyle bir proje için yazın</a></div></div>
-{diziler}{galeri}
+{akis}{diziler}{galeri}
 <a class="next-project" href="{sonraki["id"]}.html"><span>Sıradaki proje: {e(sonraki["name"])}</span><span aria-hidden="true">↗</span></a>
 </main>
 <footer class="site-footer"><address>Mon Digital<br>Zekeriyaköy, Sarıyer, İstanbul</address><a href="mailto:hello@mondigital.ai">hello@mondigital.ai</a></footer>

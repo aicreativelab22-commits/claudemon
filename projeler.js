@@ -45,10 +45,10 @@ window.MON_PROJECTS = [
   {
     "id": "happy-to-wear",
     "name": "HAPPY TO WEAR",
-    "title": "Bir kombin, sabahtan akşama.",
+    "title": "Günün değişir, ışıltın kalır.",
     "tag": "Müşteri işi",
     "duration": "15 sn",
-    "idea": "Bej trençkot ve altın payetli eteği şehrin değişen ışığında yeniden yorumladık. Happy to Wear için 15 saniyelik bir moda filmi.",
+    "idea": "Günün ilk ışığından akşama, aynı şehirde tek bir kombin. Bej trençkot ve altın payetli etek her saatte yeni bir ışıkla buluşuyor; ürün aynı kalırken hissettirdiği değişiyor.",
     "role": "Marka ürünlerinden sahne tasarımı, AI destekli görsel ve hareket üretimi, film kurgusu.",
     "outputs": "15 saniyelik moda filmi. Format: dikey, 9:16.",
     "status": "Müşteri işi. Happy to Wear için hazırlandı.",
@@ -58,18 +58,19 @@ window.MON_PROJECTS = [
   {
     "id": "quinzell",
     "name": "QUINZELL",
-    "title": "Üretmeden önce görün.",
+    "title": "Hayalet modelden moda filmine.",
     "tag": "Müşteri işi",
     "duration": "3 film",
-    "idea": "Ürün fotoğraflarından model görselleri ve renk alternatifleri oluşturduk. Quinzell ekibi bu görsellerle üretim seçeneklerini değerlendiriyor; aynı çalışma üç kısa moda filmiyle tamamlanıyor.",
-    "role": "Hayalet model fotoğraflarından ürünü model üzerinde görselleştirme, renk alternatifleri geliştirme ve görselleri videoya dönüştürme.",
-    "outputs": "Üç kısa moda filmi, model üzerinde ürün görselleri ve renk alternatifleri. Format: dikey film, dikey görsel.",
+    "idea": "Quinzell, yeni çıkacak bir giyim markası. Hayalet model fotoğrafından yola çıkıp ürünü model üzerinde gösterdik, renk seçeneklerini açtık ve aynı görselleri üç kısa moda filmine taşıdık.",
+    "role": "Model giydirme, renk çalışması ve video üretimi tek süreçte ilerledi. Ekip, renk alternatiflerini model üzerinde görerek üretim kararlarını değerlendirebiliyor.",
+    "outputs": "Üç kısa moda filmi ve iki ürün için görsel dizi. Format: dikey film, dikey görsel.",
     "status": "Müşteri işi. Quinzell için hazırlandı.",
     "films": [
       ["quinzell-renk", "Renk değişimi", "18 sn"],
       ["quinzell-gece", "Gece senin ritmin", "16 sn"],
       ["quinzell", "Günün ritminde", "10 sn"]
     ],
+    "flow": ["Kaynak fotoğraf", "Model üzerinde", "Renk alternatifleri", "Film"],
     "chains": [
       {
         "title": "Lacivert-krem takım",
@@ -111,7 +112,6 @@ window.MON_PROJECTS = [
     "name": "MELTY",
     "title": "Bir kare de kendine.",
     "tag": "Konsept marka",
-    "duration": "12 sn",
     "idea": "Bir fotoğraf kabinindeki küçük mola. Dudak balmı, kadife perde ve fotoğraf şeridiyle gündelik bir ürün kişisel bir anın parçası oluyor.",
     "role": "Karakter ve mekân tasarımı, AI destekli görsel üretimi.",
     "outputs": "Dokuz karelik kampanya görsel serisi. Format: 4:5.",
@@ -126,7 +126,6 @@ window.MON_PROJECTS = [
     "name": "LUMA",
     "title": "Işık iz bırakır.",
     "tag": "Konsept marka",
-    "duration": "40 sn",
     "idea": "Gümüşün yüzeyi, atölyedeki dokunuş ve takının kullanımı. Yakın planlarla malzemeyi, portrelerle ürünün kişisel tarafını anlatan bir çalışma.",
     "role": "AI destekli sahne ve görsel üretimi.",
     "outputs": "Dokuz karelik kampanya görsel serisi. Format: 4:5.",
