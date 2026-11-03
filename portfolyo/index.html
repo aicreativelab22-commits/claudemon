@@ -17,6 +17,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="canonical" href="https://portfolio.mondigital.ai/">
 <link rel="stylesheet" href="portfolyo.css">
+<link rel="stylesheet" href="asistan.css">
 <link rel="icon" href="ikon.svg" type="image/svg+xml">
 <script>document.documentElement.classList.add('js')</script>
 </head>
@@ -28,8 +29,9 @@
 </header>
 <main>
   <section class="open" data-tone="#14241f" data-ink="#f0eee6" aria-labelledby="baslik">
-    <h1 id="baslik">Sizin ürününüz.<br>Sınırsız dünya.</h1>
-    <p>Markalar için AI destekli film ve kampanya görseli üretiyoruz. Ürünün dokusu, rengi ve üzerindeki yazılar bozulmadan korunur. Bir afişe dokunun, projeye gidin.</p>
+    <div class="silk" aria-hidden="true"><canvas></canvas></div>
+    <h1 id="baslik" lang="en">Our works.</h1>
+    <p>Hayal ettiğiniz dünyaları yapay zekâ ile markanız için gerçeğe dönüştürüyoruz. Ürünün dokusu, rengi ve üzerindeki yazılar bozulmadan korunur. Bir afişe dokunun, projeye gidin.</p>
     <nav class="index" aria-label="Projeler">
       <a href="#mentos"><img src="medya/mentos-kapak.jpg" alt="" width="720" height="1280" fetchpriority="high"><span>MENTOS</span><small>Hibrit üretim</small></a>
       <a href="#happy-to-wear"><img src="medya/happy-to-wear-kapak.jpg" alt="" width="720" height="1280"><span>HAPPY TO WEAR</span><small>Müşteri işi</small></a>
@@ -192,13 +194,32 @@
 
   <section class="end" id="iletisim" data-tone="#14241f" data-ink="#f0eee6" aria-labelledby="iletisim-baslik">
     <h2 id="iletisim-baslik">Markanız için bir film konuşalım.</h2>
+    <form class="apply-form">
+      <div class="apply-row">
+        <div class="apply-field"><label for="apply-name">Adınız</label><input id="apply-name" name="isim" type="text" autocomplete="name" required minlength="2" maxlength="100"></div>
+        <div class="apply-field"><label for="apply-mail">E-posta</label><input id="apply-mail" name="eposta" type="email" autocomplete="email" inputmode="email" required maxlength="200"></div>
+      </div>
+      <div class="apply-field"><label for="apply-text">Aklınızda ne var?</label><textarea id="apply-text" name="mesaj" rows="5" required minlength="5" maxlength="2000" placeholder="Ürününüz, hedefiniz ya da yalnızca bir fikir. Kısa yazmanız yeterli."></textarea></div>
+      <div class="apply-trap" aria-hidden="true"><label for="apply-site">Bu alanı boş bırakın</label><input id="apply-site" name="site" type="text" tabindex="-1" autocomplete="off"></div>
+      <div class="apply-foot">
+        <button class="button" type="submit">Başvurun</button>
+        <p>Bilgilerinizi yalnızca başvurunuza dönmek için kullanırız.</p>
+      </div>
+      <p class="apply-status" role="status"></p>
+    </form>
     <div class="links">
-      <a class="button" href="mailto:hello@mondigital.ai?subject=Mon%20Digital%20proje%20g%C3%B6r%C3%BC%C5%9Fmesi">E-posta gönderin</a>
       <a class="button quiet" href="https://www.instagram.com/mondigital.ai/" target="_blank" rel="noopener noreferrer">Instagram’da yazın</a>
       <a class="plain" href="https://www.mondigital.ai/hizmetler.html" target="_blank" rel="noopener noreferrer">Hizmetleri görün</a>
+    </div>
+    <p class="reach">Bize ulaşın: <a href="mailto:hello@mondigital.ai?subject=Mon%20Digital%20proje%20g%C3%B6r%C3%BC%C5%9Fmesi">hello@mondigital.ai</a></p>
+    <div class="closing-mark">
+      <img class="closing-logo" src="medya/mon-buyuk.png" alt="MON" width="1408" height="476" loading="lazy" decoding="async">
+      <button type="button" class="closing-monna" data-open-chat aria-label="Monna ile sohbet edin"><img src="medya/monna.webp" alt="" width="577" height="760" loading="lazy" decoding="async"></button>
     </div>
   </section>
 </main>
 <script src="portfolyo.js"></script>
+<script src="ipek.js"></script>
+<script src="asistan.js"></script>
 </body>
 </html>

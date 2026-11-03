@@ -1,7 +1,35 @@
 {
   "routes": [
-    { "src": "/portfolyo", "status": 308, "headers": { "Location": "/portfolyo/" } },
-    { "src": "/", "has": [{ "type": "host", "value": "portfolio.mondigital.ai" }], "dest": "/portfolyo/index.html" },
-    { "src": "/(.+)", "has": [{ "type": "host", "value": "portfolio.mondigital.ai" }], "dest": "/portfolyo/$1" }
+    {
+      "src": "/api/(.+)",
+      "dest": "/api/$1"
+    },
+    {
+      "src": "/portfolyo",
+      "status": 308,
+      "headers": {
+        "Location": "/portfolyo/"
+      }
+    },
+    {
+      "src": "/",
+      "has": [
+        {
+          "type": "host",
+          "value": "portfolio.mondigital.ai"
+        }
+      ],
+      "dest": "/portfolyo/index.html"
+    },
+    {
+      "src": "/(.+)",
+      "has": [
+        {
+          "type": "host",
+          "value": "portfolio.mondigital.ai"
+        }
+      ],
+      "dest": "/portfolyo/$1"
+    }
   ]
 }

@@ -12,3 +12,8 @@ medya/ig-*.jpg
 
 # Siteden bağlantı verilmeyen denemeler
 denemeler/
+
+# Sunucu işlevi bağımlılıkları ve gizli anahtarlar
+node_modules/
+.env*
+.vercel/
