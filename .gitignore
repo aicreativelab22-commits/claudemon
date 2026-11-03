@@ -9,3 +9,6 @@ MEDYA_KAYNAKLARI.json
 
 # Sitede kullanılmayan Instagram görselleri
 medya/ig-*.jpg
+
+# Siteden bağlantı verilmeyen denemeler
+denemeler/
