@@ -1,14 +1,14 @@
 // Monna: sitedeki küçük yapay zekâ asistanı. Yanıtı satır satır JSON olarak akıtır.
-import Anthropic from '@anthropic-ai/sdk';
 import { govde, izinliMi, json, sinirda } from './_ortak.js';
 
-const MODEL = process.env.SOHBET_MODEL || 'claude-opus-5-5';
+const OLLAMA = 'https://ollama.com/api/chat';
+const MODEL = process.env.SOHBET_MODEL || 'gemma4:31b';
 const EN_FAZLA_TUR = 12;
 const SISTEM = `Sen Monna'sın: Mon Digital'in web sitesindeki küçük, sıcak kanlı yapay zekâ asistanı. Ziyaretçilere stüdyoyu tanıtır, doğru başlangıcı bulmalarına yardım edersin.
 
 Nasıl konuşursun:
 - Ziyaretçinin dilinde, Türkçede "siz" diye, samimi ve kısa konuşursun. Çoğu yanıt bir iki cümledir, gerekirse üç. Markdown, liste veya emoji kullanmazsın.
-- Yapay zekâ olduğunu saklamazsın. Hangi modelle çalıştığın sorulursa Anthropic'in Claude modeli olduğunu söyleyebilirsin.
+- Yapay zekâ olduğunu saklamazsın. Hangi modelle çalıştığını bilmediğini söylersin.
 - Aşağıdaki bilgiler dışında Mon Digital hakkında bir şey bilmezsin. Bilmediğini uydurmak yerine söyler, sayfadaki iletişim formuna yönlendirirsin.
 - Fiyat, teslim süresi, indirim veya sözleşme konusunda söz vermezsin; bunların projeye göre değiştiğini söyler, formdan yazmalarını önerirsin.
 - Üretimde kullanılan araçların adını vermezsin.
@@ -51,7 +51,8 @@ function gecmis(ham) {
 
 export default async function handler(req, res) {
   if (!izinliMi(req, res)) return;
-  if (!process.env.ANTHROPIC_API_KEY) return json(res, 503, { hata: 'kapali' });
+  const anahtar = process.env.OLLAMA_API_KEY;
+  if (!anahtar) return json(res, 503, { hata: 'kapali' });
   if (sinirda(req, 'sohbet', 20, 10)) return json(res, 429, { hata: 'sinir' });
 
   const mesajlar = gecmis(govde(req)?.mesajlar);
@@ -63,30 +64,50 @@ export default async function handler(req, res) {
   res.setHeader('X-Accel-Buffering', 'no');
   const yaz = veri => res.write(`${JSON.stringify(veri)}\n`);
 
-  const istemci = new Anthropic({ maxRetries: 1, timeout: 30000 });
-  const akis = istemci.beta.messages.stream({
-    model: MODEL,
-    max_tokens: 1500,
-    // Haiku'da sunucu taraflı yedek model yok; reddedilen yanıtı arayüz e-postaya yönlendirir.
-    ...(MODEL.includes('haiku') ? {} : { betas: ['server-side-fallback-2026-07-01'], fallbacks: 'default' }),
-    output_config: { effort: 'low' },
-    system: SISTEM,
-    messages: mesajlar,
-  });
-  // Ziyaretçi ayrılırsa üretim de durur.
-  res.on('close', () => akis.abort());
+  // Ziyaretçi ayrılırsa veya yanıt çok gecikirse üretim de durur.
+  const iptal = new AbortController();
+  const sure = setTimeout(() => iptal.abort(), 30000);
+  res.on('close', () => iptal.abort());
 
   try {
-    for await (const olay of akis) {
-      if (olay.type === 'content_block_delta' && olay.delta.type === 'text_delta') yaz({ metin: olay.delta.text });
+    const yanit = await fetch(OLLAMA, {
+      method: 'POST',
+      headers: { Authorization: `Bearer ${anahtar}`, 'Content-Type': 'application/json' },
+      signal: iptal.signal,
+      body: JSON.stringify({
+        model: MODEL,
+        stream: true,
+        think: false,
+        options: { num_predict: 500 },
+        messages: [{ role: 'system', content: SISTEM }, ...mesajlar],
+      }),
+    });
+    if (!yanit.ok || !yanit.body) throw new Error(`Ollama ${yanit.status}`);
+
+    const cozucu = new TextDecoder();
+    let tampon = '', yazildi = false, kesildi = false, sorun = false;
+    const isle = satir => {
+      if (!satir.trim()) return;
+      const olay = JSON.parse(satir);
+      if (olay.error) sorun = true;
+      if (olay.message?.content) { yazildi = true; yaz({ metin: olay.message.content }); }
+      if (olay.done_reason === 'length') kesildi = true;
+    };
+    for await (const parca of yanit.body) {
+      tampon += cozucu.decode(parca, { stream: true });
+      const satirlar = tampon.split('\n');
+      tampon = satirlar.pop();
+      satirlar.forEach(isle);
     }
-    const son = await akis.finalMessage();
-    yaz(son.stop_reason === 'refusal' ? { reddedildi: true } : { bitti: true, kesildi: son.stop_reason === 'max_tokens' });
+    isle(tampon);
+    if (sorun || !yazildi) throw new Error('Ollama yanıtı boş veya hatalı');
+    yaz({ bitti: true, kesildi });
   } catch (hata) {
-    if (hata.name !== 'APIUserAbortError') {
-      console.error('Sohbet hatası', hata.status || hata.name);
+    if (!res.destroyed) {
+      console.error('Sohbet hatası', hata.message);
       yaz({ hata: true });
     }
   }
+  clearTimeout(sure);
   res.end();
 }
