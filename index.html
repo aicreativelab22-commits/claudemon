@@ -28,7 +28,7 @@
 <header class="site-header">
 <a class="logo" href="index.html" aria-label="Mon Digital ana sayfa"><img src="medya/mon-logo-mark.png" alt="MON" width="150" height="50"></a>
 <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="ana-menu">Menü</button>
-<nav id="ana-menu" aria-label="Ana menü"><a href="#portfolyo">Portfolyo</a><a href="#hizmetler">Hizmetler</a><a href="#hakkinda">Hakkında</a><a class="contact-nav" href="#iletisim">İletişim</a></nav>
+<nav id="ana-menu" aria-label="Ana menü"><a href="https://portfolio.mondigital.ai/">Portfolyo</a><a href="#hizmetler">Hizmetler</a><a href="#hakkinda">Hakkında</a><a class="contact-nav" href="#iletisim">İletişim</a></nav>
 </header>
 <main id="icerik">
 
@@ -38,47 +38,26 @@
 <p class="eyebrow">Mon Digital, AI destekli kreatif stüdyo</p>
 <h1 id="hero-title">Sizin ürününüz.<br><em>Sınırsız dünya.</em></h1>
 <p class="intro">Markalar için yaratıcı konsept, AI destekli kampanya görselleri ve reklam filmleri üretiyoruz. Projenin ihtiyacına göre gerçek çekimle yapay zekâyı bir araya getiriyoruz.</p>
-<a class="primary" href="#portfolyo">Portfolyoyu gör <span aria-hidden="true">↓</span></a>
+<div class="hero-actions">
+<a class="primary" href="#iletisim">Projenizi anlatın <span aria-hidden="true">↓</span></a>
+<a class="text-link" href="#secili-isler">Seçilmiş işler</a>
 </div>
-<div class="hero-media">
+</div>
 <figure class="hero-film film-player">
 <div class="film-frame">
 <video controls playsinline preload="none" poster="medya/mentos-kapak.jpg" src="medya/mentos.mp4" aria-label="Mentos filmi: Şehrin ritminde"></video>
+<video class="film-teaser" muted loop playsinline preload="none" data-src="medya/mentos-dongu.mp4" aria-hidden="true" tabindex="-1"></video>
 <button type="button" class="film-play"><span aria-hidden="true">▶</span> Filmi izle <small>34 sn</small></button>
 </div>
 <figcaption><a href="projeler/mentos.html" data-project="mentos"><strong>Mentos</strong> <span>Hibrit üretim, gerçek çekim ve AI</span></a></figcaption>
 <p class="media-error" role="status" hidden></p>
 </figure>
-<div class="hero-side">
-<a class="hero-card" href="projeler/dal.html" data-project="dal"><img src="medya/dal-kapak.jpg" alt="DAL: taş masada ekmek ve metal ambalajlı zeytinyağı" width="720" height="1280" style="--focus:50% 42%"><span><strong>DAL</strong> <small>Konsept marka</small></span></a>
-<a class="hero-card" href="projeler/kremi.html" data-project="kremi"><img src="medya/kremi-kapak.jpg" alt="Kremi: kırmızı dudak balmı tüpü" width="720" height="1280" style="--focus:50% 34%"><span><strong>Kremi</strong> <small>Bağımsız konsept</small></span></a>
-</div>
-</div>
 </section>
 
-<div class="offer-strip">
-<a href="#portfolyo" data-go-filter="film"><strong>AI film</strong><small>Ürün ve marka filmleri</small></a>
-<a href="#mentos"><strong>Gerçek çekim + AI</strong><small>Hibrit filmler</small></a>
-<a href="#moda-uretimi"><strong>Moda filmi</strong><small>Hayalet modelden kısa filme</small></a>
-<a href="#portfolyo" data-go-filter="seri"><strong>Görsel seriler</strong><small>Ürün ve kampanya görselleri</small></a>
-</div>
+<section id="secili-isler" class="selected" aria-labelledby="selected-title">
+<h2 id="selected-title">Seçilmiş işler</h2>
 
-<section id="portfolyo" class="work" aria-labelledby="work-title">
-<div class="section-heading">
-<h2 id="work-title">Portfolyo</h2>
-<p>Reklam filmleri, moda çalışmaları ve görsel seriler. Her projede statü açıkça yazıyor.</p>
-</div>
-<div class="filter-bar">
-<div class="filters" role="group" aria-label="Çalışmaları türe göre filtrele">
-<button type="button" data-filter="all" aria-pressed="true">Tümü <sup>12</sup></button>
-<button type="button" data-filter="film" aria-pressed="false">Film <sup>9</sup></button>
-<button type="button" data-filter="moda" aria-pressed="false">Moda <sup>2</sup></button>
-<button type="button" data-filter="seri" aria-pressed="false">Görsel Seriler <sup>3</sup></button>
-</div>
-<p id="filter-status" aria-live="polite">12 çalışma gösteriliyor</p>
-</div>
-
-<article class="work-feature" id="mentos" data-category="film">
+<article class="work-feature">
 <a class="feature-link" href="projeler/mentos.html" data-project="mentos">
 <div class="feature-frames">
 <img src="medya/mentos-sahil.jpg" alt="Rumeli Hisarı önünde sahil yolu, Mentos filminden kare" width="720" height="1280" loading="lazy" decoding="async">
@@ -86,43 +65,58 @@
 <img src="medya/mentos-kare.jpg" alt="Sokakta Mentos dağıtımı, filmden kare" width="720" height="1280" loading="lazy" decoding="async">
 </div>
 <div class="feature-copy">
-<p class="work-tag">Öne çıkan proje, hibrit üretim</p>
+<p class="work-tag">Hibrit üretim</p>
 <h3>Mentos</h3>
 <p class="feature-line">Şehrin ritminde.</p>
-<p class="feature-story">Filmi prodüksiyon ekibimizle İstanbul’da çektik; sette mümkün olmayan sahneleri AI ile ekledik.</p>
+<p class="feature-story">Afternoon Film Pro ile ortak üretim. Gerçek çekimi Afternoon Film Pro yaptı, sette mümkün olmayan sahneleri AI ile ekledik.</p>
 <p class="work-foot"><span>34 sn</span><span class="work-go">Projeyi incele</span></p>
 </div>
 </a>
 </article>
 
-<div class="work-grid">
-<article class="work-card" data-category="film"><a href="projeler/dal.html" data-project="dal"><div class="work-image"><img src="medya/dal-kapak.jpg" alt="Zeytinlikte taş masada ekmek ve DAL zeytinyağı" width="720" height="1280" loading="lazy" decoding="async" style="--focus:50% 30%"></div><p class="work-tag">Konsept marka</p><h3>DAL</h3><p class="work-line">Kökünden sofrana.</p><p class="work-foot"><span>16 sn</span><span class="work-go">Projeyi incele</span></p></a></article>
-<article class="work-card" data-category="film"><a href="projeler/kremi.html" data-project="kremi"><div class="work-image"><img src="medya/kremi-kapak.jpg" alt="Krem fonda kırmızı Kremi dudak balmı tüpü" width="720" height="1280" loading="lazy" decoding="async" style="--focus:50% 34%"></div><p class="work-tag">Bağımsız konsept</p><h3>Kremi</h3><p class="work-line">Dört ton, bir dokunuş.</p><p class="work-foot"><span>20 sn</span><span class="work-go">Projeyi incele</span></p></a></article>
-<article class="work-card" data-category="film moda"><a href="projeler/happy-to-wear.html" data-project="happy-to-wear"><div class="work-image"><img src="medya/happy-to-wear-kapak.jpg" alt="Güneşli taş meydanda bej trençkot ve altın payetli etekle yürüyen kadın" width="720" height="1280" loading="lazy" decoding="async" style="--focus:50% 90%"></div><p class="work-tag">Müşteri işi</p><h3>Happy to Wear</h3><p class="work-line">Gün değişir, ışıltın kalır.</p><p class="work-foot"><span>15 sn</span><span class="work-go">Projeyi incele</span></p></a></article>
-<article class="work-card" data-category="film moda"><a href="projeler/quinzell.html" data-project="quinzell"><div class="work-image"><img src="medya/quinzell-renk-kapak.jpg" alt="Koşu bandında lacivert-krem Quinzell takımıyla yürüyen kadın" width="720" height="1280" loading="lazy" decoding="async" style="--focus:50% 16%"></div><p class="work-tag">AI moda</p><h3>Quinzell</h3><p class="work-line">Hayalet modelden moda filmine.</p><p class="work-foot"><span>3 film</span><span class="work-go">Projeyi incele</span></p></a></article>
-<article class="work-card" data-category="film"><a href="projeler/frutibon.html" data-project="frutibon"><div class="work-image"><img src="medya/frutibon-kapak.jpg" alt="Pembe kemerli mekânda çilekli Frutibon yiyen üç arkadaş" width="720" height="1280" loading="lazy" decoding="async" style="--focus:50% 45%"></div><p class="work-tag">Bağımsız konsept</p><h3>Frutibon</h3><p class="work-line">Bitter çikolata, bütün meyve.</p><p class="work-foot"><span>15 sn</span><span class="work-go">Projeyi incele</span></p></a></article>
-<article class="work-card" data-category="film"><a href="projeler/melty.html" data-project="melty"><div class="work-image"><img src="medya/melty-kapak.jpg" alt="Pembe fotoğraf kabininde MELTY dudak balmı" width="562" height="1000" loading="lazy" decoding="async" style="--focus:50% 30%"></div><p class="work-tag">Konsept marka</p><h3>Melty</h3><p class="work-line">Bir kare de kendine.</p><p class="work-foot"><span>12 sn</span><span class="work-go">Projeyi incele</span></p></a></article>
-<article class="work-card" data-category="film"><a href="projeler/luma.html" data-project="luma"><div class="work-image"><img src="medya/luma-kapak.jpg" alt="Koyu fonda heykelsi gümüş LUMA yüzük" width="562" height="1000" loading="lazy" decoding="async" style="--focus:50% 50%"></div><p class="work-tag">Konsept marka</p><h3>Luma</h3><p class="work-line">Işık iz bırakır.</p><p class="work-foot"><span>40 sn</span><span class="work-go">Projeyi incele</span></p></a></article>
-<article class="work-card" data-category="film"><a href="projeler/lost-cherry.html" data-project="lost-cherry"><div class="work-image"><img src="medya/lost-cherry-kapak.jpg" alt="Bordo perdelerin önünde Lost Cherry parfüm şişesi" width="562" height="1000" loading="lazy" decoding="async" style="--focus:50% 38%"></div><p class="work-tag">Bağımsız konsept</p><h3>Tom Ford / Lost Cherry</h3><p class="work-line">Kırmızı perde.</p><p class="work-foot"><span>40 sn</span><span class="work-go">Projeyi incele</span></p></a></article>
-<article class="work-card" data-category="seri"><a href="projeler/melty.html" data-project="melty"><div class="work-image"><img src="medya/melty-gorsel-dunya.jpg" alt="MELTY × mon: çilek, pembe ürün ve retro objelerle dokuz karelik kampanya serisi" width="1000" height="1250" loading="lazy" decoding="async"></div><p class="work-tag">Görsel seri, konsept marka</p><h3>MELTY × mon</h3><p class="work-line">Çilek, pembe ve retro objeler.</p><p class="work-foot"><span>9 görsel</span><span class="work-go">Projeyi incele</span></p></a></article>
-<article class="work-card" data-category="seri"><a href="projeler/dal.html" data-project="dal"><div class="work-image"><img src="medya/dal-pano.jpg" alt="DAL × mon: zeytin, yağ dokuları ve metal ambalajla dokuz karelik kampanya serisi" width="1000" height="1250" loading="lazy" decoding="async"></div><p class="work-tag">Görsel seri, konsept marka</p><h3>DAL × mon</h3><p class="work-line">Zeytin, yağ dokusu ve doğal ışık.</p><p class="work-foot"><span>9 görsel</span><span class="work-go">Projeyi incele</span></p></a></article>
-<article class="work-card" data-category="seri"><a href="projeler/luma.html" data-project="luma"><div class="work-image"><img src="medya/luma-pano.jpg" alt="LUMA × mon: gümüş takı yakın planlarıyla dokuz karelik kampanya serisi" width="1000" height="1250" loading="lazy" decoding="async"></div><p class="work-tag">Görsel seri, konsept marka</p><h3>LUMA × mon</h3><p class="work-line">Gümüş, ışık ve yakın plan.</p><p class="work-foot"><span>9 görsel</span><span class="work-go">Projeyi incele</span></p></a></article>
-<aside class="work-invite"><h3>Ürününüz için ne üretebiliriz?</h3><p>Ürününüzü ve ihtiyacınızı yazın, doğru başlangıcı birlikte belirleyelim.</p><a class="text-link" href="#iletisim">Projenizi anlatın</a></aside>
+<article class="work-feature flip">
+<a class="feature-link" href="projeler/happy-to-wear.html" data-project="happy-to-wear">
+<div class="feature-frames">
+<img src="medya/happy-to-wear-kapak.jpg" alt="Güneşli taş meydanda bej trençkot ve altın payetli etekle yürüyen kadın" width="720" height="1280" loading="lazy" decoding="async">
+<img src="medya/happy-to-wear-kare.jpg" alt="Happy to Wear filminden kare" width="720" height="1280" loading="lazy" decoding="async">
+<img src="medya/happy-to-wear-uc.jpg" alt="Happy to Wear filminden kare" width="720" height="1280" loading="lazy" decoding="async">
 </div>
+<div class="feature-copy">
+<p class="work-tag">Müşteri işi</p>
+<h3>Happy to Wear</h3>
+<p class="feature-line">Gün değişir, ışıltın kalır.</p>
+<p class="feature-story">Günün ilk ışığından akşama, aynı şehirde tek bir kombin. Ürün aynı kalırken hissettirdiği değişiyor.</p>
+<p class="work-foot"><span>15 sn</span><span class="work-go">Projeyi incele</span></p>
+</div>
+</a>
+</article>
 </section>
 
 <section class="fashion-story" id="moda-uretimi" aria-labelledby="fashion-title">
 <div class="section-heading">
-<h2 id="fashion-title">Hayalet model fotoğrafından moda filmine</h2>
+<div><p class="work-tag">Müşteri işi, Quinzell</p><h2 id="fashion-title">Hayalet model fotoğrafından moda filmine</h2></div>
 <p>Quinzell’de tek bir ürünü fotoğraftan filme taşıdık. Aynı süreç koleksiyonun diğer ürünlerine de uygulanabilir.</p>
 </div>
 <ol class="process-chain">
-<li><img src="medya/quinzell-u1-manken.jpg" alt="Manken üzerinde çekilmiş lacivert-krem fermuarlı takım" width="640" height="853" loading="lazy" decoding="async"><h3><span>1</span> Kaynak ürün</h3><p>Ürünün manken üzerindeki fotoğrafı.</p></li>
+<li><img src="medya/quinzell-u1-manken.jpg" alt="Hayalet model olarak çekilmiş lacivert-krem fermuarlı takım" width="640" height="853" loading="lazy" decoding="async"><h3><span>1</span> Kaynak ürün</h3><p>Ürünün hayalet model fotoğrafı.</p></li>
 <li><img src="medya/quinzell-u1-model.jpg" alt="Aynı takımın lacivert renkte model üzerindeki görünümü" width="640" height="960" loading="lazy" decoding="async"><h3><span>2</span> Model üzerinde</h3><p>Ürün, model üzerinde görselleştirildi.</p></li>
 <li class="chain-colors"><div><img src="medya/quinzell-u1-renk1.jpg" alt="Takımın adaçayı rengi, başka bir model üzerinde" width="640" height="960" loading="lazy" decoding="async"><img src="medya/quinzell-u1-renk2.jpg" alt="Takımın bordo rengi, başka bir model üzerinde" width="640" height="960" loading="lazy" decoding="async"></div><h3><span>3</span> Model ve renk alternatifleri</h3><p>Aynı takım, farklı renk ve modellerle.</p></li>
 <li><a href="projeler/quinzell.html" data-project="quinzell" aria-label="Quinzell filmlerini izle"><img src="medya/quinzell-renk-kapak.jpg" alt="Koşu bandında lacivert-krem takımla yürüyen kadın, renk değişimi filminden kare" width="720" height="1280" loading="lazy" decoding="async"></a><h3><span>4</span> Film</h3><p>Renk değişimi filmi, 18 sn.</p></li>
 </ol>
 <p class="chain-more"><a class="text-link" href="projeler/quinzell.html" data-project="quinzell">Projeyi incele</a> <span>Diğer ürün dizisi ve üç film proje sayfasında.</span></p>
+</section>
+
+<section class="more-work" aria-labelledby="more-title">
+<div class="more-copy">
+<h2 id="more-title">Stüdyo çalışmaları</h2>
+<p>Gıda, güzellik ve takı için kurduğumuz konsept markalar. Ticari müşteri işi değildir.</p>
+<a class="primary" href="https://portfolio.mondigital.ai/">Tüm işleri gör <span aria-hidden="true">↗</span></a>
+</div>
+<div class="more-grid">
+<article class="work-card"><a href="projeler/dal.html" data-project="dal"><div class="work-image"><img src="medya/dal-kapak.jpg" alt="Zeytinlikte taş masada ekmek ve DAL zeytinyağı" width="720" height="1280" loading="lazy" decoding="async" style="--focus:50% 30%"></div><h3>DAL</h3><p class="work-line">Kökünden sofrana.</p></a></article>
+<article class="work-card"><a href="projeler/melty.html" data-project="melty"><div class="work-image"><img src="medya/melty-kapak.jpg" alt="Pembe fotoğraf kabininde MELTY dudak balmı" width="562" height="1000" loading="lazy" decoding="async" style="--focus:50% 30%"></div><h3>Melty</h3><p class="work-line">Bir kare de kendine.</p></a></article>
+<article class="work-card"><a href="projeler/luma.html" data-project="luma"><div class="work-image"><img src="medya/luma-kapak.jpg" alt="Koyu fonda heykelsi gümüş LUMA yüzük" width="562" height="1000" loading="lazy" decoding="async" style="--focus:50% 50%"></div><h3>Luma</h3><p class="work-line">Işık iz bırakır.</p></a></article>
+</div>
 </section>
 
 <section class="offers" id="hizmetler" aria-labelledby="offers-title">
@@ -143,7 +137,6 @@
 <div>
 <h2 id="about-title">Mon Digital hakkında</h2>
 <p class="about-lead">Mon Digital, markalar için yaratıcı konsept, kampanya görseli ve reklam filmi üreten bir kreatif stüdyodur. Yapay zekâyı üretimin parçası olarak kullanıyor, proje gerektirdiğinde gerçek çekimle birleştiriyoruz.</p>
-<!-- KURUCU: Ad, rol ve kısa tanıtım metni geldiğinde buraya tek paragraf olarak eklenecek. -->
 </div>
 <div class="about-steps">
 <h3>Çalışma biçimi</h3>
@@ -156,12 +149,24 @@
 </section>
 
 <section class="contact" id="iletisim" aria-labelledby="contact-title">
+<div>
 <h2 id="contact-title">Bir sonraki projenizi konuşalım.</h2>
+<p class="contact-lead">Ürününüzü ve ihtiyacınızı yazın, doğru başlangıcı birlikte belirleyelim.</p>
+</div>
 <div class="contact-actions">
 <a class="contact-mail" href="mailto:hello@mondigital.ai?subject=Mon%20Digital%20proje%20g%C3%B6r%C3%BC%C5%9Fmesi">hello@mondigital.ai</a>
 <a class="text-link" href="https://www.instagram.com/mondigital.ai/" target="_blank" rel="noopener noreferrer">Instagram: @mondigital.ai</a>
 </div>
 </section>
+<aside class="founder" aria-label="Kurucu">
+<p class="founder-name">Kurucu: Melis Ay</p>
+<div class="founder-text">
+<p>MON’un arkasında, reklamcılık ve pazarlama birikimini görsel üretimle buluşturan Melis Ay var.</p>
+<p>Galatasaray Lisesi, Bahçeşehir Üniversitesi Reklamcılık ve Universidad San Jorge’deki pazarlama eğitiminin ardından şekillenen kariyeri, 2017’de sosyal medya stajıyla başladı. O tarihten bu yana dijital pazarlama, sosyal medya ve içerik üretimiyle ilgileniyor.</p>
+<p>MON’da ise markanın hikâyesinden yola çıkarak kreatif konseptler, AI destekli görseller ve reklam filmleri üretiyor.</p>
+</div>
+</aside>
+<img class="closing-logo" src="medya/mon-buyuk.png" alt="MON" width="1408" height="476" loading="lazy" decoding="async">
 </main>
 <footer class="site-footer"><span>Mon Digital</span><a href="#icerik">Başa dön</a></footer>
 <dialog id="project-dialog" aria-labelledby="dialog-title"><div class="dialog-toolbar"><span>Mon Digital</span><button class="close-dialog" type="button" aria-label="Projeyi kapat">Kapat <span aria-hidden="true">×</span></button></div><div id="dialog-content"></div></dialog>

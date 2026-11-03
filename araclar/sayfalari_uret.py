@@ -65,7 +65,7 @@ for i, p in enumerate(projeler):
 <link rel="icon" href="../ikon.svg" type="image/svg+xml">
 </head>
 <body class="detail-page">
-<header class="site-header"><a class="logo" href="../index.html" aria-label="Mon Digital ana sayfa"><img src="../medya/mon-logo-mark.png" alt="MON" width="150" height="50"></a><a class="detail-back" href="../index.html#portfolyo">Portfolyoya dön</a></header>
+<header class="site-header"><a class="logo" href="../index.html" aria-label="Mon Digital ana sayfa"><img src="../medya/mon-logo-mark.png" alt="MON" width="150" height="50"></a><a class="detail-back" href="../index.html#secili-isler">Ana sayfaya dön</a></header>
 <main class="detail">
 <div class="detail-head"><p class="work-tag">{e(p["tag"])}</p><h1>{e(p["name"])}</h1><p class="detail-line">{e(p["title"])}</p></div>
 <div class="detail-layout{" many" if p.get("films") else ""}"><div class="film-list">{filmler}</div><div class="detail-copy"><dl class="facts">{bilgiler}</dl>{kredi}<a class="text-link" href="{MAIL}">Böyle bir proje için yazın</a></div></div>

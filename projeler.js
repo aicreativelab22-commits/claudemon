@@ -7,9 +7,9 @@ window.MON_PROJECTS = [
     "tag": "Hibrit üretim",
     "duration": "34 sn",
     "idea": "Şehir hiç durmaz; Mentos da. İstanbul’un sokaklarından sahiline uzanan bu filmde marka, günün akışına küçük bir ferahlık anı olarak katılıyor.",
-    "role": "Filmi prodüksiyon ekibimizle İstanbul’da, gerçek mekânlarda çektik. Sette mümkün olmayan sahneleri ve efektleri AI üretimle ekledik. Kurgu ve sesle iki kaynağı tek ritimde birleştirdik.",
+    "role": "Sette mümkün olmayan sahneleri ve efektleri AI üretimle ekledik. Gerçek çekimi İstanbul’da Afternoon Film Pro yaptı.",
     "outputs": "34 saniyelik reklam filmi. Format: dikey, 9:16.",
-    "status": "Mentos için hazırlandı. Gerçek çekim ve AI üretimi bir arada kullanıldı.",
+    "status": "Afternoon Film Pro ile ortak üretim. Mentos için hazırlandı.",
     "stills": [],
     "alt": "Mentos Ferahlığı Hisset yazılı mavi bez çanta taşıyan kişi"
   },
@@ -45,7 +45,7 @@ window.MON_PROJECTS = [
     "idea": "Peach, Cherry Coke, Strawberry Velvet ve Coffee. Her ton aynı akışla anlatılıyor: ürün, ilham aldığı lezzet, doku ve dudak üzerindeki sonuç.",
     "role": "Ürün ve doku planları, renk anlatımı, AI destekli görsel ve hareket üretimi, kurgu.",
     "outputs": "20 saniyelik film. Format: dikey, 9:16.",
-    "status": "Bağımsız konsept çalışma. Kremi ile iş birliği veya müşteri ilişkisi iddiası taşımaz.",
+    "status": "Bağımsız konsept çalışması. Kremi ile iş birliği veya müşteri ilişkisi iddiası taşımaz.",
     "credit": "Müzik: “Bossa Antigua”, Kevin MacLeod (incompetech.com), CC BY 4.0 lisansı (creativecommons.org/licenses/by/4.0). Film için kısaltıldı; ses düzeyi ve giriş/çıkış yumuşatmaları düzenlendi.",
     "decisions": {
       "image": "kremi-kapak",
@@ -67,7 +67,7 @@ window.MON_PROJECTS = [
     "idea": "Günün ilk ışığından akşama, aynı şehirde tek bir kombin. Bej trençkot ve altın payetli etek her saatte yeni bir ışıkla buluşuyor; ürün aynı kalırken hissettirdiği değişiyor.",
     "role": "Marka ürünlerinden sahne tasarımı, AI destekli görsel ve hareket üretimi, film kurgusu.",
     "outputs": "15 saniyelik moda filmi. Format: dikey, 9:16.",
-    "status": "Gerçek müşteri işi. Happy to Wear için hazırlandı.",
+    "status": "Müşteri işi. Happy to Wear için hazırlandı.",
     "stills": [],
     "alt": "Güneşli taş meydanda bej trençkot ve altın payetli etekle yürüyen kadın"
   },
@@ -75,12 +75,12 @@ window.MON_PROJECTS = [
     "id": "quinzell",
     "name": "QUINZELL",
     "title": "Hayalet modelden moda filmine.",
-    "tag": "AI moda",
+    "tag": "Müşteri işi",
     "duration": "3 film",
     "idea": "Hayalet model fotoğrafından yola çıkıp ürünü model üzerinde göstermek, renk seçeneklerini açmak ve aynı görselleri harekete taşımak. Model giydirme, renk çalışması ve video üretimi tek süreçte ilerliyor.",
     "role": "Hayalet model fotoğraflarından ürünü model üzerinde görselleştirme, renk alternatifleri geliştirme ve görselleri videoya dönüştürme.",
     "outputs": "Üç kısa moda filmi, model üzerinde ürün görselleri ve renk alternatifleri. Format: dikey film, dikey görsel.",
-    "status": "Portfolyo çalışması. AI destekli moda görseli ve video üretimi.",
+    "status": "Müşteri işi. Quinzell için hazırlandı.",
     "films": [
       ["quinzell-renk", "Renk değişimi", "18 sn"],
       ["quinzell-gece", "Gece senin ritmin", "16 sn"],
@@ -118,7 +118,7 @@ window.MON_PROJECTS = [
     "idea": "Bütün çilek, akan bitter çikolata ve üç arkadaşın paylaştığı bir an. Pembe ve bordo tonlarda kurulan sahnelerde ürün, paylaşılan küçük bir keyfe dönüşüyor.",
     "role": "Karakter ve sahne tasarımı, AI destekli görsel ve hareket üretimi, kurgu ve ses.",
     "outputs": "15 saniyelik film. Format: dikey, 9:16.",
-    "status": "Bağımsız konsept çalışma. Kahve Dünyası / Frutibon ile iş birliği veya müşteri ilişkisi iddiası taşımaz.",
+    "status": "Bağımsız konsept çalışması. Kahve Dünyası / Frutibon ile iş birliği veya müşteri ilişkisi iddiası taşımaz.",
     "stills": [],
     "alt": "Pembe kemerli mekânda çilekli Frutibon yiyen üç arkadaş"
   },
@@ -159,18 +159,5 @@ window.MON_PROJECTS = [
       ["luma-pano", "LUMA × mon görsel serisi", 1000, 1250]
     ],
     "alt": "Koyu fonda heykelsi gümüş LUMA yüzük"
-  },
-  {
-    "id": "lost-cherry",
-    "name": "TOM FORD / LOST CHERRY",
-    "title": "Kırmızı perde.",
-    "tag": "Bağımsız konsept",
-    "duration": "40 sn",
-    "idea": "Parfüm bir sahnenin merkezine yerleşiyor. Bordo perde, tek ışık ve cam yansımaları; şişeden kişisel kullanım anına uzanan ortak bir atmosfer kuruyor.",
-    "role": "AI destekli sahne üretimi ve altı sahneyi bir araya getiren film kurgusu.",
-    "outputs": "40 saniyelik film. Format: dikey, 9:16.",
-    "status": "Bağımsız konsept çalışma. TOM FORD ile iş birliği veya müşteri ilişkisi iddiası taşımaz.",
-    "stills": [],
-    "alt": "Bordo perdelerin önünde Lost Cherry parfüm şişesi"
   }
 ];

@@ -1,4 +1,4 @@
-// Ana sayfa: proje penceresi ve portfolyo filtreleri. Pencere içeriği araclar/sayfalari_uret.py ile aynı düzendedir.
+// Ana sayfa: proje penceresi. Pencere içeriği araclar/sayfalari_uret.py ile aynı düzendedir.
 (() => {
 'use strict';
 const projects=window.MON_PROJECTS;
@@ -10,7 +10,7 @@ const escape=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&g
 const still=([file,caption,w,h])=>`<figure><img src="medya/${file}.jpg" alt="${escape(caption)}" width="${w}" height="${h}" loading="lazy" decoding="async"><figcaption>${escape(caption)}</figcaption></figure>`;
 function openProject(id,trigger){
  const p=projects.find(p=>p.id===id);if(!p)return;
- stopVideos();document.querySelectorAll('main video').forEach(v=>v.pause());opener=trigger||opener;
+ stopVideos();document.querySelectorAll('main video:not(.film-teaser)').forEach(v=>v.pause());opener=trigger||opener;
  const videos=p.films||[[p.id,p.title,p.duration]];
  const films=videos.map(([v,label,time])=>`<figure class="detail-film film-player"><div class="film-frame"><video controls playsinline preload="none" poster="medya/${v}-kapak.jpg" src="medya/${v}.mp4" aria-label="${escape(p.name)}: ${escape(label)}"></video><button type="button" class="film-play"><span aria-hidden="true">▶</span> Filmi izle <small>${escape(time)}</small></button></div><figcaption>${escape(label)}</figcaption><p class="media-error" role="status" hidden></p></figure>`).join('');
  const facts=[['Amaç ve fikir',p.idea],['MON’un üstlendiği işler',p.role],['Üretilen çıktılar ve formatlar',p.outputs],['Statü',p.status]].map(([k,v])=>`<div><dt>${k}</dt><dd>${escape(v)}</dd></div>`).join('');
@@ -27,22 +27,7 @@ function cleanClose(){if(dialog.open)return;stopVideos();document.body.classList
 dialog.querySelector('.close-dialog').addEventListener('click',()=>dialog.close());dialog.addEventListener('close',cleanClose);
 dialog.addEventListener('click',e=>{if(e.target===dialog){const r=dialog.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)dialog.close()}});
 
-const cards=[...document.querySelectorAll('.work-grid [data-category], .work-feature[data-category]')];
-const invite=document.querySelector('.work-invite');
-const status=document.querySelector('#filter-status');
-const buttons=[...document.querySelectorAll('[data-filter]')];
-const matches=(card,f)=>f==='all'||card.dataset.category.split(' ').includes(f);
-buttons.forEach(b=>{b.querySelector('sup').textContent=cards.filter(c=>matches(c,b.dataset.filter)).length});
-function applyFilter(f){
- buttons.forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.filter===f)));
- let count=0;cards.forEach(c=>{const show=matches(c,f);c.hidden=!show;if(show)count++});
- if(invite)invite.hidden=f!=='all';
- status.textContent=`${count} çalışma gösteriliyor`;
-}
-buttons.forEach(b=>b.addEventListener('click',()=>applyFilter(b.dataset.filter)));
-applyFilter('all');
 document.addEventListener('click',e=>{
  const a=e.target.closest('[data-project]');if(a&&typeof dialog.showModal==='function'){e.preventDefault();openProject(a.dataset.project,dialog.contains(a)?opener:a)}
- const go=e.target.closest('[data-go-filter]');if(go)applyFilter(go.dataset.goFilter);
 });
 })();
