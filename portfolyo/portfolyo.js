@@ -1,6 +1,7 @@
 // Kaydırınca sayfanın rengi ekrandaki projeye geçer; filmler yalnızca dokununca oynar ve aynı anda bir film oynar.
 (() => {
 'use strict';
+const EN = document.documentElement.lang === 'en';
 const body = document.body;
 const theme = document.querySelector('meta[name="theme-color"]');
 const films = [...document.querySelectorAll('.film')];
@@ -20,14 +21,14 @@ if ('IntersectionObserver' in window) {
 films.forEach(film => {
   const video = film.querySelector('video');
   const about = video.getAttribute('aria-label');
-  const time = (about.match(/(\d+) saniye/) || [])[1];
-  const label = `Filmi oynat${time ? `, ${time} sn` : ''}`;
+  const time = (about.match(/(\d+) (?:saniye|seconds)/) || [])[1];
+  const label = EN ? `Play film${time ? `, ${time} sec` : ''}` : `Filmi oynat${time ? `, ${time} sn` : ''}`;
   video.controls = false;
   const play = document.createElement('button');
   play.type = 'button';
   play.className = 'play';
   // Ekran okuyucu adı görünen yazıyla başlar, ardından hangi film olduğunu söyler.
-  play.setAttribute('aria-label', `${label}: ${about.replace(/, \d+ saniye$/, '')}`);
+  play.setAttribute('aria-label', `${label}: ${about.replace(/, \d+ (?:saniye|seconds)$/, '')}`);
   play.innerHTML = `<span><i></i>${label}</span>`;
   film.append(play);
   play.addEventListener('click', () => {
@@ -42,7 +43,8 @@ films.forEach(film => {
     film.classList.add('playing');
     const note = document.createElement('p');
     note.className = 'error';
-    note.innerHTML = `Film açılamadı. <a href="${video.getAttribute('src')}" target="_blank" rel="noopener">Dosyayı ayrı açın</a>.`;
+    const dosya = `<a href="${video.getAttribute('src')}" target="_blank" rel="noopener">${EN ? 'Open the file separately' : 'Dosyayı ayrı açın'}</a>`;
+    note.innerHTML = EN ? `The film could not be opened. ${dosya}.` : `Film açılamadı. ${dosya}.`;
     film.append(note);
   });
 });

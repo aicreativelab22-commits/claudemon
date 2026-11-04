@@ -12,6 +12,20 @@
       }
     },
     {
+      "src": "/portfolyo/en",
+      "status": 308,
+      "headers": {
+        "Location": "/portfolyo/en/"
+      }
+    },
+    {
+      "src": "/en",
+      "status": 308,
+      "headers": {
+        "Location": "/en/"
+      }
+    },
+    {
       "src": "/",
       "has": [
         {
@@ -20,6 +34,16 @@
         }
       ],
       "dest": "/portfolyo/index.html"
+    },
+    {
+      "src": "/en/",
+      "has": [
+        {
+          "type": "host",
+          "value": "portfolio.mondigital.ai"
+        }
+      ],
+      "dest": "/portfolyo/en/index.html"
     },
     {
       "src": "/(.+)",

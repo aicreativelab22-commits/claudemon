@@ -1,13 +1,14 @@
 // Ana sayfa, proje ve hizmetler sayfalarında ortak: video oynatıcı, telefon menüsü.
 (() => {
 'use strict';
+const EN=document.documentElement.lang==='en';
 const SLOW_MS=15000;
 function message(fig,text){
  const box=fig.querySelector('.media-error');if(!box)return;
  const video=fig.querySelector('video:not(.film-teaser)');
  const src=video.currentSrc||video.getAttribute('src');
  box.textContent=text+' ';
- const link=document.createElement('a');link.href=src;link.target='_blank';link.rel='noopener';link.textContent='Videoyu ayrı sekmede aç';
+ const link=document.createElement('a');link.href=src;link.target='_blank';link.rel='noopener';link.textContent=EN?'Open the video in a new tab':'Videoyu ayrı sekmede aç';
  box.append(link);box.hidden=false;
 }
 // Sessiz kısa döngü: ekranda görünürken döner. Azaltılmış hareket veya veri tasarrufunda kapak kalır.
@@ -35,12 +36,12 @@ function setup(fig){
   if(teaser)teaser.remove();
   fig.classList.add('is-playing');video.controls=true;
   const box=fig.querySelector('.media-error');if(box)box.hidden=true;
-  timer=setTimeout(()=>{if(video.readyState<3)message(fig,'Video yavaş yükleniyor.')},SLOW_MS);
+  timer=setTimeout(()=>{if(video.readyState<3)message(fig,EN?'The video is loading slowly.':'Video yavaş yükleniyor.')},SLOW_MS);
   const result=video.play();
-  if(result&&result.catch)result.catch(err=>{clear();if(err.name!=='AbortError')message(fig,'Video açılamadı.')});
+  if(result&&result.catch)result.catch(err=>{clear();if(err.name!=='AbortError')message(fig,EN?'The video could not be opened.':'Video açılamadı.')});
  });
  video.addEventListener('playing',()=>{clear();const box=fig.querySelector('.media-error');if(box)box.hidden=true});
- video.addEventListener('error',()=>{clear();fig.classList.remove('is-playing');video.controls=false;message(fig,'Video açılamadı.')});
+ video.addEventListener('error',()=>{clear();fig.classList.remove('is-playing');video.controls=false;message(fig,EN?'The video could not be opened.':'Video açılamadı.')});
 }
 window.MON_initPlayers=root=>root.querySelectorAll('.film-player').forEach(setup);
 window.MON_initPlayers(document);
@@ -49,7 +50,7 @@ document.addEventListener('play',e=>{if(!e.target.matches('.film-teaser'))docume
 document.addEventListener('visibilitychange',()=>{if(document.hidden)document.querySelectorAll('video').forEach(v=>v.pause())});
 const toggle=document.querySelector('.menu-toggle'),nav=document.querySelector('#ana-menu');
 if(toggle&&nav){
- const set=open=>{toggle.setAttribute('aria-expanded',String(open));toggle.textContent=open?'Kapat':'Menü';nav.classList.toggle('open',open)};
+ const set=open=>{toggle.setAttribute('aria-expanded',String(open));toggle.textContent=open?(EN?'Close':'Kapat'):(EN?'Menu':'Menü');nav.classList.toggle('open',open)};
  toggle.addEventListener('click',()=>set(toggle.getAttribute('aria-expanded')!=='true'));
  nav.addEventListener('click',e=>{if(e.target.closest('a'))set(false)});
  document.addEventListener('keydown',e=>{if(e.key==='Escape'&&toggle.getAttribute('aria-expanded')==='true'){set(false);toggle.focus()}});

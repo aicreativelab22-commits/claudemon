@@ -1,9 +1,12 @@
-// Yelpaze: projeleri sayfadan okur, sayfanın başına tek sahne kurar. Seçim yalnızca sahneyi değiştirir: alttaki ızgara ve proje bölümleri yerinde kalır.
+// Yelpaze: projeleri sayfadan okur, sayfanın başına tek sahne kurar. Seçilen proje sahnenin hemen altına gelir, diğerleri sırasında kalır.
 (() => {
 'use strict';
+const EN = document.documentElement.lang === 'en';
+const YAZI = EN
+  ? { sahne: 'Projects. Browse with the left and right arrow keys.', izle: 'Watch the film', incele: 'View project', gorsel: 'View the visuals', secici: 'Project selector', onceki: 'Previous project', sonraki: 'Next project', kapak: 'Back to cover', film: 'The film could not be opened; the cover is showing.', dosya: 'Open the file separately' }
+  : { sahne: 'Projeler. Sol ve sağ ok tuşlarıyla gezilir.', izle: 'Filmi izle', incele: 'Projeyi incele', gorsel: 'Görselleri incele', secici: 'Proje seçici', onceki: 'Önceki proje', sonraki: 'Sonraki proje', kapak: 'Kapağa dön', film: 'Film açılamadı, kapak gösteriliyor.', dosya: 'Dosyayı ayrı açın' };
 const open = document.querySelector('.open');
-const index = document.querySelector('.index');
-if (!open || !index) return;
+if (!open) return;
 
 // Mentos önde başlar; Luma açılışta görünmesin diye tam arkada, sıra gelince öne çıkar.
 const SIRA = ['mentos', 'happy-to-wear', 'quinzell', 'kremi', 'luma', 'frutibon', 'dal', 'melty'];
@@ -24,6 +27,9 @@ const projects = [...document.querySelectorAll('.work')].map(section => {
 const N = projects.length;
 if (N < 3) return;
 
+const order = [...document.querySelectorAll('.work')];
+const listParent = order[0].parentNode, listEnd = order[order.length - 1].nextElementSibling;
+
 const wrap = i => ((i % N) + N) % N;
 const az = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
 const el = (tag, cls, html) => { const e = document.createElement(tag); if (cls) e.className = cls; if (html) e.innerHTML = html; return e; };
@@ -33,7 +39,7 @@ stage.id = 'filmler';
 stage.tabIndex = 0;
 stage.setAttribute('role', 'group');
 stage.setAttribute('aria-roledescription', 'galeri');
-stage.setAttribute('aria-label', 'Projeler. Sol ve sağ ok tuşlarıyla gezilir.');
+stage.setAttribute('aria-label', YAZI.sahne);
 const world = el('div', 'y-dunya');
 world.append(el('div', 'y-golge'));
 const panels = projects.map((p, i) => {
@@ -56,11 +62,11 @@ world.append(cinema);
 stage.append(world);
 
 const bar = el('div', 'y-alt');
-const info = el('div', 'y-bilgi', '<strong></strong><span class="y-tur"></span><a>Projeyi incele</a>');
+const info = el('div', 'y-bilgi', `<strong></strong><span class="y-tur"></span><a>${YAZI.incele}</a>`);
 info.setAttribute('aria-live', 'polite');
 const nameEl = info.querySelector('strong'), kindEl = info.querySelector('.y-tur'), moreEl = info.querySelector('a');
 const names = el('nav', 'y-adlar');
-names.setAttribute('aria-label', 'Proje seçici');
+names.setAttribute('aria-label', YAZI.secici);
 projects.forEach(p => {
   p.link = el('a');
   p.link.href = '#' + p.id;
@@ -68,13 +74,13 @@ projects.forEach(p => {
   names.append(p.link);
 });
 const actions = el('div', 'y-eylem');
-const playBtn = el('button', 'y-izle', '<i></i><span>Filmi izle</span>');
+const playBtn = el('button', 'y-izle', `<i></i><span>${YAZI.izle}</span>`);
 playBtn.type = 'button';
 const playText = playBtn.querySelector('span');
 const prev = el('button', 'y-ok', '<svg viewBox="0 0 14 14" aria-hidden="true"><path d="M9 1L3 7l6 6"/></svg>');
-prev.type = 'button'; prev.setAttribute('aria-label', 'Önceki proje');
+prev.type = 'button'; prev.setAttribute('aria-label', YAZI.onceki);
 const next = el('button', 'y-ok', '<svg viewBox="0 0 14 14" aria-hidden="true"><path d="M5 1l6 6-6 6"/></svg>');
-next.type = 'button'; next.setAttribute('aria-label', 'Sonraki proje');
+next.type = 'button'; next.setAttribute('aria-label', YAZI.sonraki);
 actions.append(playBtn, prev, next);
 const note = el('p', 'y-durum');
 note.setAttribute('role', 'status');
@@ -117,7 +123,7 @@ const measure = () => {
 const closeFilm = () => {
   filmOn = false;
   document.body.classList.remove('y-film', 'modal-open');
-  playText.textContent = 'Filmi izle';
+  playText.textContent = YAZI.izle;
   video.pause(); video.removeAttribute('src'); video.load();
 };
 const openFilm = () => {
@@ -127,7 +133,7 @@ const openFilm = () => {
   // modal-open ipek zeminin çizimini durdurur: film oynarken arkada hareket kalmaz.
   document.body.classList.add('y-film', 'modal-open');
   note.textContent = '';
-  playText.textContent = 'Kapağa dön';
+  playText.textContent = YAZI.kapak;
   video.setAttribute('aria-label', p.about);
   video.src = p.src;
   video.play().catch(() => {});
@@ -141,10 +147,11 @@ const show = i => {
   cur = n;
   const p = projects[cur];
   nameEl.textContent = p.name; kindEl.textContent = p.kind; moreEl.href = '#' + p.id;
-  moreEl.textContent = p.src ? 'Projeyi incele' : 'Görselleri incele';
+  moreEl.textContent = p.src ? YAZI.incele : YAZI.gorsel;
   projects.forEach((x, j) => {
     x.link.setAttribute('aria-current', j === cur ? 'true' : 'false');
   });
+  [p.section, ...order.filter(x => x !== p.section)].forEach(x => listParent.insertBefore(x, listEnd));
   playBtn.hidden = !p.src;
   document.body.classList.toggle('y-filmsiz', !p.src);
   apply(true);
@@ -154,9 +161,7 @@ const show = i => {
 const skip = document.querySelector('.skip');
 if (skip) skip.setAttribute('href', '#filmler');
 document.body.classList.add('yelpaze');
-open.insertBefore(stage, index);
-open.insertBefore(bar, index);
-open.insertBefore(note, index);
+open.append(stage, bar, note);
 bar.append(info, names, actions);
 
 const startId = location.hash.slice(1);
@@ -177,7 +182,7 @@ names.addEventListener('click', e => {
 });
 addEventListener('hashchange', () => {
   const i = projects.findIndex(p => p.id === location.hash.slice(1));
-  if (i >= 0 && i !== cur) show(i);
+  if (i >= 0 && i !== cur) { show(i); projects[i].section.scrollIntoView(); }
 });
 stage.addEventListener('keydown', e => {
   if (e.target === video) return;
@@ -206,7 +211,7 @@ video.addEventListener('error', () => {
   if (!filmOn) return;
   const src = video.getAttribute('src');
   closeFilm(); apply(false);
-  note.innerHTML = `Film açılamadı, kapak gösteriliyor. <a href="${src}" target="_blank" rel="noopener">Dosyayı ayrı açın</a>.`;
+  note.innerHTML = `${YAZI.film} <a href="${src}" target="_blank" rel="noopener">${YAZI.dosya}</a>.`;
 });
 // Aynı anda tek film: Quinzell'in sayfadaki diğer filmleriyle de geçerli.
 document.addEventListener('play', e => {

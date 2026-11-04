@@ -26,9 +26,9 @@ Hizmetler: yaratıcı konsept, kampanya görselleri, film üretimi (kısa reklam
 
 İşler:
 - Mentos, "Şehrin ritminde": Afternoon Film Pro ile ortak üretim. Gerçek çekimi Afternoon Film Pro yaptı, sette mümkün olmayan sahneleri Mon Digital AI ile ekledi.
-- Happy to Wear: müşteri işi. Bej trençkot ve altın payetli eteği şehrin değişen ışığında yorumlayan 15 saniyelik moda filmi.
-- Quinzell: müşteri işi. Ürün fotoğraflarından model görselleri, renk alternatifleri ve üç kısa moda filmi üretildi; ekip bu görsellerle üretim seçeneklerini değerlendiriyor.
-- DAL (zeytinyağı), Melty (dudak balmı), Luma (gümüş takı): stüdyonun konsept markaları, ticari müşteri işi değil.
+- Happy to Wear: marka iş birliği. Bej trençkot ve altın payetli eteği şehrin değişen ışığında yorumlayan 15 saniyelik moda filmi.
+- Quinzell: marka iş birliği. Ürün fotoğraflarından model görselleri, renk alternatifleri ve üç kısa moda filmi üretildi; ekip bu görsellerle üretim seçeneklerini değerlendiriyor.
+- DAL (zeytinyağı), Melty (dudak balmı), Luma (gümüş takı): stüdyonun konsept markaları, ticari marka iş birliği değil.
 - Kremi ve Frutibon: bağımsız konsept çalışmaları. Bu markalarla iş birliği veya müşteri ilişkisi yoktur, öyle anlatmazsın.
 Tüm işler Portfolyo sayfasında.
 

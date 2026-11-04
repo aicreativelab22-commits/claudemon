@@ -1,6 +1,8 @@
 // Başvuru formu ve Monna sohbeti. Sunucu işlevleri yoksa ziyaretçiyi e-postaya yönlendirir.
 (() => {
 'use strict';
+const EN = document.documentElement.lang === 'en';
+const T = EN ? {"konu": "Mon Digital project enquiry", "gonderemedik": "We couldn’t send it just now. ", "epostayla": "Send your message by email", "gonderiliyor": "Sending…", "tesekkur": "We’ve got it, thank you.", "donus": "We’ll reply to the address you gave.", "eposta": "Could you check your email address?", "sinir": "Too many attempts in a short time. Please try again shortly.", "s1": "What do you create?", "s2": "How do we start?", "s3": "What work have you done?", "selam": "Hi, I’m Monna. Shall we talk about what we can do for your project?", "selamKapat": "Close the greeting", "sorun": "Ask Monna", "asistan": "Your AI assistant", "sohbet": "Chat with Monna", "kimlik": "Mon Digital’s AI assistant", "kapat": "Close chat", "mesaj": "Your message", "sor": "Ask something…", "gonder": "Send", "not1": "It’s an AI and can make mistakes. What you write is sent to an AI provider to generate a reply; please put personal details in the ", "not2": "form", "not3": ".", "ilk": "Hi, I’m Monna. You can ask what Mon Digital does or tell me about an idea you have.", "yaziyor": "Monna is typing", "mola": "We’ve chatted quite a bit, so a short break. You can write to us in the meantime:", "cevap": "I can’t answer right now. You can reach us here:", "red": "I can’t help with that. For Mon Digital, you can reach us here:", "kopuk": "The connection dropped. You can reach us here:"} : {"konu": "Mon Digital proje görüşmesi", "gonderemedik": "Şu an gönderemedik. ", "epostayla": "Mesajınızı e-postayla iletin", "gonderiliyor": "Gönderiliyor…", "tesekkur": "Aldık, teşekkürler.", "donus": "Yazdığınız adresten size döneceğiz.", "eposta": "E-posta adresini kontrol eder misiniz?", "sinir": "Kısa sürede çok deneme yapıldı. Biraz sonra tekrar deneyin.", "s1": "Ne üretiyorsunuz?", "s2": "Nasıl başlarız?", "s3": "Hangi işleri yaptınız?", "selam": "Merhaba, ben Monna. Projeniz için neler yapabileceğimizi konuşalım mı?", "selamKapat": "Karşılama mesajını kapat", "sorun": "Monna’ya sorun", "asistan": "AI asistanınız", "sohbet": "Monna ile sohbet", "kimlik": "Mon Digital’in yapay zekâ asistanı", "kapat": "Sohbeti kapat", "mesaj": "Mesajınız", "sor": "Bir şey sorun…", "gonder": "Gönder", "not1": "Yapay zekâdır, hata yapabilir. Yazdıklarınız yanıt üretmek için yapay zekâ sağlayıcısına iletilir; kişisel bilgilerinizi ", "not2": "forma", "not3": " yazın.", "ilk": "Merhaba, ben Monna. Mon Digital’in neler yaptığını sorabilir, aklınızdaki fikri anlatabilirsiniz.", "yaziyor": "Monna yazıyor", "mola": "Biraz fazla konuştuk, kısa bir mola. Bu arada bize yazabilirsiniz:", "cevap": "Şu an cevap veremiyorum. Bize buradan ulaşabilirsiniz:", "red": "Bu konuda yardımcı olamıyorum. Mon Digital için bize buradan ulaşabilirsiniz:", "kopuk": "Bağlantı koptu. Bize buradan ulaşabilirsiniz:"};
 const MAIL = 'hello@mondigital.ai';
 const mailLink = (konu, govde) => `mailto:${MAIL}?subject=${encodeURIComponent(konu)}${govde ? `&body=${encodeURIComponent(govde)}` : ''}`;
 
@@ -10,29 +12,29 @@ if (form) {
  const durum = form.querySelector('.apply-status');
  const dugme = form.querySelector('button[type=submit]');
  const yedek = veri => {
-  durum.textContent = 'Şu an gönderemedik. ';
+  durum.textContent = T.gonderemedik;
   const a = document.createElement('a');
-  a.href = mailLink('Mon Digital proje görüşmesi', [veri.mesaj, veri.isim, veri.eposta].filter(Boolean).join('\n\n'));
-  a.textContent = 'Mesajınızı e-postayla iletin';
+  a.href = mailLink(T.konu, [veri.mesaj, veri.isim, veri.eposta].filter(Boolean).join('\n\n'));
+  a.textContent = T.epostayla;
   durum.append(a);
  };
  form.addEventListener('submit', async e => {
   e.preventDefault();
   if (!form.reportValidity() || dugme.disabled) return;
   const veri = Object.fromEntries(new FormData(form));
-  dugme.disabled = true;durum.textContent = 'Gönderiliyor…';
+  dugme.disabled = true;durum.textContent = T.gonderiliyor;
   try {
    const yanit = await fetch('/api/iletisim', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(veri) });
    if (yanit.ok) {
     const kutu = document.createElement('div');
     kutu.className = 'apply-done';kutu.tabIndex = -1;kutu.setAttribute('role', 'status');
-    kutu.innerHTML = '<h3>Aldık, teşekkürler.</h3><p>Yazdığınız adresten size döneceğiz.</p>';
+    kutu.innerHTML = `<h3>${T.tesekkur}</h3><p>${T.donus}</p>`;
     form.replaceWith(kutu);kutu.focus();
     return;
    }
    const hata = (await yanit.json().catch(() => ({}))).hata;
-   if (hata === 'eposta') durum.textContent = 'E-posta adresini kontrol eder misiniz?';
-   else if (hata === 'sinir') durum.textContent = 'Kısa sürede çok deneme yapıldı. Biraz sonra tekrar deneyin.';
+   if (hata === 'eposta') durum.textContent = T.eposta;
+   else if (hata === 'sinir') durum.textContent = T.sinir;
    else yedek(veri);
   } catch {
    yedek(veri);
@@ -42,20 +44,20 @@ if (form) {
 }
 
 // Monna
-const YUZ = '<img class="monna" src="medya/monna-kucuk.webp" alt="" width="152" height="200" decoding="async">';
-const SECENEKLER = ['Ne üretiyorsunuz?', 'Nasıl başlarız?', 'Hangi işleri yaptınız?'];
+const YUZ = `<img class="monna" src="${EN ? '../' : ''}medya/monna-kucuk.webp" alt="" width="152" height="200" decoding="async">`;
+const SECENEKLER = [T.s1, T.s2, T.s3];
 const ILETISIM = document.querySelector('#iletisim') ? '#iletisim' : 'index.html#iletisim';
 
 const kok = document.createElement('div');
 kok.className = 'chat';
-kok.innerHTML = `<div class="chat-hello" role="status" hidden><button type="button" class="chat-hello-ac">Merhaba, ben Monna. Projeniz için neler yapabileceğimizi konuşalım mı?</button><button type="button" class="chat-hello-kapat" aria-label="Karşılama mesajını kapat">×</button></div>
-<button type="button" class="chat-open" aria-expanded="false" aria-controls="chat-panel">${YUZ}<span class="chat-open-yazi"><strong>Monna’ya sorun</strong><small>AI asistanınız</small></span></button>
-<section class="chat-panel" id="chat-panel" role="dialog" aria-label="Monna ile sohbet" hidden>
-<header class="chat-head">${YUZ}<div><strong>Monna</strong><small>Mon Digital’in yapay zekâ asistanı</small></div><button type="button" class="chat-close" aria-label="Sohbeti kapat">×</button></header>
+kok.innerHTML = `<div class="chat-hello" role="status" hidden><button type="button" class="chat-hello-ac">${T.selam}</button><button type="button" class="chat-hello-kapat" aria-label="${T.selamKapat}">×</button></div>
+<button type="button" class="chat-open" aria-expanded="false" aria-controls="chat-panel">${YUZ}<span class="chat-open-yazi"><strong>${T.sorun}</strong><small>${T.asistan}</small></span></button>
+<section class="chat-panel" id="chat-panel" role="dialog" aria-label="${T.sohbet}" hidden>
+<header class="chat-head">${YUZ}<div><strong>Monna</strong><small>${T.kimlik}</small></div><button type="button" class="chat-close" aria-label="${T.kapat}">×</button></header>
 <div class="chat-log" role="log" aria-live="polite" tabindex="0"></div>
 <div class="chat-chips"></div>
-<form class="chat-form"><label class="sr" for="chat-input">Mesajınız</label><textarea id="chat-input" rows="1" maxlength="600" placeholder="Bir şey sorun…" autocomplete="off"></textarea><button type="submit">Gönder</button></form>
-<p class="chat-note">Yapay zekâdır, hata yapabilir. Yazdıklarınız yanıt üretmek için yapay zekâ sağlayıcısına iletilir; kişisel bilgilerinizi <a href="${ILETISIM}">forma</a> yazın.</p>
+<form class="chat-form"><label class="sr" for="chat-input">${T.mesaj}</label><textarea id="chat-input" rows="1" maxlength="600" placeholder="${T.sor}" autocomplete="off"></textarea><button type="submit">${T.gonder}</button></form>
+<p class="chat-note">${T.not1}<a href="${ILETISIM}">${T.not2}</a>${T.not3}</p>
 </section>`;
 document.body.append(kok);
 
@@ -73,7 +75,7 @@ const balon = (kim, metin = '') => {
 };
 const hataGoster = (p, metin) => {
  p.classList.remove('wait');p.textContent = `${metin} `;
- const a = document.createElement('a');a.href = mailLink('Mon Digital proje görüşmesi');a.textContent = MAIL;
+ const a = document.createElement('a');a.href = mailLink(T.konu);a.textContent = MAIL;
  p.append(a);
 };
 function ayarla(acik, odak = true) {
@@ -81,7 +83,7 @@ function ayarla(acik, odak = true) {
  kok.classList.toggle('is-open', acik);
  ac.setAttribute('aria-expanded', String(acik));
  if (acik && !kayit.children.length) {
-  balon('bot', 'Merhaba, ben Monna. Mon Digital’in neler yaptığını sorabilir, aklınızdaki fikri anlatabilirsiniz.');
+  balon('bot', T.ilk);
   SECENEKLER.forEach(metin => {
    const b = document.createElement('button');
    b.type = 'button';b.textContent = metin;
@@ -99,13 +101,13 @@ async function sor(metin) {
  balon('user', metin);
  mesajlar.push({ role: 'user', content: metin });
  const p = balon('bot wait');
- p.setAttribute('aria-label', 'Monna yazıyor');
+ p.setAttribute('aria-label', T.yaziyor);
  let yanit = '';
  try {
   const cevap = await fetch('/api/sohbet', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ mesajlar }) });
   if (!cevap.ok) {
    mesajlar.pop();
-   hataGoster(p, cevap.status === 429 ? 'Biraz fazla konuştuk, kısa bir mola. Bu arada bize yazabilirsiniz:' : 'Şu an cevap veremiyorum. Bize buradan ulaşabilirsiniz:');
+   hataGoster(p, cevap.status === 429 ? T.mola : T.cevap);
   } else {
    const okuyucu = cevap.body.getReader(), cozucu = new TextDecoder();
    let tampon = '', sorun = false, reddedildi = false;
@@ -128,7 +130,7 @@ async function sor(metin) {
    }
    if (sorun || reddedildi || !yanit) {
     mesajlar.pop();yanit = '';
-    hataGoster(p, reddedildi ? 'Bu konuda yardımcı olamıyorum. Mon Digital için bize buradan ulaşabilirsiniz:' : 'Şu an cevap veremiyorum. Bize buradan ulaşabilirsiniz:');
+    hataGoster(p, reddedildi ? T.red : T.cevap);
    } else {
     p.textContent = yanit;
     mesajlar.push({ role: 'assistant', content: yanit });
@@ -136,7 +138,7 @@ async function sor(metin) {
   }
  } catch {
   mesajlar.pop();
-  hataGoster(p, 'Bağlantı koptu. Bize buradan ulaşabilirsiniz:');
+  hataGoster(p, T.kopuk);
  }
  mesgul = false;gonderDugme.disabled = false;kayit.scrollTop = kayit.scrollHeight;
  if (!panel.hidden) girdi.focus({ preventScroll: true });
