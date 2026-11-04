@@ -22,6 +22,7 @@ ol{list-style:none}
 .top .home{min-height:44px}
 .top img{width:136px}
 .top-links{display:flex;align-items:center;gap:20px}
+.top .lang-link{justify-content:center;min-width:44px;padding:0 10px;border:1px solid currentColor;font-size:15px;font-weight:500;text-decoration:none}
 .top a{display:inline-flex;align-items:center;min-height:44px;text-underline-offset:5px}
 
 /* Açılış: başlık ve sekiz afişlik dizin */

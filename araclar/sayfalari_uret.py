@@ -69,7 +69,7 @@ def uret(dil, D):
 <link rel="icon" href="{ust}ikon.svg" type="image/svg+xml">
 </head>
 <body class="detail-page">
-<header class="site-header"><a class="logo" href="{ana}" aria-label="{D["ana"]}"><img src="{ust}medya/mon-logo-mark.png" alt="MON" width="150" height="50"></a><div class="detail-links"><a class="detail-back lang-link" href="{D["karsi"]}/{p["id"]}.html" hreflang="{D["karsi_kod"]}" lang="{D["karsi_kod"]}" aria-label="{D["karsi_ad"]}">{D["karsi_kod"].upper()}</a><a class="detail-back" href="{ana}#secili-isler">{D["geri"]}</a></div></header>
+<header class="site-header"><a class="logo" href="{ana}" aria-label="{D["ana"]}"><img src="{ust}medya/mon-logo-mark.png" alt="MON" width="150" height="50"></a><div class="detail-links"><a class="detail-back" href="{ana}#secili-isler">{D["geri"]}</a><a class="detail-back lang-link" href="{D["karsi"]}/{p["id"]}.html" hreflang="{D["karsi_kod"]}" lang="{D["karsi_kod"]}" aria-label="{D["karsi_ad"]}">{D["karsi_kod"].upper()}</a></div></header>
 <main class="detail">
 <div class="detail-head"><p class="work-tag">{e(p["tag"])}</p><h1>{e(p["name"])}</h1><p class="detail-line">{e(p["title"])}</p></div>
 <div class="detail-layout{" many" if p.get("films") else ""}"><div class="film-list">{filmler}</div><div class="detail-copy"><dl class="facts">{bilgiler}</dl>{kredi}<a class="text-link" href="{MAIL}">{D["yaz"]}</a></div></div>

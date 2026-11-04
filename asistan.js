@@ -160,7 +160,7 @@ girdi.addEventListener('keydown', e => {
 });
 panel.addEventListener('click', e => { if (e.target.closest('.chat-note a')) ayarla(false, false); });
 
-// Karşılama balonu: ziyaret başına bir kez, 6 saniye sonra; odağı değiştirmez, sohbeti kendiliğinden açmaz.
+// Karşılama balonu: sekme başına ve yarım saatte bir kez, 6 saniye sonra; odağı değiştirmez, sohbeti kendiliğinden açmaz.
 const SELAM_ANAHTAR = 'monna-selam';
 const ALAN = /(^|\.)mondigital\.ai$/.test(location.hostname) ? '; domain=.mondigital.ai' : '';
 let selamBitti = false;
@@ -169,11 +169,11 @@ const selamGoruldu = () => {
  try { if (sessionStorage.getItem(SELAM_ANAHTAR)) return true; } catch {}
  return document.cookie.split('; ').includes(`${SELAM_ANAHTAR}=1`);
 };
-// www ile portfolyo ayrı alan adları: oturum çerezi ikisinde de geçerli, yalnız bu işareti taşır.
+// www ile portfolyo ayrı alan adları: çerez ikisinde de geçerli, yalnız bu işareti taşır. Süresi var; oturum çerezi tarayıcı oturumu geri yüklenince hiç silinmiyordu.
 const selamIsaretle = () => {
  selamBitti = true;
  try { sessionStorage.setItem(SELAM_ANAHTAR, '1'); } catch {}
- document.cookie = `${SELAM_ANAHTAR}=1; path=/; SameSite=Lax${ALAN}${location.protocol === 'https:' ? '; Secure' : ''}`;
+ document.cookie = `${SELAM_ANAHTAR}=1; path=/; Max-Age=1800; SameSite=Lax${ALAN}${location.protocol === 'https:' ? '; Secure' : ''}`;
 };
 function selamiBitir() {
  selam.hidden = true;
@@ -190,12 +190,13 @@ const selamUygun = () => !document.hidden && panel.hidden && !document.querySele
 
 // Filme veya eyleme binecekse düğme küçülür; küçüğü bir eyleme ya da oynayan filme biniyorsa gizlenir. Balon eylemin üstüne binerse kapanır.
 const KUCUK = 52, PAY = 8;
-const kesisir = (e, sol, ust, sag, alt) => {
+const kesisir = (e, sol, ust, sag, alt, pay = PAY) => {
  const k = e.getBoundingClientRect();
- return k.width && k.height && k.left < sag + PAY && k.right > sol - PAY && k.top < alt + PAY && k.bottom > ust - PAY;
+ return k.width && k.height && k.left < sag + pay && k.right > sol - pay && k.top < alt + pay && k.bottom > ust - pay;
 };
-// Form alanları her zaman sayılır. Kart ve satır boyu bağlantılar sayılmaz; aksi halde düğme telefonda sayfanın çoğunda kaybolurdu.
-const eylemler = () => [...document.querySelectorAll('main a,main button,main input,main textarea,main select')].filter(e => {
+// Form alanları her zaman sayılır. Kart, satır boyu bağlantılar ve film altyazısı sayılmaz; aksi halde düğme küçülür, balon ilk ekranda hiç çıkamazdı.
+const eylemler = () => [...document.querySelectorAll('main a,main button,main input,main textarea,main select,main .y-isaret,main .play span')].filter(e => {
+ if (e.closest('figcaption')) return false;
  const k = e.getBoundingClientRect();
  return e.matches('input,textarea,select') || k.width * k.height < 30000;
 });
@@ -208,12 +209,12 @@ const denetle = () => {
  if (!d.width) return;
  const ust = d.bottom - Math.max(d.height, 60), hepsi = [...filmler(), ...eylemler()];
  kok.classList.toggle('is-kucuk', hepsi.some(e => kesisir(e, d.right - tam, ust, d.right, d.bottom)));
- const kucukBinen = e => kesisir(e, d.right - KUCUK, d.bottom - KUCUK, d.right, d.bottom);
+ const kucukBinen = e => kesisir(e, d.right - KUCUK, d.bottom - KUCUK, d.right, d.bottom, 0);
  const oynayan = f => { const v = f.querySelector('video:not(.film-teaser)'); return v && !v.paused && !v.ended; };
  kok.classList.toggle('is-over-film', eylemler().some(kucukBinen) || filmler().some(f => oynayan(f) && kucukBinen(f)));
  if (!selam.hidden && !selam.contains(document.activeElement)) {
   const b = selam.getBoundingClientRect();
-  if (!selamUygun() || eylemler().some(e => kesisir(e, b.left, b.top, b.right, b.bottom))) selamiBitir();
+  if (!selamUygun() || eylemler().some(e => kesisir(e, b.left, b.top, b.right, b.bottom, 0))) selamiBitir();
  }
 };
 const iste = () => { if (!bekliyor) { bekliyor = true; requestAnimationFrame(denetle); } };
@@ -247,7 +248,7 @@ function selamiDene() {
    selam.style.animation = 'none';
    const b = selam.getBoundingClientRect();
    selam.style.animation = '';
-   if (!eylemler().some(e => kesisir(e, b.left, b.top, b.right, b.bottom))) { selamIsaretle(); return; }
+   if (!eylemler().some(e => kesisir(e, b.left, b.top, b.right, b.bottom, 0))) { selamIsaretle(); return; }
    selam.hidden = true;
   }
  }
