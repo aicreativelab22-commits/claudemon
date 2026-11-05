@@ -29,6 +29,7 @@ window.MON_PROJECTS = [
   },
   {
     "id": "bps",
+    "video": "bps-film",
     "name": "BPS",
     "title": "Her damlada bir dünya.",
     "tag": "Marka iş birliği",

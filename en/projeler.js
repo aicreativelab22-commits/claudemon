@@ -29,6 +29,7 @@ window.MON_PROJECTS = [
   },
   {
     "id": "bps",
+    "video": "bps-film",
     "name": "BPS",
     "title": "A world in every drop.",
     "tag": "Brand collaboration",
