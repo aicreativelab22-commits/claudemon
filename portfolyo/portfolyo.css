@@ -74,10 +74,10 @@ dt{font-weight:600;margin-top:12px}
 .asamalar{display:grid;gap:28px;margin-bottom:34px;grid-column:1/-1}
 .asama{margin:0;min-width:0}.asama>img{width:100%;height:auto;max-width:420px}.asama-not{max-width:420px;margin:8px 0 0;font-size:14px;line-height:1.45}
 .asama figcaption{display:flex;align-items:baseline;gap:10px;margin-bottom:12px;font-size:16px}.asama figcaption span{font:italic 400 24px/1 var(--display)}
-.kampanya-kareler{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;max-width:420px}.kampanya-kareler img{width:100%;height:auto}
+.kampanya-kareler{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;max-width:420px}.kampanya-kareler img{width:100%;height:auto}
 .film-bos{aspect-ratio:9/16;max-width:180px;background:#f3f1ec}
 @media(max-width:700px){.asama>img,.asama-not,.kampanya-kareler{max-width:290px}.film-bos{max-width:150px}}
-@media(min-width:1000px){.asamalar{grid-template-columns:minmax(0,1.22fr) minmax(0,3.08fr) minmax(0,.5625fr);gap:32px;max-width:1320px}.asama>img,.asama-not,.film-bos{max-width:none}.kampanya-kareler{grid-template-columns:repeat(4,minmax(0,1fr));max-width:none}}
+@media(min-width:1000px){.asamalar{grid-template-columns:minmax(0,1.22fr) minmax(0,2.32fr) minmax(0,.5625fr);gap:32px;max-width:1100px}.asama>img,.asama-not,.film-bos{max-width:none}.kampanya-kareler{max-width:none}}
 .series figcaption{padding-top:8px;font-size:14px}
 .steps ol{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px 12px;margin:14px 0 34px;font-size:14px;line-height:1.35}
 .steps li img{width:100%;aspect-ratio:2/3;object-fit:cover;object-position:50% 20%;margin-bottom:7px}
