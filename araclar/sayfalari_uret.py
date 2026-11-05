@@ -41,10 +41,12 @@ def uret(dil, D):
         pano = p.get('board')
         if pano:
             k = pano['campaign']
+            film = (f'<figure class="asama asama-film"><figcaption><span>3</span>{e(pano["film"]["label"])}</figcaption>'
+                    '<div class="film-bos" aria-hidden="true"></div></figure>') if pano.get('film') else ''
             kareler = ''.join(f'<img src="{ust}medya/{f}.jpg" alt="{e(a, quote=True)}" width="{k["w"]}" height="{k["h"]}" loading="lazy" decoding="async">' for f, a in k['items'])
             pano = (f'<section class="detail-chain detail-board"><p>{e(pano["text"])}</p><div class="asamalar"><figure class="asama"><figcaption><span>1</span>{e(pano["label"])}</figcaption>'
                     f'<img src="{ust}medya/{pano["file"]}.jpg" alt="{e(pano["alt"], quote=True)}" width="{pano["w"]}" height="{pano["h"]}" loading="lazy" decoding="async"><p class="asama-not">{e(pano["note"])}</p></figure>'
-                    f'<figure class="asama"><figcaption><span>2</span>{e(k["label"])}</figcaption><div class="kampanya-kareler">{kareler}</div></figure></div></section>')
+                    f'<figure class="asama"><figcaption><span>2</span>{e(k["label"])}</figcaption><div class="kampanya-kareler">{kareler}</div></figure>{film}</div></section>')
         else:
             pano = ''
         akis = ('<p class="chain-flow">' + '<span aria-hidden="true"> → </span>'.join(e(a) for a in p['flow']) + '</p>') if p.get('flow') else ''

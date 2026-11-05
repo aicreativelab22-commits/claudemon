@@ -185,6 +185,7 @@ TABLO = {
     'Üründen modele.': 'From product to model.',
     '<span>1</span>Model üzerinde': '<span>1</span>On a model',
     '<span>2</span>Kampanya görselleri': '<span>2</span>Campaign visuals',
+    '<span>3</span>Reklam filmi': '<span>3</span>Ad film',
     'Beyaz şeritli eşofman takımıyla taş duvarlar arasında yürüyen model': 'A model walking between stone walls in the white striped tracksuit',
     'Güneş altında beyaz şeritli ceketin kırmızı fermuar ve şerit detayı': 'Red zip and stripe detail on the white striped jacket in sunlight',
     'Açık havada beyaz şeritli eşofman takımının arkası': 'The back of the white striped tracksuit, outdoors',

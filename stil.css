@@ -112,7 +112,9 @@ main{position:relative;z-index:0}
 .fashion-story .section-heading{align-items:flex-end;margin-bottom:36px}.fashion-story h2{font-size:clamp(32px,3.6vw,54px);margin-top:8px}.fashion-story .section-heading>p{max-width:36em}
 .process-chain{grid-column:2;grid-row:1/4;align-self:start;list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px;max-width:800px}
 /* Üç aşama: model üzerinde, kampanya görselleri, film. Sütun oranları görselleri aynı boyda tutar. */
-.asamalar{display:grid;grid-template-columns:minmax(0,1.22fr) minmax(0,3.08fr);gap:clamp(20px,2.4vw,36px);align-items:start;max-width:1180px}
+.asamalar{display:grid;grid-template-columns:minmax(0,1.22fr) minmax(0,3.08fr) minmax(0,.5625fr);gap:clamp(20px,2.4vw,36px);align-items:start;max-width:1320px}
+/* Film gelene kadar beyaz bir film yeri durur */
+.film-bos{aspect-ratio:9/16;background:#f3f1ec}
 .asama{margin:0;min-width:0}.asama a{display:block}.asama img{display:block;width:100%;height:auto}
 .asama figcaption{display:flex;align-items:baseline;gap:10px;margin-bottom:12px;font-size:16px;color:var(--paper)}
 .asama figcaption span{font:italic 400 24px/1 var(--serif);color:var(--accent)}
@@ -212,7 +214,7 @@ body.modal-open{overflow:hidden}
 @media(max-width:1180px){
 .hero{--film-h:min(calc(100svh - 196px),520px);gap:32px}
 .fashion-story .process-chain{margin-top:28px}.chain-more{margin-top:24px}
-.asamalar{grid-template-columns:minmax(0,1fr)}.asama a,.asama>img,.asama-not{max-width:420px}.kampanya-kareler{max-width:640px}
+.asamalar{grid-template-columns:minmax(0,1fr)}.asama a,.asama>img,.asama-not{max-width:420px}.kampanya-kareler{max-width:640px}.film-bos{max-width:180px}
 .offer-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
 .offer-grid article{padding-bottom:24px}
 .feature-link{gap:28px}
@@ -253,7 +255,7 @@ body.modal-open{overflow:hidden}
 .film-play{bottom:14px;min-height:48px;padding:0 16px}
 .section-heading{display:block;margin-bottom:20px}.section-heading>p{margin-top:10px}
 .selected,.fashion-story,.more-work,.offers,.about{padding-block:48px}
-.asama a,.asama>img,.asama-not,.kampanya-kareler{max-width:290px}.kampanya-kareler{grid-template-columns:repeat(2,minmax(0,1fr))}
+.asama a,.asama>img,.asama-not,.kampanya-kareler{max-width:290px}.film-bos{max-width:150px}.kampanya-kareler{grid-template-columns:repeat(2,minmax(0,1fr))}
 .more-work>h2{margin-bottom:20px}.more-work>.primary{margin-top:24px}
 .selected>h2{margin-bottom:20px}
 .feature-link{padding:12px;gap:18px}.feature-frames{gap:6px}
