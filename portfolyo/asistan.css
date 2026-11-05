@@ -38,18 +38,32 @@ html:not(.js) .apply-form{display:none}
 /* Monna sohbeti */
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
 .chat{position:fixed;right:20px;bottom:20px;z-index:20;display:flex;flex-direction:column;align-items:flex-end}
-.chat-open{display:inline-flex;align-items:center;gap:10px;min-height:60px;padding:6px 20px 6px 10px;border:1px solid var(--accent);border-radius:30px;background:var(--bg);text-align:left;box-shadow:0 8px 24px rgba(0,0,0,.35);transition:border-color .2s,background .2s}.chat-open:hover{border-color:var(--paper);background:#1f3b33}
-.chat-open:focus-visible,.chat-hello button:focus-visible{outline:2px solid var(--bg);outline-offset:2px;box-shadow:0 0 0 2px var(--paper)}
+.chat-open{display:inline-flex;align-items:center;gap:10px;min-height:60px;padding:6px 20px 6px 10px;border:1px solid var(--accent);border-radius:30px;background:var(--bg);text-align:left;box-shadow:0 8px 24px rgba(0,0,0,.35)}.chat-open:hover{border-color:var(--paper);background:#1f3b33}
+.chat-open{transition:border-color .2s,background .2s,opacity .25s}
+.chat-open:focus-visible,.monna-gelis button:focus-visible{outline:2px solid var(--bg);outline-offset:2px;box-shadow:0 0 0 2px var(--paper)}
 .chat-open .monna{height:46px}
 .chat-open-yazi strong{display:block;font-size:15px;font-weight:600;line-height:1.25}.chat-open-yazi small{display:block;font-size:12px;line-height:1.3;color:var(--muted)}
-/* Karşılama balonu: düğmenin üstünde, bir kez ve hafif bir girişle */
-.chat-hello{position:relative;display:flex;align-items:flex-start;width:min(300px,calc(100vw - 24px));margin-bottom:16px;border:1px solid var(--line);background:var(--paper);color:var(--bg);box-shadow:0 10px 30px rgba(0,0,0,.35);animation:chat-hello .28s ease-out}
-.chat-hello::after{content:"";position:absolute;right:20px;bottom:-7px;width:12px;height:12px;background:var(--paper);border:solid var(--line);border-width:0 1px 1px 0;transform:rotate(45deg)}
-.chat-hello-ac{flex:1;min-width:0;min-height:44px;padding:12px 0 12px 14px;border:0;background:none;font-size:15px;line-height:1.4;text-align:left}.chat-hello-ac:hover{text-decoration:underline;text-underline-offset:3px}
-.chat-hello-kapat{flex:none;width:44px;height:44px;border:0;background:none;font-size:24px;line-height:1}.chat-hello-kapat:hover{color:#51574c}
-.chat-hello.yan{position:absolute;right:calc(100% + 14px);bottom:0;width:340px;margin:0}
-.chat-hello.yan::after{right:-7px;bottom:22px;border-width:1px 1px 0 0}
-@keyframes chat-hello{from{opacity:0;transform:translateY(6px)}}
+/* Monna'nın gelişi: arka plansız, tek başına kenardan süzülür ve bir soru sorar. O sırada düğme çekilir. */
+.chat.is-gezinti .chat-open{opacity:0;pointer-events:none}
+.monna-gelis{position:fixed;display:flex;flex-direction:column;gap:12px;transition:opacity .34s,transform .34s ease-in}
+.monna-gelis.olcum{visibility:hidden}.monna-gelis.olcum *{animation:none!important}
+.yer-sag-alt,.yer-sag-orta{right:24px;align-items:flex-end}.yer-sol-alt,.yer-sol-orta{left:24px;align-items:flex-start}
+.yer-sag-alt,.yer-sol-alt{bottom:20px}.yer-sag-orta,.yer-sol-orta{top:30%}
+.monna-robot{display:block;flex:none;padding:0;border:0;background:none;animation:monna-sagdan .62s cubic-bezier(.2,1.2,.35,1) both}
+.yer-sol-alt .monna-robot,.yer-sol-orta .monna-robot{animation-name:monna-soldan}
+.monna-robot img{display:block;width:auto;height:150px;filter:drop-shadow(0 12px 16px rgba(0,0,0,.34));transform-origin:50% 92%;animation:monna-salin 2.8s ease-in-out .7s infinite}
+.monna-robot:focus-visible{border-radius:8px}
+.monna-soru{position:relative;display:flex;align-items:flex-start;width:250px;background:var(--paper);color:var(--bg);box-shadow:0 10px 28px rgba(0,0,0,.32);animation:monna-soru .3s ease-out .42s both}
+.monna-soru::after{content:"";position:absolute;right:50px;bottom:-6px;width:12px;height:12px;background:var(--paper);transform:rotate(45deg)}
+.yer-sol-alt .monna-soru::after,.yer-sol-orta .monna-soru::after{right:auto;left:50px}
+.monna-soru-ac{flex:1;min-width:0;min-height:44px;padding:12px 0 12px 14px;border:0;background:none;color:var(--bg);font-size:15px;line-height:1.4;text-align:left}.monna-soru-ac:hover{text-decoration:underline;text-underline-offset:3px}
+.monna-soru-kapat{flex:none;width:44px;height:44px;border:0;background:none;color:var(--bg);font-size:24px;line-height:1}.monna-soru-kapat:hover{color:#51574c}
+.monna-gelis.gidiyor{opacity:0;transform:translateX(70px)}
+.monna-gelis.gidiyor.yer-sol-alt,.monna-gelis.gidiyor.yer-sol-orta{transform:translateX(-70px)}
+@keyframes monna-sagdan{from{opacity:0;transform:translateX(150px)}}
+@keyframes monna-soldan{from{opacity:0;transform:translateX(-150px)}}
+@keyframes monna-salin{0%,100%{transform:rotate(-2deg)}50%{transform:rotate(2deg) translateY(-4px)}}
+@keyframes monna-soru{from{opacity:0;transform:translateY(6px) scale(.97)}}
 /* Film veya eylem düğmesine binecekse önce küçülür, küçüğü de biniyorsa gizlenir. */
 .chat.is-over-film:not(.is-open) .chat-open{visibility:hidden}
 .chat.is-tucked .chat-open,.chat.is-kucuk .chat-open{justify-content:center;width:52px;min-height:52px;padding:4px}
@@ -76,5 +90,12 @@ html:not(.js) .apply-form{display:none}
 .chat{right:12px;bottom:12px}.chat-open{min-height:56px;padding:4px 16px 4px 6px}.chat-open .monna{height:44px}
 .chat.is-tucked:not(.is-open) .chat-open{visibility:hidden}
 .chat.is-open{right:0;bottom:0;left:0}.chat-panel{width:100%;height:100dvh;border:0}
+}
+@media(max-width:899px){
+.yer-sag-alt{right:12px}.yer-sol-alt{left:12px}
+.yer-sag-alt,.yer-sol-alt{bottom:max(14px,env(safe-area-inset-bottom))}
+.monna-soru{width:min(250px,calc(100vw - 24px))}
+.monna-robot img{height:112px}
+.monna-soru::after{right:36px}.yer-sol-alt .monna-soru::after{left:36px}
 }
 @media(prefers-reduced-motion:reduce){.chat *{animation:none!important;transition:none!important}}
