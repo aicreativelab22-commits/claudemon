@@ -1,6 +1,20 @@
 // Proje içeriğinin tek kaynağı. Değiştirince araclar/sayfalari_uret.py ile projeler/*.html yeniden üretilir.
 window.MON_PROJECTS = [
   {
+    "id": "happy-to-wear",
+    "name": "HAPPY TO WEAR",
+    "title": "Gerçek çekim, sınırsız sahne.",
+    "tag": "Marka iş birliği · Hibrit üretim",
+    "video": "happy-to-wear-haussmann",
+    "duration": "12 sn",
+    "idea": "Happy to Wear çekimi yaptı, görselleri bize gönderdi. Bu görsellerden yola çıkarak aynı kombini yapay zekâyla yeni sahnelere taşıdık: siyah fonda yakın planlar, altın aynalı bir Haussmann salonunda hareket. Gerçek çekim işin temelini kurdu, yapay zekâ sahneyi genişletti.",
+    "role": "Marka çekiminden gelen görsellerle AI destekli sahne ve hareket üretimi, film kurgusu.",
+    "outputs": "12 saniyelik moda filmi. Format: dikey, 9:16.",
+    "status": "Happy to Wear ile marka iş birliği kapsamında hazırlandı. Fotoğraf çekimi: Happy to Wear.",
+    "stills": [],
+    "alt": "Siyah fonda beyaz yelek, geniş paça pantolon ve boncuklu başlıkla duran kadın"
+  },
+  {
     "id": "mentos",
     "name": "MENTOS",
     "title": "Şehrin ritminde.",
@@ -12,6 +26,19 @@ window.MON_PROJECTS = [
     "status": "Afternoon Film Pro ile ortak üretim. Mentos için hazırlandı.",
     "stills": [],
     "alt": "Mentos Ferahlığı Hisset yazılı mavi bez çanta taşıyan kişi"
+  },
+  {
+    "id": "bps",
+    "name": "BPS",
+    "title": "Her damlada bir dünya.",
+    "tag": "Marka iş birliği",
+    "duration": "16 sn",
+    "idea": "Koku görülmez; biz onu görünür kıldık. Koku kâğıdıyla başlayan film, tek bir damlayla çiçek, meyve ve vanilya notalarına uzanıyor, sonunda BPS şişelerinde buluşuyor.",
+    "role": "Film ve görsel üretimi, kurgu.",
+    "outputs": "16 saniyelik film. Format: dikey, 9:16.",
+    "status": "BPS ile marka iş birliği kapsamında hazırlandı.",
+    "stills": [],
+    "alt": "Taş basamaklar üzerinde çiçek ve meyvelerle dizilmiş BPS esans şişeleri"
   },
   {
     "id": "dal",
@@ -43,22 +70,9 @@ window.MON_PROJECTS = [
     "alt": "Krem fonda kırmızı Kremi dudak balmı tüpü"
   },
   {
-    "id": "happy-to-wear",
-    "name": "HAPPY TO WEAR",
-    "title": "Günün değişir, ışıltın kalır.",
-    "tag": "Marka iş birliği",
-    "duration": "15 sn",
-    "idea": "Tek bir kombini, günün değişen ışığı ve atmosferi içinde ele aldık. Bej trençkot ve altın payetli eteği sabahtan akşama uzanan bir şehir hikâyesine taşıyarak koleksiyonun farklı anlara eşlik eden karakterini öne çıkardık.",
-    "role": "Marka ürünlerinden sahne tasarımı, AI destekli görsel ve hareket üretimi, film kurgusu.",
-    "outputs": "15 saniyelik moda filmi. Format: dikey, 9:16.",
-    "status": "Happy to Wear ile marka iş birliği kapsamında hazırlandı.",
-    "stills": [],
-    "alt": "Güneşli taş meydanda bej trençkot ve altın payetli etekle yürüyen kadın"
-  },
-  {
     "id": "quinzell",
     "name": "QUINZELL",
-    "title": "Hayalet modelden moda filmine.",
+    "title": "Üründen modele.",
     "tag": "Marka iş birliği",
     "duration": "3 film",
     "idea": "Bir ürün fotoğrafından ne kadar ileri gidilebilir? Quinzell’in hayalet model fotoğraflarından yola çıkarak model üzerinde görseller, renk alternatifleri ve üç kısa moda filmi hazırladık. Aynı ürünleri farklı renk ve sahnelerde ele alan çalışma, ekibin üretim öncesinde seçenekleri değerlendirmesine de alan açtı.",
@@ -70,6 +84,7 @@ window.MON_PROJECTS = [
       ["quinzell-gece", "Gece senin ritmin", "16 sn"],
       ["quinzell", "Günün ritminde", "10 sn"]
     ],
+    "board": { "text": "Aynı ürün, önce mankende, sonra model üzerinde: ön, üç çeyrek, yan ve arka.", "file": "quinzell-uretim-modele", "w": 1600, "h": 1312, "alt": "Beyaz şeritli eşofman takımı: ön, üç çeyrek, yan ve arka açılarda önce gerçek ürün, sonra model üzerinde", "note": "Kaynak fotoğraflar değiştirilmedi. Yan görünüm için en yakın mevcut kaynak açı kullanıldı." },
     "flow": ["Kaynak fotoğraf", "Model üzerinde", "Renk alternatifleri", "Film"],
     "chains": [
       {

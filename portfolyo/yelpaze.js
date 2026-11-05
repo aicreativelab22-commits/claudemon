@@ -8,8 +8,8 @@ const YAZI = EN
 const open = document.querySelector('.open');
 if (!open) return;
 
-// Mentos önde başlar; Luma açılışta görünmesin diye tam arkada, sıra gelince öne çıkar.
-const SIRA = ['mentos', 'happy-to-wear', 'quinzell', 'kremi', 'luma', 'frutibon', 'dal', 'melty'];
+// Happy to Wear önde başlar; Luma açılışta görünmesin diye tam arkada, sıra gelince öne çıkar.
+const SIRA = ['happy-to-wear', 'mentos', 'bps', 'quinzell', 'kremi', 'luma', 'frutibon', 'dal', 'melty'];
 const siraNo = id => { const i = SIRA.indexOf(id); return i < 0 ? SIRA.length : i; };
 const projects = [...document.querySelectorAll('.work')].map(section => {
   const film = section.querySelector(':scope > .film, :scope > .still');

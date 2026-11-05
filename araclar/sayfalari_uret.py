@@ -32,12 +32,15 @@ def uret(dil, D):
     MAIL = f"mailto:hello@mondigital.ai?subject={D['konu']}"
     os.makedirs(os.path.join(KOK, D['klasor']), exist_ok=True)
     for i, p in enumerate(projeler):
-        videolar = [] if p.get('gorselOnly') else p.get('films') or [[p['id'], p['title'], p['duration']]]
+        videolar = [] if p.get('gorselOnly') else p.get('films') or [[p.get('video', p['id']), p['title'], p['duration']]]
         filmler = ''.join(
             f'<figure class="detail-film film-player"><div class="film-frame"><video controls playsinline preload="none" poster="{ust}medya/{v}-kapak.jpg" '
             f'src="{ust}medya/{v}.mp4" aria-label="{e(p["name"])}: {e(ad)}"></video><button type="button" class="film-play"><span aria-hidden="true">▶</span> '
             f'{D["izle"]} <small>{e(sure)}</small></button></div><figcaption>{e(ad)}</figcaption><p class="media-error" role="status" hidden></p></figure>'
             for v, ad, sure in videolar) or f'<figure class="detail-film"><div class="film-frame"><img src="{ust}medya/{p["id"]}-kapak.jpg" alt="{e(p["alt"], quote=True)}" width="720" height="1280"></div></figure>'
+        pano = p.get('board')
+        pano = (f'<section class="detail-chain detail-board"><p>{e(pano["text"])}</p><figure><img src="{ust}medya/{pano["file"]}.jpg" alt="{e(pano["alt"], quote=True)}" '
+                f'width="{pano["w"]}" height="{pano["h"]}" loading="lazy" decoding="async"><figcaption>{e(pano["note"])}</figcaption></figure></section>') if pano else ''
         akis = ('<p class="chain-flow">' + '<span aria-hidden="true"> → </span>'.join(e(a) for a in p['flow']) + '</p>') if p.get('flow') else ''
         bilgiler = ''.join(f'<div><dt>{k}</dt><dd>{e(v)}</dd></div>' for k, v in (
             (D['fikir'], p['idea']), (D['is_'], p['role']),
@@ -73,7 +76,7 @@ def uret(dil, D):
 <main class="detail">
 <div class="detail-head"><p class="work-tag">{e(p["tag"])}</p><h1>{e(p["name"])}</h1><p class="detail-line">{e(p["title"])}</p></div>
 <div class="detail-layout{" many" if p.get("films") else ""}"><div class="film-list">{filmler}</div><div class="detail-copy"><dl class="facts">{bilgiler}</dl>{kredi}<a class="text-link" href="{MAIL}">{D["yaz"]}</a></div></div>
-{akis}{diziler}{galeri}
+{pano}{akis}{diziler}{galeri}
 <a class="next-project" href="{sonraki["id"]}.html"><span>{D["sonraki"]}: {e(sonraki["name"])}</span><span aria-hidden="true">↗</span></a>
 </main>
 <footer class="site-footer"><address>Mon Digital<br>{D["adres"]}</address><a href="mailto:hello@mondigital.ai">hello@mondigital.ai</a></footer>

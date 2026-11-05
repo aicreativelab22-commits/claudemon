@@ -69,6 +69,8 @@ dt{font-weight:600;margin-top:12px}
 .more{margin-top:44px}
 .more h3{font:italic 400 clamp(24px,6vw,34px)/1.15 var(--display)}
 .steps-flow{margin-bottom:28px;font-size:17px;line-height:1.5}
+.board-text{max-width:36em;margin:10px 0 16px;font-size:17px;line-height:1.5}
+.board{margin-bottom:34px;max-width:1100px}.board img{width:100%}.board figcaption{padding-top:8px;font-size:14px}
 .series figcaption{padding-top:8px;font-size:14px}
 .steps ol{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px 12px;margin:14px 0 34px;font-size:14px;line-height:1.35}
 .steps li img{width:100%;aspect-ratio:2/3;object-fit:cover;object-position:50% 20%;margin-bottom:7px}

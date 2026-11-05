@@ -14,6 +14,19 @@ window.MON_PROJECTS = [
     "alt": "A person carrying a blue Mentos tote bag"
   },
   {
+    "id": "bps",
+    "name": "BPS",
+    "title": "A world in every drop.",
+    "tag": "Brand collaboration",
+    "duration": "16 sec",
+    "idea": "Scent can’t be seen, so we made it visible. Starting with a scent strip, the film follows a single drop into floral, fruit and vanilla notes and comes together in the BPS bottles.",
+    "role": "Film and visual production, editing.",
+    "outputs": "16-second film. Format: vertical, 9:16.",
+    "status": "Made as part of a brand collaboration with BPS.",
+    "stills": [],
+    "alt": "BPS essence bottles arranged with flowers and fruit on stone steps"
+  },
+  {
     "id": "dal",
     "name": "DAL",
     "title": "From root to table.",
