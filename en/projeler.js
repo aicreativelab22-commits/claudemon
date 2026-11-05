@@ -70,29 +70,17 @@ window.MON_PROJECTS = [
     "alt": "A red Kremi lip balm tube on a cream background"
   },
   {
-    "id": "quinzell", "gorselOnly": true, "cover": "quinzell-u2-model",
+    "id": "quinzell", "gorselOnly": true, "cover": "quinzell-beyaz-model",
     "name": "QUINZELL",
     "title": "From product to model.",
     "tag": "Brand collaboration",
     "idea": "How far can a single product photo go? Starting from Quinzell’s ghost mannequin photos, we created on-model visuals and color alternatives. Showing the same products in different colors and scenes, the work also gave the team room to weigh their options before production.",
     "role": "Model styling, color work and video production moved forward in one process. The team can weigh production decisions by seeing the color alternatives on a model.",
-    "outputs": "Visual series for two products. Format: vertical visuals.",
+    "outputs": "On-model product visuals. Format: vertical visuals.",
     "status": "Made as part of a brand collaboration with Quinzell.",
     "board": { "text": "The same product, first on the mannequin, then on a model: front, three-quarter, side and back.", "file": "quinzell-product-to-model", "w": 1600, "h": 1312, "alt": "A white striped tracksuit at front, three-quarter, side and back angles: first the real product, then on a model", "note": "Source photos were not altered. The closest available source angle was used for the side view." },
-    "flow": ["Source photo", "On model", "Color alternatives"],
-    "chains": [
-      {
-        "title": "Striped tracksuit",
-        "items": [
-          ["quinzell-u2-manken", "Source photo: ghost mannequin", 640, 853],
-          ["quinzell-u2-model", "Generated visual: on model", 640, 960],
-          ["quinzell-u2-renk1", "Generated visual: burgundy color alternative", 640, 960],
-          ["quinzell-u2-renk2", "Generated visual: navy color alternative", 640, 960]
-        ]
-      }
-    ],
     "stills": [],
-    "alt": "The same set in black, on a model"
+    "alt": "A white striped tracksuit on a model"
   },
   {
     "id": "frutibon",

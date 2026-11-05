@@ -35,10 +35,10 @@ ol{list-style:none}
 .open>p{max-width:34em;margin:16px 0 0;font-size:17px;line-height:1.45}
 /* Proje: JavaScript yoksa bölüm kendi rengini taşır; varsa renk gövdeye geçer */
 .work{background:var(--tone);color:var(--ink);padding:56px var(--gutter)}
-.work:not(#mentos){padding-block:44px}
-/* Proje adı görsellerle yarışmaz; Mentos kendi büyük adını korur */
-.work:not(#mentos) .name{font-size:min(calc(var(--col)/var(--w)),clamp(36px,4.2vw,60px))}
-.work:not(#mentos) .title{font-size:clamp(24px,5.6vw,34px)}
+.work{padding-block:44px}
+/* Proje adı görsellerle yarışmaz; bütün markalarda aynı ölçü, uzun ad yalnızca sığmazsa küçülür */
+.work .name{font-size:min(calc(var(--col)/var(--w)),clamp(40px,4.6vw,68px))}
+.work .title{font-size:clamp(24px,5.6vw,34px)}
 .live .work{background:transparent;color:inherit}
 .text{display:flex;flex-direction:column;gap:22px}
 /* Dev puntoda kılcal çizgiler kaybolmasın diye optik boyut sabit ve küçük */
@@ -120,10 +120,10 @@ dt{font-weight:600;margin-top:12px}
 .open h1{font-size:clamp(48px,4.6vw,72px)}
 .open>p{max-width:52em;margin:20px 0 0;font-size:18px}
 .work{display:grid;grid-template-columns:minmax(0,1fr) var(--film-w);column-gap:var(--gap);padding:12svh var(--gutter);align-items:stretch}
-.work:not(#mentos){padding-block:9svh}
+.work{padding-block:9svh}
 .text{justify-content:space-between;min-height:var(--film-h)}
-.work:not(#mentos) .text{justify-content:flex-start;min-height:0}
-.work:not(#mentos) .title{font-size:clamp(26px,2.4vw,38px)}
+.work .text{justify-content:flex-start;min-height:0}
+.work .title{font-size:clamp(26px,2.4vw,38px)}
 .title{font-size:clamp(30px,3.3vw,52px)}
 .idea{font-size:19px}
 .film{margin:0;width:100%;max-width:none;align-self:start}
