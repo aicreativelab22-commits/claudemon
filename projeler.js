@@ -115,11 +115,11 @@ window.MON_PROJECTS = [
     "name": "LUMA",
     "title": "Işık iz bırakır.",
     "tag": "Konsept marka",
-    "video": "luma-yuzuk",
-    "duration": "6 sn",
+    "video": "luma-editorial",
+    "duration": "12 sn",
     "idea": "LUMA için gümüşün heykelsi formunu ve ışıkla değişen yüzeyini merkeze aldık. Atölye detaylarını, ürün yakın planlarını ve kullanım sahnelerini aynı seride buluşturarak takıyı hem bir tasarım nesnesi hem kişisel bir ifade olarak ele aldık.",
     "role": "AI destekli sahne, görsel ve hareket üretimi.",
-    "outputs": "6 saniyelik film, dokuz karelik kampanya görsel serisi. Format: dikey film, 4:5 görsel seri.",
+    "outputs": "12 saniyelik film, dokuz karelik kampanya görsel serisi. Format: dikey film, 4:5 görsel seri.",
     "status": "Konsept marka çalışmasıdır. Ticari bir marka iş birliği kapsamında hazırlanmamıştır.",
     "stills": [
       ["luma-pano", "LUMA × mon görsel serisi", 1000, 1250]

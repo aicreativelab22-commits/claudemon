@@ -115,11 +115,11 @@ window.MON_PROJECTS = [
     "name": "LUMA",
     "title": "Light leaves a trace.",
     "tag": "Concept brand",
-    "video": "luma-yuzuk",
-    "duration": "6 sec",
+    "video": "luma-editorial",
+    "duration": "12 sec",
     "idea": "For LUMA, we centered on silver’s sculptural form and its surface that changes with light. Bringing workshop details, product close-ups and lifestyle scenes into one series, we treated jewelry as both a design object and a personal expression.",
     "role": "AI-assisted scene, visual and motion production.",
-    "outputs": "6-second film, nine-frame campaign visual series. Format: vertical film, 4:5 visual series.",
+    "outputs": "12-second film, nine-frame campaign visual series. Format: vertical film, 4:5 visual series.",
     "status": "Concept brand work. Not created as part of a commercial brand collaboration.",
     "stills": [
       ["luma-pano", "LUMA × mon visual series", 1000, 1250]

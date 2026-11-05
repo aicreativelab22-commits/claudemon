@@ -228,10 +228,10 @@ TABLO = {
     'medya/mon-tanitim-altyazi.mp4': 'medya/mon-tanitim.mp4',
     'Üç parmağında gümüş LUMA yüzükleriyle elini kameraya uzatan kadın': 'A woman reaching toward the camera with silver LUMA rings on three fingers',
     'Yeşil mermer tezgahta DAL zeytinyağı şişesi ve zeytinler': 'A DAL olive oil bottle and olives on a green marble counter',
-    'Konsept marka, 6 sn': 'Concept brand, 6 sec',
+    'Konsept marka, 12 sn': 'Concept brand, 12 sec',
     'AI destekli sahne, görsel ve hareket üretimi.': 'AI-assisted scene, visual and motion production.',
-    '6 saniyelik film, dokuz karelik kampanya görsel serisi. Format: dikey film, 4:5 görsel seri.': '6-second film, nine-frame campaign visual series. Format: vertical film, 4:5 visual series.',
-    'LUMA filmi: Işık iz bırakır, 6 saniye': 'LUMA film: Light leaves a trace, 6 seconds',
+    '12 saniyelik film, dokuz karelik kampanya görsel serisi. Format: dikey film, 4:5 görsel seri.': '12-second film, nine-frame campaign visual series. Format: vertical film, 4:5 visual series.',
+    'LUMA filmi: Işık iz bırakır, 12 saniye': 'LUMA film: Light leaves a trace, 12 seconds',
     'Melty şimdilik gizli: filmi gelince template etiketleri kaldırılır': 'Melty is hidden for now: remove the template tags when its film arrives',
 }
 
