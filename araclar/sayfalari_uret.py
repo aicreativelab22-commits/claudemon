@@ -37,7 +37,7 @@ def uret(dil, D):
             f'<figure class="detail-film film-player"><div class="film-frame"><video controls playsinline preload="none" poster="{ust}medya/{v}-kapak.jpg" '
             f'src="{ust}medya/{v}.mp4" aria-label="{e(p["name"])}: {e(ad)}"></video><button type="button" class="film-play"><span aria-hidden="true">▶</span> '
             f'{D["izle"]} <small>{e(sure)}</small></button></div><figcaption>{e(ad)}</figcaption><p class="media-error" role="status" hidden></p></figure>'
-            for v, ad, sure in videolar) or f'<figure class="detail-film"><div class="film-frame"><img src="{ust}medya/{p["id"]}-kapak.jpg" alt="{e(p["alt"], quote=True)}" width="720" height="1280"></div></figure>'
+            for v, ad, sure in videolar) or f'<figure class="detail-film"><div class="film-frame"><img src="{ust}medya/{p.get("cover", p["id"] + "-kapak")}.jpg" alt="{e(p["alt"], quote=True)}" width="720" height="1280"></div></figure>'
         pano = p.get('board')
         pano = (f'<section class="detail-chain detail-board"><p>{e(pano["text"])}</p><figure><img src="{ust}medya/{pano["file"]}.jpg" alt="{e(pano["alt"], quote=True)}" '
                 f'width="{pano["w"]}" height="{pano["h"]}" loading="lazy" decoding="async"><figcaption>{e(pano["note"])}</figcaption></figure></section>') if pano else ''
@@ -53,7 +53,7 @@ def uret(dil, D):
         sonraki = projeler[(i + 1) % len(projeler)]
         aciklama = e(p['idea'], quote=True)
         baslik = e(f'{p["name"]} | Mon Digital')
-        kapak = videolar[0][0] if videolar else p['id']
+        kapak = videolar[0][0] + '-kapak' if videolar else p.get('cover', p['id'] + '-kapak')
         sayfa = f'''<!doctype html>
 <html lang="{dil}">
 <head>
@@ -66,7 +66,7 @@ def uret(dil, D):
 <meta property="og:site_name" content="Mon Digital">
 <meta property="og:title" content="{baslik}">
 <meta property="og:description" content="{aciklama}">
-<meta property="og:image" content="{ust}medya/{kapak}-kapak.jpg">
+<meta property="og:image" content="{ust}medya/{kapak}.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="stylesheet" href="{ust}stil.css">
 <link rel="icon" href="{ust}ikon.svg" type="image/svg+xml">

@@ -70,32 +70,17 @@ window.MON_PROJECTS = [
     "alt": "Krem fonda kırmızı Kremi dudak balmı tüpü"
   },
   {
-    "id": "quinzell",
+    "id": "quinzell", "gorselOnly": true, "cover": "quinzell-u2-model",
     "name": "QUINZELL",
     "title": "Üründen modele.",
     "tag": "Marka iş birliği",
-    "duration": "3 film",
-    "idea": "Bir ürün fotoğrafından ne kadar ileri gidilebilir? Quinzell’in hayalet model fotoğraflarından yola çıkarak model üzerinde görseller, renk alternatifleri ve üç kısa moda filmi hazırladık. Aynı ürünleri farklı renk ve sahnelerde ele alan çalışma, ekibin üretim öncesinde seçenekleri değerlendirmesine de alan açtı.",
+    "idea": "Bir ürün fotoğrafından ne kadar ileri gidilebilir? Quinzell’in hayalet model fotoğraflarından yola çıkarak model üzerinde görseller ve renk alternatifleri hazırladık. Aynı ürünleri farklı renk ve sahnelerde ele alan çalışma, ekibin üretim öncesinde seçenekleri değerlendirmesine de alan açtı.",
     "role": "Model giydirme, renk çalışması ve video üretimi tek süreçte ilerledi. Ekip, renk alternatiflerini model üzerinde görerek üretim kararlarını değerlendirebiliyor.",
-    "outputs": "Üç kısa moda filmi ve iki ürün için görsel dizi. Format: dikey film, dikey görsel.",
+    "outputs": "İki ürün için görsel dizi. Format: dikey görsel.",
     "status": "Quinzell ile marka iş birliği kapsamında hazırlandı.",
-    "films": [
-      ["quinzell-renk", "Renk değişimi", "18 sn"],
-      ["quinzell-gece", "Gece senin ritmin", "16 sn"],
-      ["quinzell", "Günün ritminde", "10 sn"]
-    ],
     "board": { "text": "Aynı ürün, önce mankende, sonra model üzerinde: ön, üç çeyrek, yan ve arka.", "file": "quinzell-uretim-modele", "w": 1600, "h": 1312, "alt": "Beyaz şeritli eşofman takımı: ön, üç çeyrek, yan ve arka açılarda önce gerçek ürün, sonra model üzerinde", "note": "Kaynak fotoğraflar değiştirilmedi. Yan görünüm için en yakın mevcut kaynak açı kullanıldı." },
-    "flow": ["Kaynak fotoğraf", "Model üzerinde", "Renk alternatifleri", "Film"],
+    "flow": ["Kaynak fotoğraf", "Model üzerinde", "Renk alternatifleri"],
     "chains": [
-      {
-        "title": "Lacivert-krem takım",
-        "items": [
-          ["quinzell-u1-manken", "Kaynak fotoğraf: hayalet model", 640, 853],
-          ["quinzell-u1-model", "Üretilen görsel: model üzerinde", 640, 960],
-          ["quinzell-u1-renk1", "Üretilen görsel: adaçayı renk alternatifi", 640, 960],
-          ["quinzell-u1-renk2", "Üretilen görsel: bordo renk alternatifi", 640, 960]
-        ]
-      },
       {
         "title": "Şeritli eşofman takımı",
         "items": [
@@ -107,7 +92,7 @@ window.MON_PROJECTS = [
       }
     ],
     "stills": [],
-    "alt": "Koşu bandında lacivert-krem Quinzell takımıyla yürüyen kadın"
+    "alt": "Aynı takımın siyah renkte model üzerindeki görünümü"
   },
   {
     "id": "frutibon",

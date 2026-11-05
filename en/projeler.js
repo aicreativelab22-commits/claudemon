@@ -1,6 +1,20 @@
 // İngilizce proje içeriği. Yapı ve dosya adları ../projeler.js ile aynı kalır; değiştirince araclar/sayfalari_uret.py yeniden çalıştırılır.
 window.MON_PROJECTS = [
   {
+    "id": "happy-to-wear",
+    "name": "HAPPY TO WEAR",
+    "title": "Real shoot, limitless scenes.",
+    "tag": "Brand collaboration · Hybrid production",
+    "video": "happy-to-wear-haussmann",
+    "duration": "12 sec",
+    "idea": "Happy to Wear did the shoot and sent us the images. Starting from them, we used AI to take the same outfit into new scenes: close-ups against a black backdrop, movement in a Haussmann salon with a gold mirror. The real shoot laid the foundation; AI extended the stage.",
+    "role": "AI-assisted scene and motion production from the brand’s shoot images, film editing.",
+    "outputs": "12-second fashion film. Format: vertical, 9:16.",
+    "status": "Made as part of a brand collaboration with Happy to Wear. Photography: Happy to Wear.",
+    "stills": [],
+    "alt": "A woman in a white vest, wide-leg trousers and a beaded headpiece against a black backdrop"
+  },
+  {
     "id": "mentos",
     "name": "MENTOS",
     "title": "In the rhythm of the city.",
@@ -56,44 +70,17 @@ window.MON_PROJECTS = [
     "alt": "A red Kremi lip balm tube on a cream background"
   },
   {
-    "id": "happy-to-wear",
-    "name": "HAPPY TO WEAR",
-    "title": "Your day changes, your sparkle stays.",
-    "tag": "Brand collaboration",
-    "duration": "15 sec",
-    "idea": "We explored a single outfit through the day’s changing light and atmosphere. Taking the beige trench coat and gold sequin skirt into a city story from morning to evening, we highlighted the collection’s character across different moments.",
-    "role": "Scene design from the brand’s products, AI-assisted visual and motion production, film editing.",
-    "outputs": "15-second fashion film. Format: vertical, 9:16.",
-    "status": "Made as part of a brand collaboration with Happy to Wear.",
-    "stills": [],
-    "alt": "A woman walking across a sunny stone square in a beige trench coat and gold sequin skirt"
-  },
-  {
-    "id": "quinzell",
+    "id": "quinzell", "gorselOnly": true, "cover": "quinzell-u2-model",
     "name": "QUINZELL",
-    "title": "From ghost mannequin to fashion film.",
+    "title": "From product to model.",
     "tag": "Brand collaboration",
-    "duration": "3 films",
-    "idea": "How far can a single product photo go? Starting from Quinzell’s ghost mannequin photos, we created on-model visuals, color alternatives and three short fashion films. Showing the same products in different colors and scenes, the work also gave the team room to weigh their options before production.",
+    "idea": "How far can a single product photo go? Starting from Quinzell’s ghost mannequin photos, we created on-model visuals and color alternatives. Showing the same products in different colors and scenes, the work also gave the team room to weigh their options before production.",
     "role": "Model styling, color work and video production moved forward in one process. The team can weigh production decisions by seeing the color alternatives on a model.",
-    "outputs": "Three short fashion films and visual series for two products. Format: vertical film, vertical visuals.",
+    "outputs": "Visual series for two products. Format: vertical visuals.",
     "status": "Made as part of a brand collaboration with Quinzell.",
-    "films": [
-      ["quinzell-renk", "Color change", "18 sec"],
-      ["quinzell-gece", "The night is your rhythm", "16 sec"],
-      ["quinzell", "In the rhythm of the day", "10 sec"]
-    ],
-    "flow": ["Source photo", "On model", "Color alternatives", "Film"],
+    "board": { "text": "The same product, first on the mannequin, then on a model: front, three-quarter, side and back.", "file": "quinzell-product-to-model", "w": 1600, "h": 1312, "alt": "A white striped tracksuit at front, three-quarter, side and back angles: first the real product, then on a model", "note": "Source photos were not altered. The closest available source angle was used for the side view." },
+    "flow": ["Source photo", "On model", "Color alternatives"],
     "chains": [
-      {
-        "title": "Navy and cream set",
-        "items": [
-          ["quinzell-u1-manken", "Source photo: ghost mannequin", 640, 853],
-          ["quinzell-u1-model", "Generated visual: on model", 640, 960],
-          ["quinzell-u1-renk1", "Generated visual: sage color alternative", 640, 960],
-          ["quinzell-u1-renk2", "Generated visual: burgundy color alternative", 640, 960]
-        ]
-      },
       {
         "title": "Striped tracksuit",
         "items": [
@@ -105,7 +92,7 @@ window.MON_PROJECTS = [
       }
     ],
     "stills": [],
-    "alt": "A woman walking on a treadmill in a navy and cream Quinzell set"
+    "alt": "The same set in black, on a model"
   },
   {
     "id": "frutibon",
