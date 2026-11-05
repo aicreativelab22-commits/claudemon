@@ -77,9 +77,9 @@ window.MON_PROJECTS = [
     "tag": "Brand collaboration",
     "idea": "How far can a single product photo go? Starting from Quinzell’s ghost mannequin photos, we created on-model visuals and color alternatives. Showing the same products in different colors and scenes, the work also gave the team room to weigh their options before production.",
     "role": "Model styling, color work and video production moved forward in one process. The team can weigh production decisions by seeing the color alternatives on a model.",
-    "outputs": "On-model product visuals. Format: vertical visuals.",
+    "outputs": "On-model product visuals, campaign visuals. Format: vertical visuals.",
     "status": "Made as part of a brand collaboration with Quinzell.",
-    "board": { "text": "The same product, first on the mannequin, then on a model: front, three-quarter, side and back.", "file": "quinzell-product-to-model", "w": 1600, "h": 1312, "alt": "A white striped tracksuit at front, three-quarter, side and back angles: first the real product, then on a model", "note": "Source photos were not altered. The closest available source angle was used for the side view." },
+    "board": { "text": "The same product, first on the mannequin, then on a model: front, three-quarter, side and back.", "file": "quinzell-product-to-model", "w": 1600, "h": 1312, "alt": "A white striped tracksuit at front, three-quarter, side and back angles: first the real product, then on a model", "note": "Source photos were not altered. The closest available source angle was used for the side view.", "label": "On a model", "campaign": {"label": "Campaign visuals", "w": 720, "h": 964, "items": [["quinzell-kampanya-1", "A model walking between stone walls in the white striped tracksuit"], ["quinzell-kampanya-2", "Red zip and stripe detail on the white striped jacket in sunlight"], ["quinzell-kampanya-3", "The back of the white striped tracksuit, outdoors"], ["quinzell-kampanya-4", "A model standing outdoors in front of stone structures in the white striped tracksuit"]]} },
     "stills": [],
     "alt": "A white striped tracksuit on a model"
   },

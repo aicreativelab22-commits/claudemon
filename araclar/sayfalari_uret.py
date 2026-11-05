@@ -39,8 +39,14 @@ def uret(dil, D):
             f'{D["izle"]} <small>{e(sure)}</small></button></div><figcaption>{e(ad)}</figcaption><p class="media-error" role="status" hidden></p></figure>'
             for v, ad, sure in videolar) or f'<figure class="detail-film"><div class="film-frame"><img src="{ust}medya/{p.get("cover", p["id"] + "-kapak")}.jpg" alt="{e(p["alt"], quote=True)}" width="720" height="1280"></div></figure>'
         pano = p.get('board')
-        pano = (f'<section class="detail-chain detail-board"><p>{e(pano["text"])}</p><figure><img src="{ust}medya/{pano["file"]}.jpg" alt="{e(pano["alt"], quote=True)}" '
-                f'width="{pano["w"]}" height="{pano["h"]}" loading="lazy" decoding="async"><figcaption>{e(pano["note"])}</figcaption></figure></section>') if pano else ''
+        if pano:
+            k = pano['campaign']
+            kareler = ''.join(f'<img src="{ust}medya/{f}.jpg" alt="{e(a, quote=True)}" width="{k["w"]}" height="{k["h"]}" loading="lazy" decoding="async">' for f, a in k['items'])
+            pano = (f'<section class="detail-chain detail-board"><p>{e(pano["text"])}</p><div class="asamalar"><figure class="asama"><figcaption><span>1</span>{e(pano["label"])}</figcaption>'
+                    f'<img src="{ust}medya/{pano["file"]}.jpg" alt="{e(pano["alt"], quote=True)}" width="{pano["w"]}" height="{pano["h"]}" loading="lazy" decoding="async"><p class="asama-not">{e(pano["note"])}</p></figure>'
+                    f'<figure class="asama"><figcaption><span>2</span>{e(k["label"])}</figcaption><div class="kampanya-kareler">{kareler}</div></figure></div></section>')
+        else:
+            pano = ''
         akis = ('<p class="chain-flow">' + '<span aria-hidden="true"> → </span>'.join(e(a) for a in p['flow']) + '</p>') if p.get('flow') else ''
         bilgiler = ''.join(f'<div><dt>{k}</dt><dd>{e(v)}</dd></div>' for k, v in (
             (D['fikir'], p['idea']), (D['is_'], p['role']),

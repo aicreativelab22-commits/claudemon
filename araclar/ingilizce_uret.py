@@ -215,7 +215,7 @@ TABLO = {
     'Bu konu hakkında görüşmek için bize ulaşın.': 'Get in touch to talk about this.',
     '>Bize ulaşın <span': '>Get in touch <span',
     'Beyaz şeritli eşofman takımı, model üzerinde': 'A white striped tracksuit on a model',
-    'Model üzerinde ürün görselleri. Format: dikey görsel.': 'On-model product visuals. Format: vertical visuals.',
+    'Model üzerinde ürün görselleri, kampanya görselleri. Format: dikey görsel.': 'On-model product visuals, campaign visuals. Format: vertical visuals.',
     'Yaratıcı konsept, kampanya görselleri, film üretimi, sürekli içerik üretimi, reklam yönetimi, web sitesi, AI sistemleri ve sesli ajanlar.': 'Creative concepts, campaign visuals, film production, ongoing content production, ad management, websites, AI systems and voice agents.',
     '>Reklam yönetimi<': '>Ad management<',
     '>Web sitesi<': '>Website<',
