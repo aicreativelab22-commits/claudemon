@@ -29,7 +29,7 @@ window.MON_PROJECTS = [
   },
   {
     "id": "bps",
-    "video": "bps-film",
+    "video": "bps-reklam",
     "name": "BPS",
     "title": "A world in every drop.",
     "tag": "Brand collaboration",
@@ -39,7 +39,7 @@ window.MON_PROJECTS = [
     "outputs": "16-second film. Format: vertical, 9:16.",
     "status": "Made as part of a brand collaboration with BPS.",
     "stills": [],
-    "alt": "BPS essence bottles arranged with flowers and fruit in a stone niche"
+    "alt": "BPS essence bottles lined up with flowers and fruit in front of a stone niche"
   },
   {
     "id": "dal",

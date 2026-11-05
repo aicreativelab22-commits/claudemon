@@ -29,7 +29,7 @@ window.MON_PROJECTS = [
   },
   {
     "id": "bps",
-    "video": "bps-film",
+    "video": "bps-reklam",
     "name": "BPS",
     "title": "Her damlada bir dünya.",
     "tag": "Marka iş birliği",
@@ -39,7 +39,7 @@ window.MON_PROJECTS = [
     "outputs": "16 saniyelik film. Format: dikey, 9:16.",
     "status": "BPS ile marka iş birliği kapsamında hazırlandı.",
     "stills": [],
-    "alt": "Taş bir nişte çiçek ve meyvelerle dizilmiş BPS esans şişeleri"
+    "alt": "Taş bir nişin önünde çiçek ve meyvelerle dizilmiş BPS esans şişeleri"
   },
   {
     "id": "dal",

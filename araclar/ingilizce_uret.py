@@ -173,7 +173,7 @@ TABLO = {
     '<span>16 sn</span>': '<span>16 sec</span>',
     'Gözleri kapalı, koku kağıdını koklayan kadın': 'A woman with closed eyes smelling a scent strip',
     'Çiğ damlalı lavanta dalı, BPS filminden kare': 'A dew-covered lavender sprig, a frame from the BPS film',
-    'Taş bir nişte çiçek ve meyvelerle dizilmiş BPS esans şişeleri': 'BPS essence bottles arranged with flowers and fruit in a stone niche',
+    'Taş bir nişin önünde çiçek ve meyvelerle dizilmiş BPS esans şişeleri': 'BPS essence bottles lined up with flowers and fruit in front of a stone niche',
     'Her damlada bir dünya.': 'A world in every drop.',
     'Görülmeyen bir şeyi, kokuyu anlattık: tek bir damladan çiçeklere, meyvelere ve vanilyaya uzanan 16 saniyelik bir film.': 'We told the story of something you can’t see, scent: a 16-second film that moves from a single drop to flowers, fruit and vanilla.',
     'Marka iş birliği · 16 sn': 'Brand collaboration · 16 sec',
