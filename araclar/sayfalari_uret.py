@@ -43,7 +43,8 @@ def uret(dil, D):
             k = pano['campaign']
             ciftler = ''.join(f'<img src="{ust}medya/{f}.jpg" alt="{e(a, quote=True)}" width="{pano["w"]}" height="{pano["h"]}" loading="lazy" decoding="async">' for f, a in pano['files'])
             film = (f'<figure class="asama asama-film"><figcaption><span>3</span>{e(pano["film"]["label"])}</figcaption>'
-                    '<div class="film-bos" aria-hidden="true"></div></figure>') if pano.get('film') else ''
+                    + (f'<img class="film-bos" src="{ust}medya/{pano["film"]["file"]}.jpg" alt="{e(pano["film"]["alt"], quote=True)}" width="720" height="1280" loading="lazy" decoding="async">'
+                       if pano['film'].get('file') else '<div class="film-bos" aria-hidden="true"></div>') + '</figure>') if pano.get('film') else ''
             kareler = ''.join(f'<img src="{ust}medya/{f}.jpg" alt="{e(a, quote=True)}" width="{k["w"]}" height="{k["h"]}" loading="lazy" decoding="async">' for f, a in k['items'])
             pano = (f'<section class="detail-chain detail-board"><p>{e(pano["text"])}</p><div class="asamalar"><figure class="asama"><figcaption><span>1</span>{e(pano["label"])}</figcaption>'
                     f'<div class="pano-ciftler">{ciftler}</div><p class="asama-not">{e(pano["note"])}</p></figure>'
