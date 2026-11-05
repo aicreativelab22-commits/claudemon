@@ -44,7 +44,7 @@ if (form) {
 }
 
 // Monna
-const YUZ = `<img class="monna" src="${EN ? '../' : ''}medya/monna-kucuk.webp" alt="" width="152" height="200" decoding="async">`;
+const YUZ = `<img class="monna" src="${EN ? '../' : ''}medya/monna-robot-kucuk.webp" alt="" width="153" height="200" decoding="async">`;
 const SECENEKLER = [T.s1, T.s2, T.s3];
 const ILETISIM = document.querySelector('#iletisim') ? '#iletisim' : 'index.html#iletisim';
 
