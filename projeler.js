@@ -38,7 +38,7 @@ window.MON_PROJECTS = [
     "outputs": "16 saniyelik film. Format: dikey, 9:16.",
     "status": "BPS ile marka iş birliği kapsamında hazırlandı.",
     "stills": [],
-    "alt": "Taş basamaklar üzerinde çiçek ve meyvelerle dizilmiş BPS esans şişeleri"
+    "alt": "Taş bir nişte çiçek ve meyvelerle dizilmiş BPS esans şişeleri"
   },
   {
     "id": "dal",
@@ -96,7 +96,7 @@ window.MON_PROJECTS = [
     "alt": "Pembe kemerli mekanda çilekli Frutibon yiyen üç arkadaş"
   },
   {
-    "id": "melty", "gorselOnly": true,
+    "id": "melty", "gorselOnly": true, "gizli": true,
     "name": "MELTY",
     "title": "Bir kare de kendine.",
     "tag": "Konsept marka",
@@ -110,17 +110,19 @@ window.MON_PROJECTS = [
     "alt": "Pembe fotoğraf kabininde MELTY dudak balmı"
   },
   {
-    "id": "luma", "gorselOnly": true,
+    "id": "luma",
     "name": "LUMA",
     "title": "Işık iz bırakır.",
     "tag": "Konsept marka",
+    "video": "luma-yuzuk",
+    "duration": "6 sn",
     "idea": "LUMA için gümüşün heykelsi formunu ve ışıkla değişen yüzeyini merkeze aldık. Atölye detaylarını, ürün yakın planlarını ve kullanım sahnelerini aynı seride buluşturarak takıyı hem bir tasarım nesnesi hem kişisel bir ifade olarak ele aldık.",
-    "role": "AI destekli sahne ve görsel üretimi.",
-    "outputs": "Dokuz karelik kampanya görsel serisi. Format: 4:5.",
+    "role": "AI destekli sahne, görsel ve hareket üretimi.",
+    "outputs": "6 saniyelik film, dokuz karelik kampanya görsel serisi. Format: dikey film, 4:5 görsel seri.",
     "status": "Konsept marka çalışmasıdır. Ticari bir marka iş birliği kapsamında hazırlanmamıştır.",
     "stills": [
       ["luma-pano", "LUMA × mon görsel serisi", 1000, 1250]
     ],
-    "alt": "Koyu fonda heykelsi gümüş LUMA yüzük"
+    "alt": "Üç parmağında gümüş LUMA yüzükleriyle elini kameraya uzatan kadın"
   }
 ];

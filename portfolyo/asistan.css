@@ -28,6 +28,13 @@ html:not(.js) .apply-form{display:none}
 .apply-done{padding:48px 28px;background:#223f36;color:var(--paper)}.apply-done:focus{outline:0}.apply-done h3{margin:0 0 10px;font:400 clamp(30px,3vw,42px)/1.12 var(--serif);color:var(--paper)}.apply-done p{margin:0;font-size:17px;color:var(--muted)}
 @media(prefers-reduced-motion:reduce){.apply-field input,.apply-field textarea{transition:none}}
 
+/* Alttaki Monna'nın konuşma balonu: logonun üstünde, harflere binmez */
+.closing-mark{margin-top:108px}
+.closing-balon{position:absolute;z-index:1;left:50%;bottom:calc(110.7% + 12px);width:max-content;max-width:min(330px,76vw);padding:10px 14px;background:#f0eee6;color:#14241f;font:500 15px/1.4 'Instrument Sans',Arial,Helvetica,sans-serif;letter-spacing:0;text-align:center;box-shadow:0 8px 24px rgba(0,0,0,.3);transform:translateX(-50%)}
+.closing-balon::before{content:"";position:absolute;left:calc(50% - 6px);bottom:-5px;width:12px;height:12px;background:#f0eee6;transform:rotate(45deg)}
+.closing-monna:hover .closing-balon{background:#fff}.closing-monna:hover .closing-balon::before{background:#fff}
+@media(max-width:700px){.closing-mark{margin-top:120px}.closing-balon{max-width:230px;padding:8px 12px;font-size:14px}}
+
 /* Monna sohbeti */
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
 .chat{position:fixed;right:20px;bottom:20px;z-index:20;display:flex;flex-direction:column;align-items:flex-end}

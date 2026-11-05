@@ -26,7 +26,7 @@ def gorsel(s, ust):
 
 def uret(dil, D):
     kaynak = open(os.path.join(KOK, D['veri']), encoding='utf-8').read()
-    projeler = json.loads(kaynak[kaynak.index('['):kaynak.rindex(']') + 1])
+    projeler = [p for p in json.loads(kaynak[kaynak.index('['):kaynak.rindex(']') + 1]) if not p.get('gizli')]
     ust = D['ust']
     ana = ust + ('en/index.html' if dil == 'en' else 'index.html')
     MAIL = f"mailto:hello@mondigital.ai?subject={D['konu']}"

@@ -50,7 +50,6 @@ TABLO = {
     '>Daha fazlası portfolyoda.<': '>More in the portfolio.<',
     'Zeytinlikte taş masada ekmek ve DAL zeytinyağı': 'Bread and DAL olive oil on a stone table in an olive grove',
     'Pembe fotoğraf kabininde MELTY dudak balmı': 'MELTY lip balm in a pink photo booth',
-    'Koyu fonda heykelsi gümüş LUMA yüzük': 'A sculptural silver LUMA ring on a dark background',
     '>Konsept marka<': '>Concept brand<',
     '>Tüm projeleri görün <span': '>See all projects <span',
     # Hizmetler
@@ -96,7 +95,6 @@ TABLO = {
     '>Projenizi gönderin <span': '>Send your project <span',
     '>Projenizi gönderin<': '>Send your project<',
     'Bilgilerinizi yalnızca talebinize yanıt vermek için kullanırız.': 'We only use your details to respond to your request.',
-    'Monna ile sohbet edin': 'Chat with Monna',
     'Zekeriyaköy, Sarıyer, İstanbul': 'Zekeriyaköy, Sarıyer, Istanbul',
     '>Instagram’da yazın<': '>Write to us on Instagram<',
     '>Hizmetleri görün<': '>See our services<',
@@ -157,7 +155,6 @@ TABLO = {
     # Luma
     '>Işık iz bırakır.<': '>Light leaves a trace.<',
     'LUMA için gümüşün heykelsi formunu ve ışıkla değişen yüzeyini merkeze aldık. Atölye detaylarını, ürün yakın planlarını ve kullanım sahnelerini aynı seride buluşturarak takıyı hem bir tasarım nesnesi hem kişisel bir ifade olarak ele aldık.': 'For LUMA, we centered on silver’s sculptural form and its surface that changes with light. Bringing workshop details, product close-ups and lifestyle scenes into one series, we treated jewelry as both a design object and a personal expression.',
-    'AI destekli sahne ve görsel üretimi.': 'AI-assisted scene and visual production.',
     'LUMA × mon: gümüş yüzük, küpe ve bilezikleri gösteren dokuz karelik kampanya serisi': 'LUMA × mon: a nine-frame campaign series showing a silver ring, earrings and bracelets',
     'LUMA × mon görsel serisi': 'LUMA × mon visual series',
     # Bölüm içi kısa etiketler
@@ -176,7 +173,7 @@ TABLO = {
     '<span>16 sn</span>': '<span>16 sec</span>',
     'Gözleri kapalı, koku kağıdını koklayan kadın': 'A woman with closed eyes smelling a scent strip',
     'Çiğ damlalı lavanta dalı, BPS filminden kare': 'A dew-covered lavender sprig, a frame from the BPS film',
-    'Taş basamaklar üzerinde çiçek ve meyvelerle dizilmiş BPS esans şişeleri': 'BPS essence bottles arranged with flowers and fruit on stone steps',
+    'Taş bir nişte çiçek ve meyvelerle dizilmiş BPS esans şişeleri': 'BPS essence bottles arranged with flowers and fruit in a stone niche',
     'Her damlada bir dünya.': 'A world in every drop.',
     'Görülmeyen bir şeyi, kokuyu anlattık: tek bir damladan çiçeklere, meyvelere ve vanilyaya uzanan 16 saniyelik bir film.': 'We told the story of something you can’t see, scent: a 16-second film that moves from a single drop to flowers, fruit and vanilla.',
     'Marka iş birliği · 16 sn': 'Brand collaboration · 16 sec',
@@ -197,8 +194,6 @@ TABLO = {
     'Happy to Wear ile marka iş birliği kapsamında hazırlandı. Fotoğraf çekimi: Happy to Wear.': 'Made as part of a brand collaboration with Happy to Wear. Photography: Happy to Wear.',
     'HAPPY TO WEAR filmi: Gerçek çekim, sınırsız sahne, 12 saniye': 'HAPPY TO WEAR film: Real shoot, limitless scenes, 12 seconds',
     # Yeni giriş ve filmsiz Quinzell
-    'Markanız için <em>kampanya görselleri ve reklam filmleri.</em>': 'Campaign visuals and ad films <em>for your brand.</em>',
-    'Ürünlerinizi model üzerinde, farklı sahnelerde ve hareketli hikayelerde gösteriyoruz. Yaratıcı fikirleri AI destekli üretimle hayata geçiriyor, projeye göre gerçek çekimle birleştiriyoruz.': 'We show your products on models, in different scenes and in moving stories. We bring creative ideas to life with AI-powered production, combining them with real shoots depending on the project.',
     'Bir ürün fotoğrafından ne kadar ileri gidilebilir? Quinzell’in hayalet model fotoğraflarından yola çıkarak model üzerinde görseller ve renk alternatifleri hazırladık. Aynı ürünleri farklı renk ve sahnelerde ele alan çalışma, ekibin üretim öncesinde seçenekleri değerlendirmesine de alan açtı.': 'How far can a single product photo go? Starting from Quinzell’s ghost mannequin photos, we created on-model visuals and color alternatives. Showing the same products in different colors and scenes, the work also gave the team room to weigh their options before production.',
     'Marka iş birliği · Görsel seri': 'Brand collaboration · Visual series',
     # AI sistemleri ve sesli asistanlar
@@ -220,6 +215,18 @@ TABLO = {
     '>Web sitesi<': '>Website<',
     '<strong>Çıktı:</strong> planlanıp yayına alınan reklam kampanyaları.': '<strong>Output:</strong> planned and launched ad campaigns.',
     '<strong>Çıktı:</strong> markanıza özel, yayına hazır web sitesi.': '<strong>Output:</strong> a ready-to-launch website made for your brand.',
+    'Ben Monna, yapay zeka asistanınız. Buradan konuşabiliriz.': 'I’m Monna, your AI assistant. We can talk here.',
+    'Fikirden yayına,<br><em>markanız için.</em>': 'From idea to launch,<br><em>for your brand.</em>',
+    'Fikirlerinizi görsellere, filmlere ve dijital çözümlere dönüştürüyoruz. Yaratıcı fikirleri AI destekli üretimle hayata geçiriyor, projeye göre gerçek çekimle birleştiriyoruz.': 'We turn your ideas into visuals, films and digital solutions. We bring creative ideas to life with AI-powered production, combining them with real shoots depending on the project.',
+    # Altyazılar Türkçe olduğu için İngilizce sayfada altyazısız film
+    'medya/mon-tanitim-altyazi.mp4': 'medya/mon-tanitim.mp4',
+    'Üç parmağında gümüş LUMA yüzükleriyle elini kameraya uzatan kadın': 'A woman reaching toward the camera with silver LUMA rings on three fingers',
+    'Yeşil mermer tezgahta DAL zeytinyağı şişesi ve zeytinler': 'A DAL olive oil bottle and olives on a green marble counter',
+    'Konsept marka, 6 sn': 'Concept brand, 6 sec',
+    'AI destekli sahne, görsel ve hareket üretimi.': 'AI-assisted scene, visual and motion production.',
+    '6 saniyelik film, dokuz karelik kampanya görsel serisi. Format: dikey film, 4:5 görsel seri.': '6-second film, nine-frame campaign visual series. Format: vertical film, 4:5 visual series.',
+    'LUMA filmi: Işık iz bırakır, 6 saniye': 'LUMA film: Light leaves a trace, 6 seconds',
+    'Melty şimdilik gizli: filmi gelince template etiketleri kaldırılır': 'Melty is hidden for now: remove the template tags when its film arrives',
 }
 
 # Türkçe harf içeren ama çevrilmemesi gereken özel adlar

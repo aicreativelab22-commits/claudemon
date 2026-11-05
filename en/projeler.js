@@ -38,7 +38,7 @@ window.MON_PROJECTS = [
     "outputs": "16-second film. Format: vertical, 9:16.",
     "status": "Made as part of a brand collaboration with BPS.",
     "stills": [],
-    "alt": "BPS essence bottles arranged with flowers and fruit on stone steps"
+    "alt": "BPS essence bottles arranged with flowers and fruit in a stone niche"
   },
   {
     "id": "dal",
@@ -96,7 +96,7 @@ window.MON_PROJECTS = [
     "alt": "Three friends eating strawberry Frutibon in a pink arched space"
   },
   {
-    "id": "melty", "gorselOnly": true,
+    "id": "melty", "gorselOnly": true, "gizli": true,
     "name": "MELTY",
     "title": "A frame for yourself.",
     "tag": "Concept brand",
@@ -110,17 +110,19 @@ window.MON_PROJECTS = [
     "alt": "MELTY lip balm in a pink photo booth"
   },
   {
-    "id": "luma", "gorselOnly": true,
+    "id": "luma",
     "name": "LUMA",
     "title": "Light leaves a trace.",
     "tag": "Concept brand",
+    "video": "luma-yuzuk",
+    "duration": "6 sec",
     "idea": "For LUMA, we centered on silver’s sculptural form and its surface that changes with light. Bringing workshop details, product close-ups and lifestyle scenes into one series, we treated jewelry as both a design object and a personal expression.",
-    "role": "AI-assisted scene and visual production.",
-    "outputs": "Nine-frame campaign visual series. Format: 4:5.",
+    "role": "AI-assisted scene, visual and motion production.",
+    "outputs": "6-second film, nine-frame campaign visual series. Format: vertical film, 4:5 visual series.",
     "status": "Concept brand work. Not created as part of a commercial brand collaboration.",
     "stills": [
       ["luma-pano", "LUMA × mon visual series", 1000, 1250]
     ],
-    "alt": "A sculptural silver LUMA ring on a dark background"
+    "alt": "A woman reaching toward the camera with silver LUMA rings on three fingers"
   }
 ];

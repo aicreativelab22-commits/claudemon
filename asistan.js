@@ -2,7 +2,7 @@
 (() => {
 'use strict';
 const EN = document.documentElement.lang === 'en';
-const T = EN ? {"konu": "Mon Digital project enquiry", "gonderemedik": "We couldn’t send it just now. ", "epostayla": "Send your message by email", "gonderiliyor": "Sending…", "tesekkur": "We’ve got it, thank you.", "donus": "We’ll reply to the address you gave.", "eposta": "Could you check your email address?", "sinir": "Too many attempts in a short time. Please try again shortly.", "s1": "What do you create?", "s2": "How do we start?", "s3": "What work have you done?", "selam": "Hi, I’m Monna. Shall we talk about what we can do for your project?", "selamKapat": "Close the greeting", "sorun": "Ask Monna", "asistan": "Your AI assistant", "sohbet": "Chat with Monna", "kimlik": "Mon Digital’s AI assistant", "kapat": "Close chat", "mesaj": "Your message", "sor": "Ask something…", "gonder": "Send", "not1": "It’s an AI and can make mistakes. What you write is sent to an AI provider to generate a reply; please put personal details in the ", "not2": "form", "not3": ".", "ilk": "Hi, I’m Monna. You can ask what Mon Digital does or tell me about an idea you have.", "yaziyor": "Monna is typing", "mola": "We’ve chatted quite a bit, so a short break. You can write to us in the meantime:", "cevap": "I can’t answer right now. You can reach us here:", "red": "I can’t help with that. For Mon Digital, you can reach us here:", "kopuk": "The connection dropped. You can reach us here:"} : {"konu": "Mon Digital proje görüşmesi", "gonderemedik": "Şu an gönderemedik. ", "epostayla": "Mesajınızı e-postayla iletin", "gonderiliyor": "Gönderiliyor…", "tesekkur": "Aldık, teşekkürler.", "donus": "Yazdığınız adresten size döneceğiz.", "eposta": "E-posta adresini kontrol eder misiniz?", "sinir": "Kısa sürede çok deneme yapıldı. Biraz sonra tekrar deneyin.", "s1": "Ne üretiyorsunuz?", "s2": "Nasıl başlarız?", "s3": "Hangi işleri yaptınız?", "selam": "Merhaba, ben Monna. Projeniz için neler yapabileceğimizi konuşalım mı?", "selamKapat": "Karşılama mesajını kapat", "sorun": "Monna’ya sorun", "asistan": "AI asistanınız", "sohbet": "Monna ile sohbet", "kimlik": "Mon Digital’in yapay zeka asistanı", "kapat": "Sohbeti kapat", "mesaj": "Mesajınız", "sor": "Bir şey sorun…", "gonder": "Gönder", "not1": "Yapay zekadır, hata yapabilir. Yazdıklarınız yanıt üretmek için yapay zeka sağlayıcısına iletilir; kişisel bilgilerinizi ", "not2": "forma", "not3": " yazın.", "ilk": "Merhaba, ben Monna. Mon Digital’in neler yaptığını sorabilir, aklınızdaki fikri anlatabilirsiniz.", "yaziyor": "Monna yazıyor", "mola": "Biraz fazla konuştuk, kısa bir mola. Bu arada bize yazabilirsiniz:", "cevap": "Şu an cevap veremiyorum. Bize buradan ulaşabilirsiniz:", "red": "Bu konuda yardımcı olamıyorum. Mon Digital için bize buradan ulaşabilirsiniz:", "kopuk": "Bağlantı koptu. Bize buradan ulaşabilirsiniz:"};
+const T = EN ? {"konu": "Mon Digital project enquiry", "gonderemedik": "We couldn’t send it just now. ", "epostayla": "Send your message by email", "gonderiliyor": "Sending…", "tesekkur": "We’ve got it, thank you.", "donus": "We’ll reply to the address you gave.", "eposta": "Could you check your email address?", "sinir": "Too many attempts in a short time. Please try again shortly.", "s1": "What do you create?", "s2": "How do we start?", "s3": "What work have you done?", "sorular": ["Hi, I’m Monna. Shall we talk about what we can do for your project?", "What world would you like to see your product in?", "Do you have a film or campaign visuals in mind?"], "selamKapat": "Close the greeting", "sorun": "Ask Monna", "asistan": "Your AI assistant", "sohbet": "Chat with Monna", "kimlik": "Mon Digital’s AI assistant", "kapat": "Close chat", "mesaj": "Your message", "sor": "Ask something…", "gonder": "Send", "not1": "It’s an AI and can make mistakes. What you write is sent to an AI provider to generate a reply; please put personal details in the ", "not2": "form", "not3": ".", "ilk": "Hi, I’m Monna. You can ask what Mon Digital does or tell me about an idea you have.", "yaziyor": "Monna is typing", "mola": "We’ve chatted quite a bit, so a short break. You can write to us in the meantime:", "cevap": "I can’t answer right now. You can reach us here:", "red": "I can’t help with that. For Mon Digital, you can reach us here:", "kopuk": "The connection dropped. You can reach us here:"} : {"konu": "Mon Digital proje görüşmesi", "gonderemedik": "Şu an gönderemedik. ", "epostayla": "Mesajınızı e-postayla iletin", "gonderiliyor": "Gönderiliyor…", "tesekkur": "Aldık, teşekkürler.", "donus": "Yazdığınız adresten size döneceğiz.", "eposta": "E-posta adresini kontrol eder misiniz?", "sinir": "Kısa sürede çok deneme yapıldı. Biraz sonra tekrar deneyin.", "s1": "Ne üretiyorsunuz?", "s2": "Nasıl başlarız?", "s3": "Hangi işleri yaptınız?", "sorular": ["Merhaba, ben Monna. Projeniz için neler yapabileceğimizi konuşalım mı?", "Ürününüzü hangi dünyada görmek isterdiniz?", "Aklınızda bir film mi, kampanya görselleri mi var?"], "selamKapat": "Karşılama mesajını kapat", "sorun": "Monna’ya sorun", "asistan": "AI asistanınız", "sohbet": "Monna ile sohbet", "kimlik": "Mon Digital’in yapay zeka asistanı", "kapat": "Sohbeti kapat", "mesaj": "Mesajınız", "sor": "Bir şey sorun…", "gonder": "Gönder", "not1": "Yapay zekadır, hata yapabilir. Yazdıklarınız yanıt üretmek için yapay zeka sağlayıcısına iletilir; kişisel bilgilerinizi ", "not2": "forma", "not3": " yazın.", "ilk": "Merhaba, ben Monna. Mon Digital’in neler yaptığını sorabilir, aklınızdaki fikri anlatabilirsiniz.", "yaziyor": "Monna yazıyor", "mola": "Biraz fazla konuştuk, kısa bir mola. Bu arada bize yazabilirsiniz:", "cevap": "Şu an cevap veremiyorum. Bize buradan ulaşabilirsiniz:", "red": "Bu konuda yardımcı olamıyorum. Mon Digital için bize buradan ulaşabilirsiniz:", "kopuk": "Bağlantı koptu. Bize buradan ulaşabilirsiniz:"};
 const MAIL = 'hello@mondigital.ai';
 const mailLink = (konu, govde) => `mailto:${MAIL}?subject=${encodeURIComponent(konu)}${govde ? `&body=${encodeURIComponent(govde)}` : ''}`;
 
@@ -50,7 +50,7 @@ const ILETISIM = document.querySelector('#iletisim') ? '#iletisim' : 'index.html
 
 const kok = document.createElement('div');
 kok.className = 'chat';
-kok.innerHTML = `<div class="chat-hello" role="status" hidden><button type="button" class="chat-hello-ac">${T.selam}</button><button type="button" class="chat-hello-kapat" aria-label="${T.selamKapat}">×</button></div>
+kok.innerHTML = `<div class="chat-hello" role="status" hidden><button type="button" class="chat-hello-ac">${T.sorular[0]}</button><button type="button" class="chat-hello-kapat" aria-label="${T.selamKapat}">×</button></div>
 <button type="button" class="chat-open" aria-expanded="false" aria-controls="chat-panel">${YUZ}<span class="chat-open-yazi"><strong>${T.sorun}</strong><small>${T.asistan}</small></span></button>
 <section class="chat-panel" id="chat-panel" role="dialog" aria-label="${T.sohbet}" hidden>
 <header class="chat-head">${YUZ}<div><strong>Monna</strong><small>${T.kimlik}</small></div><button type="button" class="chat-close" aria-label="${T.kapat}">×</button></header>
@@ -160,24 +160,49 @@ girdi.addEventListener('keydown', e => {
 });
 panel.addEventListener('click', e => { if (e.target.closest('.chat-note a')) ayarla(false, false); });
 
-// Karşılama balonu: sekme başına ve yarım saatte bir kez, 6 saniye sonra; odağı değiştirmez, sohbeti kendiliğinden açmaz.
-const SELAM_ANAHTAR = 'monna-selam';
+// Karşılama soruları: yarım saatte en çok üç kez, aralarında 2,5 dakika, her biri 10 saniye; odağı değiştirmez, sohbeti kendiliğinden açmaz.
+// Ziyaretçi kapatır veya sohbeti açarsa o süre boyunca susar.
+const SELAM_ANAHTAR = 'monna-selam', SELAM_EN_COK = 3, SELAM_ARA = 150000, SELAM_SURE = 10000, SELAM_OMUR = 1800;
 const ALAN = /(^|\.)mondigital\.ai$/.test(location.hostname) ? '; domain=.mondigital.ai' : '';
-let selamBitti = false;
-const selamGoruldu = () => {
- if (selamBitti) return true;
- try { if (sessionStorage.getItem(SELAM_ANAHTAR)) return true; } catch {}
- return document.cookie.split('; ').includes(`${SELAM_ANAHTAR}=1`);
+let selamYedek = { adet: 0, son: 0, bitti: false }, selamSayac = 0, selamBekle = 0;
+const selamOku = () => {
+ const c = document.cookie.split('; ').find(x => x.startsWith(`${SELAM_ANAHTAR}=`));
+ if (c) {
+  const [adet, son, bitti] = c.split('=')[1].split('.');
+  return { adet: +adet || 0, son: +son || 0, bitti: bitti === '1' };
+ }
+ if (Date.now() - selamYedek.son > SELAM_OMUR * 1000) selamYedek = { adet: 0, son: 0, bitti: false };
+ return selamYedek;
 };
-// www ile portfolyo ayrı alan adları: çerez ikisinde de geçerli, yalnız bu işareti taşır. Süresi var; oturum çerezi tarayıcı oturumu geri yüklenince hiç silinmiyordu.
-const selamIsaretle = () => {
- selamBitti = true;
- try { sessionStorage.setItem(SELAM_ANAHTAR, '1'); } catch {}
- document.cookie = `${SELAM_ANAHTAR}=1; path=/; Max-Age=1800; SameSite=Lax${ALAN}${location.protocol === 'https:' ? '; Secure' : ''}`;
+// www ile portfolyo ayrı alan adları: çerez ikisinde de geçerli, yalnız bu sayacı taşır.
+const selamYaz = durum => {
+ selamYedek = durum;
+ document.cookie = `${SELAM_ANAHTAR}=${durum.adet}.${durum.son}.${durum.bitti ? 1 : 0}; path=/; Max-Age=${SELAM_OMUR}; SameSite=Lax${ALAN}${location.protocol === 'https:' ? '; Secure' : ''}`;
 };
-function selamiBitir() {
+const selamSustu = durum => durum.bitti || durum.adet >= SELAM_EN_COK;
+function selamPlanla() {
+ clearTimeout(selamBekle);
+ const durum = selamOku();
+ if (!selamSustu(durum)) selamBekle = setTimeout(selamiDene, Math.max(6000, durum.son + SELAM_ARA - Date.now()));
+}
+function selamGizle() {
+ clearTimeout(selamSayac);
+ if (selam.hidden) return;
  selam.hidden = true;
- selamIsaretle();
+ selamPlanla();
+}
+function selamiBitir() {
+ clearTimeout(selamSayac);
+ clearTimeout(selamBekle);
+ selam.hidden = true;
+ selamYaz({ ...selamOku(), bitti: true });
+}
+function selamZamani() {
+ clearTimeout(selamSayac);
+ selamSayac = setTimeout(() => {
+  if (selam.matches(':hover') || selam.contains(document.activeElement)) selamZamani();
+  else selamGizle();
+ }, SELAM_SURE);
 }
 const formDolu = () => {
  const a = document.activeElement;
@@ -214,7 +239,7 @@ const denetle = () => {
  kok.classList.toggle('is-over-film', eylemler().some(kucukBinen) || filmler().some(f => oynayan(f) && kucukBinen(f)));
  if (!selam.hidden && !selam.contains(document.activeElement)) {
   const b = selam.getBoundingClientRect();
-  if (!selamUygun() || eylemler().some(e => kesisir(e, b.left, b.top, b.right, b.bottom, 0))) selamiBitir();
+  if (!selamUygun() || eylemler().some(e => kesisir(e, b.left, b.top, b.right, b.bottom, 0))) selamGizle();
  }
 };
 const iste = () => { if (!bekliyor) { bekliyor = true; requestAnimationFrame(denetle); } };
@@ -238,9 +263,11 @@ if (hedefler.length && 'IntersectionObserver' in window) {
 }
 
 function selamiDene() {
- if (selamGoruldu()) return;
+ const durum = selamOku();
+ if (selamSustu(durum) || !selam.hidden) return;
  denetle();
  if (selamUygun()) {
+  kok.querySelector('.chat-hello-ac').textContent = T.sorular[durum.adet % T.sorular.length];
   // Geniş ekranda önce düğmenin yanı, olmazsa üstü; boş yer yoksa kaydırınca yeniden denenir.
   for (const yan of innerWidth >= 900 ? [true, false] : [false]) {
    selam.classList.toggle('yan', yan);
@@ -248,17 +275,21 @@ function selamiDene() {
    selam.style.animation = 'none';
    const b = selam.getBoundingClientRect();
    selam.style.animation = '';
-   if (!eylemler().some(e => kesisir(e, b.left, b.top, b.right, b.bottom, 0))) { selamIsaretle(); return; }
+   if (!eylemler().some(e => kesisir(e, b.left, b.top, b.right, b.bottom, 0))) {
+    selamYaz({ adet: durum.adet + 1, son: Date.now(), bitti: false });
+    selamZamani();
+    return;
+   }
    selam.hidden = true;
   }
  }
- setTimeout(selamiDene, 2000);
+ selamBekle = setTimeout(selamiDene, 2000);
 }
 kok.querySelector('.chat-hello-ac').addEventListener('click', () => ayarla(true));
 const selamKapat = () => { selamiBitir(); ac.focus({ preventScroll: true }); };
 kok.querySelector('.chat-hello-kapat').addEventListener('click', selamKapat);
 selam.addEventListener('keydown', e => { if (e.key === 'Escape') selamKapat(); });
-document.addEventListener('play', e => { if (!e.target.classList.contains('film-teaser') && !selam.hidden) selamiBitir(); }, true);
-document.addEventListener('focusin', e => { if (!selam.hidden && e.target.closest && e.target.closest('.apply-form')) selamiBitir(); });
-if (!selamGoruldu()) setTimeout(selamiDene, 6000);
+document.addEventListener('play', e => { if (!e.target.classList.contains('film-teaser')) selamGizle(); }, true);
+document.addEventListener('focusin', e => { if (e.target.closest && e.target.closest('.apply-form')) selamGizle(); });
+selamPlanla();
 })();

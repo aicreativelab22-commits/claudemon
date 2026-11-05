@@ -30,7 +30,7 @@ Hizmetler: yaratıcı konsept, kampanya görselleri, film üretimi (kısa reklam
 - Happy to Wear: marka iş birliği, hibrit üretim. Fotoğrafları marka çekti, Mon Digital bu görsellerden sahneleri ve hareketi yapay zekayla üretti. 12 saniyelik moda filmi.
 - BPS: marka iş birliği. Esans markası için koku notalarını görsele taşıyan 16 saniyelik film.
 - Quinzell: marka iş birliği. Ürün fotoğraflarından model görselleri, renk alternatifleri ve üç kısa moda filmi üretildi; ekip bu görsellerle üretim seçeneklerini değerlendiriyor.
-- DAL (zeytinyağı), Melty (dudak balmı), Luma (gümüş takı): stüdyonun konsept markaları, ticari marka iş birliği değil.
+- DAL (zeytinyağı), Luma (gümüş takı): stüdyonun konsept markaları, ticari marka iş birliği değil.
 - Kremi ve Frutibon: bağımsız konsept çalışmaları. Bu markalarla iş birliği veya müşteri ilişkisi yoktur, öyle anlatmazsın.
 Tüm işler Portfolyo sayfasında.
 

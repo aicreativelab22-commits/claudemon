@@ -1,7 +1,7 @@
 // Ana sayfa: proje penceresi. Pencere içeriği araclar/sayfalari_uret.py ile aynı düzendedir.
 (() => {
 'use strict';
-const projects=window.MON_PROJECTS;
+const projects=window.MON_PROJECTS.filter(p=>!p.gizli);
 const dialog=document.querySelector('#project-dialog');
 const content=document.querySelector('#dialog-content');
 const EN=document.documentElement.lang==='en';
