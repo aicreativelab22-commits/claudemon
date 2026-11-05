@@ -32,7 +32,7 @@ TABLO = {
     'Mon Digital, AI destekli kreatif stüdyo': 'Mon Digital, an AI-powered creative studio',
     '>Projenizi anlatın <span': '>Tell us about your project <span',
     '>Projenizi anlatın<': '>Tell us about your project<',
-    '>Portfolyoyu keşfedin<': '>Explore the portfolio<',
+    '>Portfolyoyu keşfedin <span': '>Explore the portfolio <span',
     # Seçilmiş işler
     '>Seçilmiş işler<': '>Selected work<',
     'Rumeli Hisarı önünde sahil yolu, Mentos filminden kare': 'The seaside road in front of Rumeli Hisarı, a frame from the Mentos film',
