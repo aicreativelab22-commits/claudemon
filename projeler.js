@@ -73,13 +73,13 @@ window.MON_PROJECTS = [
   {
     "id": "quinzell", "gorselOnly": true, "cover": "quinzell-beyaz-model",
     "name": "QUINZELL",
-    "title": "Üründen modele.",
+    "title": "Askıdan sahneye.",
     "tag": "Marka iş birliği",
     "idea": "Bir ürün fotoğrafından ne kadar ileri gidilebilir? Quinzell’in hayalet model fotoğraflarından yola çıkarak model üzerinde görseller ve renk alternatifleri hazırladık. Aynı ürünleri farklı renk ve sahnelerde ele alan çalışma, ekibin üretim öncesinde seçenekleri değerlendirmesine de alan açtı.",
     "role": "Model giydirme, renk çalışması ve video üretimi tek süreçte ilerledi. Ekip, renk alternatiflerini model üzerinde görerek üretim kararlarını değerlendirebiliyor.",
     "outputs": "Model üzerinde ürün görselleri, kampanya görselleri. Format: dikey görsel.",
     "status": "Quinzell ile marka iş birliği kapsamında hazırlandı.",
-    "board": { "text": "Aynı ürün, önce mankende, sonra model üzerinde: ön, üç çeyrek, yan ve arka.", "file": "quinzell-uretim-modele", "w": 1600, "h": 1312, "alt": "Beyaz şeritli eşofman takımı: ön, üç çeyrek, yan ve arka açılarda önce gerçek ürün, sonra model üzerinde", "note": "Kaynak fotoğraflar değiştirilmedi. Yan görünüm için en yakın mevcut kaynak açı kullanıldı.", "label": "Model üzerinde", "film": {"label": "Reklam filmi"}, "campaign": {"label": "Kampanya görselleri", "w": 720, "h": 964, "items": [["quinzell-kampanya-1", "Beyaz şeritli eşofman takımıyla taş duvarlar arasında yürüyen model"], ["quinzell-kampanya-3", "Açık havada beyaz şeritli eşofman takımının arkası"], ["quinzell-kampanya-4", "Beyaz şeritli eşofman takımıyla açık havada taş yapıların önünde duran model"]]} },
+    "board": { "text": "Aynı ürün, önce mankende, sonra model üzerinde: önden ve arkadan.", "files": [["quinzell-on", "Beyaz şeritli eşofman takımı önden: önce gerçek ürün, sonra model üzerinde"], ["quinzell-arka", "Beyaz şeritli eşofman takımı arkadan: önce gerçek ürün, sonra model üzerinde"]], "w": 800, "h": 632, "note": "Kaynak fotoğraflar değiştirilmedi.", "label": "Model üzerinde", "film": {"label": "Reklam filmi"}, "campaign": {"label": "Kampanya görselleri", "w": 720, "h": 964, "items": [["quinzell-kampanya-1", "Beyaz şeritli eşofman takımıyla taş duvarlar arasında yürüyen model"], ["quinzell-kampanya-3", "Açık havada beyaz şeritli eşofman takımının arkası"], ["quinzell-kampanya-4", "Beyaz şeritli eşofman takımıyla açık havada taş yapıların önünde duran model"]]} },
     "stills": [],
     "alt": "Beyaz şeritli eşofman takımı, model üzerinde"
   },
