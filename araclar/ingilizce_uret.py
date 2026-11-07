@@ -160,7 +160,7 @@ TABLO = {
     # Bölüm içi kısa etiketler
     # Giriş filmi, Happy to Wear, BPS ve Askıdan sahneye
     'Mon Digital stüdyo filmi': 'Mon Digital studio film',
-    '</span> Filmi izle <small>28 sn</small>': '</span> Watch the film <small>28 sec</small>',
+    '</span> Filmi izle <small>29 sn</small>': '</span> Watch the film <small>28 sec</small>',
     '<strong>Mon Digital</strong> <span>Stüdyo filmi</span>': '<strong>Mon Digital</strong> <span>Studio film</span>',
     'Marka iş birliği · Hibrit üretim · 2 film': 'Brand collaboration · Hybrid production · 2 films',
     'Marka iş birliği · Hibrit üretim': 'Brand collaboration · Hybrid production',
@@ -226,10 +226,10 @@ TABLO = {
     '<strong>Çıktı:</strong> planlanıp yayına alınan reklam kampanyaları.': '<strong>Output:</strong> planned and launched ad campaigns.',
     '<strong>Çıktı:</strong> markanıza özel, yayına hazır web sitesi.': '<strong>Output:</strong> a ready-to-launch website made for your brand.',
     'Ben Monna, yapay zeka asistanınız. Buradan konuşabiliriz.': 'I’m Monna, your AI assistant. We can talk here.',
-    'Fikirden yayına,<br><em>markanız için.</em>': 'From idea to launch,<br><em>for your brand.</em>',
+    'Fikirden yayına,<br><em>markanız için.</em>': 'Your brand,<br><em>its own world.</em>',
     'Fikirlerinizi görsellere, filmlere ve dijital çözümlere dönüştürüyoruz. Yaratıcı fikirleri AI destekli üretimle hayata geçiriyor, projeye göre gerçek çekimle birleştiriyoruz.': 'We turn your ideas into visuals, films and digital solutions. We bring creative ideas to life with AI-powered production, combining them with real shoots depending on the project.',
     # Altyazılar Türkçe olduğu için İngilizce sayfada altyazısız film
-    'medya/mon-tanitim-altyazi.mp4': 'medya/mon-tanitim.mp4',
+    'medya/mon-studyo-filmi.mp4': 'medya/mon-tanitim.mp4',
     'Üç parmağında gümüş LUMA yüzükleriyle elini kameraya uzatan kadın': 'A woman reaching toward the camera with silver LUMA rings on three fingers',
     'Yeşil mermer tezgahta DAL zeytinyağı şişesi ve zeytinler': 'A DAL olive oil bottle and olives on a green marble counter',
     'Konsept marka, 14 sn': 'Concept brand, 14 sec',
