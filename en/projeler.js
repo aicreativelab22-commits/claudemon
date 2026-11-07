@@ -8,7 +8,7 @@ window.MON_PROJECTS = [
     "video": "happy-to-wear-haussmann",
     "duration": "12 sec",
     "films": [["happy-to-wear-haussmann", "Real shoot, limitless scenes.", "12 sec"], ["happy-to-wear-behind", "Be/Hind", "13 sec"]],
-    "idea": "Happy to Wear did the shoot and sent us the images. Starting from them, we used AI to take the same outfit into new scenes: close-ups against a black backdrop, movement in a Haussmann salon with a gold mirror. The real shoot laid the foundation; AI extended the stage.",
+    "idea": "We made two fashion films for Happy to Wear, taking the brand’s outfits into different scenes: close-ups against a black backdrop, a Haussmann salon with a gold mirror, and quiet moments in a sunlit old apartment. Real shoot and AI come together in the same story.",
     "role": "AI-assisted scene and motion production from the brand’s shoot images, film editing.",
     "outputs": "Two fashion films: 12 and 13 seconds. Format: vertical, 9:16.",
     "status": "Made as part of a brand collaboration with Happy to Wear. Photography: Happy to Wear.",
@@ -116,11 +116,11 @@ window.MON_PROJECTS = [
     "name": "LUMA",
     "title": "Light leaves a trace.",
     "tag": "Concept brand",
-    "video": "luma-muzikli",
-    "duration": "12 sec",
+    "video": "luma-film",
+    "duration": "14 sec",
     "idea": "For LUMA, we centered on silver’s sculptural form and its surface that changes with light. Bringing workshop details, product close-ups and lifestyle scenes into one series, we treated jewelry as both a design object and a personal expression.",
     "role": "AI-assisted scene, visual and motion production.",
-    "outputs": "12-second film, nine-frame campaign visual series. Format: vertical film, 4:5 visual series.",
+    "outputs": "14-second film, nine-frame campaign visual series. Format: vertical film, 4:5 visual series.",
     "status": "Concept brand work. Not created as part of a commercial brand collaboration.",
     "stills": [
       ["luma-pano", "LUMA × mon visual series", 1000, 1250]

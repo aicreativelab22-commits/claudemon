@@ -8,7 +8,7 @@ window.MON_PROJECTS = [
     "video": "happy-to-wear-haussmann",
     "duration": "12 sn",
     "films": [["happy-to-wear-haussmann", "Gerçek çekim, sınırsız sahne.", "12 sn"], ["happy-to-wear-behind", "Be/Hind", "13 sn"]],
-    "idea": "Happy to Wear çekimi yaptı, görselleri bize gönderdi. Bu görsellerden yola çıkarak aynı kombini yapay zekayla yeni sahnelere taşıdık: siyah fonda yakın planlar, altın aynalı bir Haussmann salonunda hareket. Gerçek çekim işin temelini kurdu, yapay zeka sahneyi genişletti.",
+    "idea": "Happy to Wear için iki moda filmi hazırladık. Markanın kombinlerini farklı sahnelere taşıdık: siyah fonda yakın planlar, altın aynalı bir Haussmann salonu ve gün ışığı alan eski bir dairede sakin anlar. Gerçek çekimle yapay zekayı aynı hikayede buluşturduk.",
     "role": "Marka çekiminden gelen görsellerle AI destekli sahne ve hareket üretimi, film kurgusu.",
     "outputs": "İki moda filmi: 12 ve 13 saniye. Format: dikey, 9:16.",
     "status": "Happy to Wear ile marka iş birliği kapsamında hazırlandı. Fotoğraf çekimi: Happy to Wear.",
@@ -116,11 +116,11 @@ window.MON_PROJECTS = [
     "name": "LUMA",
     "title": "Işık iz bırakır.",
     "tag": "Konsept marka",
-    "video": "luma-muzikli",
-    "duration": "12 sn",
+    "video": "luma-film",
+    "duration": "14 sn",
     "idea": "LUMA için gümüşün heykelsi formunu ve ışıkla değişen yüzeyini merkeze aldık. Atölye detaylarını, ürün yakın planlarını ve kullanım sahnelerini aynı seride buluşturarak takıyı hem bir tasarım nesnesi hem kişisel bir ifade olarak ele aldık.",
     "role": "AI destekli sahne, görsel ve hareket üretimi.",
-    "outputs": "12 saniyelik film, dokuz karelik kampanya görsel serisi. Format: dikey film, 4:5 görsel seri.",
+    "outputs": "14 saniyelik film, dokuz karelik kampanya görsel serisi. Format: dikey film, 4:5 görsel seri.",
     "status": "Konsept marka çalışmasıdır. Ticari bir marka iş birliği kapsamında hazırlanmamıştır.",
     "stills": [
       ["luma-pano", "LUMA × mon görsel serisi", 1000, 1250]

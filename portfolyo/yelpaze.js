@@ -12,7 +12,7 @@ if (!open) return;
 const SIRA = ['happy-to-wear', 'mentos', 'bps', 'quinzell', 'kremi', 'luma', 'frutibon', 'dal', 'melty'];
 const siraNo = id => { const i = SIRA.indexOf(id); return i < 0 ? SIRA.length : i; };
 const projects = [...document.querySelectorAll('.work')].map(section => {
-  const film = section.querySelector(':scope > .film, :scope > .still');
+  const film = section.querySelector(':scope > .film, :scope > .film-cift > .film, :scope > .still');
   const video = film && film.querySelector('video');
   const poster = film && film.querySelector('img');
   if (!poster) return null;

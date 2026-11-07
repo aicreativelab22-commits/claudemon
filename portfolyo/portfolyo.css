@@ -83,6 +83,9 @@ dt{font-weight:600;margin-top:12px}
 .steps ol{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px 12px;margin:14px 0 34px;font-size:14px;line-height:1.35}
 .steps li img{width:100%;aspect-ratio:2/3;object-fit:cover;object-position:50% 20%;margin-bottom:7px}
 .more-films{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+/* İki ana film yan yana (Happy to Wear) */
+.film-cift{order:4;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:20px}.film-cift .film{margin:0;width:100%;max-width:none}
+.film-cift .play{padding:8px}.film-cift .play span{padding:0 10px;font-size:12.5px;gap:6px;white-space:nowrap}
 .more-films .film{margin:0;width:100%;max-width:none}
 .series img{width:84%}
 .more-films .play{padding:8px}
@@ -141,6 +144,8 @@ dt{font-weight:600;margin-top:12px}
 .steps{display:block}
 .steps ol{grid-template-columns:repeat(4,minmax(0,min(19vw,300px)));gap:18px;margin:16px 0 48px}
 .more-films{grid-template-columns:repeat(2,minmax(0,var(--film-w)));justify-content:start;gap:var(--gap)}
+.work.iki-film{grid-template-columns:minmax(0,1fr) calc(var(--film-w)*2 + 16px);--col:calc(100vw - var(--gutter)*2 - 18px - var(--film-w)*2 - 16px - var(--gap))}
+.film-cift{margin:0;gap:16px;align-self:start}.film-cift .play{padding:14px}.film-cift .play span{padding:0 18px;font-size:16px;gap:10px}
 .more-films .play{padding:14px}
 .more-films .play span{padding:0 18px;font-size:16px;gap:10px}
 .end{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);grid-template-rows:auto auto auto 1fr auto;column-gap:72px;align-items:start;padding:80px var(--gutter) 56px}
