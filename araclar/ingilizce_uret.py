@@ -48,7 +48,6 @@ TABLO = {
     'Marka iş birliği · Quinzell': 'Brand collaboration · Quinzell',
     # Portfolyoya geçiş
     '>Daha fazlası portfolyoda.<': '>More in the portfolio.<',
-    'Zeytinlikte taş masada ekmek ve DAL zeytinyağı': 'Bread and DAL olive oil on a stone table in an olive grove',
     'Pembe fotoğraf kabininde MELTY dudak balmı': 'MELTY lip balm in a pink photo booth',
     '>Konsept marka<': '>Concept brand<',
     '>Tüm projeleri görün <span': '>See all projects <span',
@@ -142,6 +141,7 @@ TABLO = {
     'Sahne tasarımı, AI destekli görsel ve hareket üretimi, kurgu.': 'Scene design, AI-assisted visual and motion production, editing.',
     '16 saniyelik film, dokuz karelik kampanya görsel serisi. Format: dikey film, 4:5 görsel seri.': '16-second film, nine-frame campaign visual series. Format: vertical film, 4:5 visual series.',
     'Konsept marka çalışmasıdır. Ticari bir marka iş birliği kapsamında hazırlanmamıştır.': 'Concept brand work. Not created as part of a commercial brand collaboration.',
+    'Mermer tezgahta zeytinlerle duran DAL zeytinyağı ambalajı': 'A DAL olive oil tin on a marble counter with olives',
     'DAL filmi: Kökünden sofrana, 16 saniye': 'DAL film: From root to table, 16 seconds',
     'DAL × mon: zeytin, yağ dokuları, portreler ve metal ambalajı buluşturan dokuz karelik görsel seri': 'DAL × mon: a nine-frame visual series bringing together olives, oil textures, portraits and metal packaging',
     'DAL × mon görsel serisi': 'DAL × mon visual series',

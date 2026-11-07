@@ -44,6 +44,7 @@ window.MON_PROJECTS = [
   },
   {
     "id": "dal",
+    "video": "dal-film",
     "name": "DAL",
     "title": "From root to table.",
     "tag": "Concept brand",
@@ -116,7 +117,7 @@ window.MON_PROJECTS = [
     "name": "LUMA",
     "title": "Light leaves a trace.",
     "tag": "Concept brand",
-    "video": "luma-film",
+    "video": "luma-son",
     "duration": "14 sec",
     "idea": "For LUMA, we centered on silver’s sculptural form and its surface that changes with light. Bringing workshop details, product close-ups and lifestyle scenes into one series, we treated jewelry as both a design object and a personal expression.",
     "role": "AI-assisted scene, visual and motion production.",

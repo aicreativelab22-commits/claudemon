@@ -44,6 +44,7 @@ window.MON_PROJECTS = [
   },
   {
     "id": "dal",
+    "video": "dal-film",
     "name": "DAL",
     "title": "Kökünden sofrana.",
     "tag": "Konsept marka",
@@ -116,7 +117,7 @@ window.MON_PROJECTS = [
     "name": "LUMA",
     "title": "Işık iz bırakır.",
     "tag": "Konsept marka",
-    "video": "luma-film",
+    "video": "luma-son",
     "duration": "14 sn",
     "idea": "LUMA için gümüşün heykelsi formunu ve ışıkla değişen yüzeyini merkeze aldık. Atölye detaylarını, ürün yakın planlarını ve kullanım sahnelerini aynı seride buluşturarak takıyı hem bir tasarım nesnesi hem kişisel bir ifade olarak ele aldık.",
     "role": "AI destekli sahne, görsel ve hareket üretimi.",
