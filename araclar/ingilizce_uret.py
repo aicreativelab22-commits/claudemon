@@ -78,7 +78,7 @@ TABLO = {
     'Marka bilgisi ve iş akışınıza göre araştırma, fikir geliştirme, içerik uyarlama ve operasyonu destekleyen yapay zeka yardımcıları kurarız.': 'We build AI assistants around your brand knowledge and workflow to support research, ideation, content adaptation and operations.',
     # Hakkında
     '>Mon Digital hakkında<': '>About Mon Digital<',
-    '2019’da kurulan MON Digital, markalar için yaratıcı konseptler, kampanya görselleri ve reklam filmleri üreten bir kreatif stüdyo.': 'Founded in 2019, MON Digital is a creative studio producing creative concepts, campaign visuals and ad films for brands.',
+    '2020’de kurulan MON Digital, markalar için yaratıcı konseptler, kampanya görselleri ve reklam filmleri üreten bir kreatif stüdyo.': 'Founded in 2020, MON Digital is a creative studio producing creative concepts, campaign visuals and ad films for brands.',
     'MON’un kurucusu Melis Ay, Galatasaray Lisesi’nin ardından Bahçeşehir Üniversitesi’nde reklamcılık, Universidad San Jorge’de pazarlama eğitimi aldı. Dijital dünyaya 2017’de bir sosyal medya stajıyla adım attı; sonraki yıllarda dijital pazarlama, sosyal medya ve içerik üretimi üzerine çalıştı. Bugün MON’da markalar için AI destekli görseller ve reklam filmleri üretiyor.': 'Melis Ay, MON’s founder, studied at Galatasaray High School, then advertising at Bahçeşehir University and marketing at Universidad San Jorge. After entering the digital world through a social media internship in 2017, Melis went on to work in digital marketing, social media and content production. Today, at MON, Melis creates AI-powered visuals and ad films for brands.',
     '>Çalışma biçimi<': '>How we work<',
     '<strong>Fikir</strong><span>Ürünü ve hedefi birlikte netleştiriyor, konsepti buna göre kuruyoruz.': '<strong>Idea</strong><span>We clarify the product and the goal together and build the concept around them.',
@@ -198,7 +198,10 @@ TABLO = {
     'Quinzell projesini inceleyin': 'View the Quinzell project',
     'Happy to Wear çekimi yaptı, görselleri bize gönderdi. Bu görsellerden yola çıkarak aynı kombini yapay zekayla yeni sahnelere taşıdık: siyah fonda yakın planlar, altın aynalı bir Haussmann salonunda hareket. Gerçek çekim işin temelini kurdu, yapay zeka sahneyi genişletti.': 'Happy to Wear did the shoot and sent us the images. Starting from them, we used AI to take the same outfit into new scenes: close-ups against a black backdrop, movement in a Haussmann salon with a gold mirror. The real shoot laid the foundation; AI extended the stage.',
     'Marka çekiminden gelen görsellerle AI destekli sahne ve hareket üretimi, film kurgusu.': 'AI-assisted scene and motion production from the brand’s shoot images, film editing.',
-    '12 saniyelik moda filmi. Format: dikey, 9:16.': '12-second fashion film. Format: vertical, 9:16.',
+    'İki moda filmi: 12 ve 13 saniye. Format: dikey, 9:16.': 'Two fashion films: 12 and 13 seconds. Format: vertical, 9:16.',
+    'Diğer film: Be/Hind': 'Another film: Be/Hind',
+    'HAPPY TO WEAR filmi: Be/Hind, 13 saniye': 'HAPPY TO WEAR film: Be/Hind, 13 seconds',
+    'Uzun beyaz yelek elbise ve kemerle pencere önünde duran kadın': 'A woman in a long white vest dress with a belt, standing by a window',
     'Happy to Wear ile marka iş birliği kapsamında hazırlandı. Fotoğraf çekimi: Happy to Wear.': 'Made as part of a brand collaboration with Happy to Wear. Photography: Happy to Wear.',
     'HAPPY TO WEAR filmi: Gerçek çekim, sınırsız sahne, 12 saniye': 'HAPPY TO WEAR film: Real shoot, limitless scenes, 12 seconds',
     # Yeni giriş ve filmsiz Quinzell
