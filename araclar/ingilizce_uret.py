@@ -117,13 +117,13 @@ TABLO = {
     'Quinzell ile marka iş birliği kapsamında hazırlandı.': 'Made as part of a brand collaboration with Quinzell.',
     # Kremi
     '>Dört ton, bir dokunuş.<': '>Four shades, one touch.<',
-    '>Bağımsız konsept, 20 sn<': '>Independent concept, 20 sec<',
+    '>Bağımsız konsept, 18 sn<': '>Independent concept, 18 sec<',
     'Dört renk için, ilhamlarını görünür kılan bir anlatım kurduk. Peach, Cherry Coke, Strawberry Velvet ve Coffee tonlarını ürün, lezzet çağrışımı, doku ve dudak üzerindeki görünüm arasında ilerleyen kısa bir filmde buluşturduk.': 'For four colors, we built a narrative that makes their inspirations visible. We brought the Peach, Cherry Coke, Strawberry Velvet and Coffee shades together in a short film that moves between product, flavor association, texture and the look on the lips.',
     'Ürün ve doku planları, renk anlatımı, AI destekli görsel ve hareket üretimi, kurgu.': 'Product and texture shots, color storytelling, AI-assisted visual and motion production, editing.',
-    '20 saniyelik film. Format: dikey, 9:16.': '20-second film. Format: vertical, 9:16.',
+    '18 saniyelik film. Format: dikey, 9:16.': '18-second film. Format: vertical, 9:16.',
     'Bağımsız konsept çalışması. Kremi ile iş birliği veya müşteri ilişkisi iddiası taşımaz.': 'Independent concept work. It does not claim any collaboration or client relationship with Kremi.',
     'Müzik: “Bossa Antigua”, Kevin MacLeod (incompetech.com), CC BY 4.0 lisansı (creativecommons.org/licenses/by/4.0). Film için kısaltıldı; ses düzeyi ve giriş/çıkış yumuşatmaları düzenlendi.': 'Music: “Bossa Antigua”, Kevin MacLeod (incompetech.com), licensed under CC BY 4.0 (creativecommons.org/licenses/by/4.0). Shortened for the film; volume and fades adjusted.',
-    'KREMİ filmi: Dört ton, bir dokunuş, 20 saniye': 'KREMİ film: Four shades, one touch, 20 seconds',
+    'KREMİ filmi: Dört ton, bir dokunuş, 18 saniye': 'KREMİ film: Four shades, one touch, 18 seconds',
     'Krem fonda kırmızı Kremi dudak balmı tüpü': 'A red Kremi lip balm tube on a cream background',
     # Frutibon
     '>Bitter çikolata, bütün meyve.<': '>Dark chocolate, whole fruit.<',
