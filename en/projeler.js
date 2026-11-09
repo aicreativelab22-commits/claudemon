@@ -88,6 +88,7 @@ window.MON_PROJECTS = [
   },
   {
     "id": "frutibon",
+    "video": "frutibon-reklam",
     "name": "FRUTIBON",
     "title": "Dark chocolate, whole fruit.",
     "tag": "Independent concept",
@@ -97,7 +98,7 @@ window.MON_PROJECTS = [
     "outputs": "15-second film. Format: vertical, 9:16.",
     "status": "Independent concept work. It does not claim any collaboration or client relationship with Kahve Dünyası / Frutibon.",
     "stills": [],
-    "alt": "Three friends eating strawberry Frutibon in a pink arched space"
+    "alt": "A woman holding out a strawberry from a Frutibon pack at a pink table"
   },
   {
     "id": "melty", "gorselOnly": true, "gizli": true,

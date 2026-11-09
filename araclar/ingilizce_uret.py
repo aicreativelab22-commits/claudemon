@@ -133,7 +133,7 @@ TABLO = {
     '15 saniyelik film. Format: dikey, 9:16.': '15-second film. Format: vertical, 9:16.',
     'Bağımsız konsept çalışması. Kahve Dünyası / Frutibon ile iş birliği veya müşteri ilişkisi iddiası taşımaz.': 'Independent concept work. It does not claim any collaboration or client relationship with Kahve Dünyası / Frutibon.',
     'FRUTIBON filmi: Bitter çikolata, bütün meyve, 15 saniye': 'FRUTIBON film: Dark chocolate, whole fruit, 15 seconds',
-    'Pembe kemerli mekanda çilekli Frutibon yiyen üç arkadaş': 'Three friends eating strawberry Frutibon in a pink arched space',
+    'Pembe masada Frutibon paketinden çilek uzatan kadın': 'A woman holding out a strawberry from a Frutibon pack at a pink table',
     # DAL
     '>Kökünden sofrana.<': '>From root to table.<',
     '>Konsept marka, 16 sn<': '>Concept brand, 16 sec<',

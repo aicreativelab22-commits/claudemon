@@ -88,6 +88,7 @@ window.MON_PROJECTS = [
   },
   {
     "id": "frutibon",
+    "video": "frutibon-reklam",
     "name": "FRUTIBON",
     "title": "Bitter çikolata, bütün meyve.",
     "tag": "Bağımsız konsept",
@@ -97,7 +98,7 @@ window.MON_PROJECTS = [
     "outputs": "15 saniyelik film. Format: dikey, 9:16.",
     "status": "Bağımsız konsept çalışması. Kahve Dünyası / Frutibon ile iş birliği veya müşteri ilişkisi iddiası taşımaz.",
     "stills": [],
-    "alt": "Pembe kemerli mekanda çilekli Frutibon yiyen üç arkadaş"
+    "alt": "Pembe masada Frutibon paketinden çilek uzatan kadın"
   },
   {
     "id": "melty", "gorselOnly": true, "gizli": true,
