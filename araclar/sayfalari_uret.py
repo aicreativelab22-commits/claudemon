@@ -41,7 +41,8 @@ def uret(dil, D):
         pano = p.get('board')
         if pano:
             k = pano['campaign']
-            ciftler = ''.join(f'<img src="{ust}medya/{f}.jpg" alt="{e(a, quote=True)}" width="{pano["w"]}" height="{pano["h"]}" loading="lazy" decoding="async">' for f, a in pano['files'])
+            ciftler = ''.join('<div class="os-grup"><div class="os-kareler">' + ''.join(f'<img src="{ust}medya/{f}.jpg" alt="{e(a, quote=True)}" width="{pano["w"]}" height="{pano["h"]}" loading="lazy" decoding="async">' for f, a in g['items'])
+                              + f'</div><p class="os-etiket">{e(g["label"])}</p></div>' for g in pano['groups'])
             film = (f'<figure class="asama asama-film"><figcaption><span>3</span>{e(pano["film"]["label"])}</figcaption>'
                     + (f'<div class="film-bos film-player"><div class="film-frame"><video controls playsinline preload="none" poster="{ust}medya/{pano["film"]["video"]}-kapak.jpg" '
                        f'src="{ust}medya/{pano["film"]["video"]}.mp4" aria-label="{e(p["name"])}: {e(pano["film"]["label"])}"></video><button type="button" class="film-play"><span aria-hidden="true">▶</span> '
@@ -49,7 +50,7 @@ def uret(dil, D):
                        if pano['film'].get('video') else '<div class="film-bos" aria-hidden="true"></div>') + '</figure>') if pano.get('film') else ''
             kareler = ''.join(f'<img src="{ust}medya/{f}.jpg" alt="{e(a, quote=True)}" width="{k["w"]}" height="{k["h"]}" loading="lazy" decoding="async">' for f, a in k['items'])
             pano = (f'<section class="detail-chain detail-board"><p>{e(pano["text"])}</p><div class="asamalar"><figure class="asama"><figcaption><span>1</span>{e(pano["label"])}</figcaption>'
-                    f'<div class="pano-ciftler">{ciftler}</div><p class="asama-not">{e(pano["note"])}</p></figure>'
+                    f'<div class="once-sonra">{ciftler}</div><p class="asama-not">{e(pano["note"])}</p></figure>'
                     f'<figure class="asama"><figcaption><span>2</span>{e(k["label"])}</figcaption><div class="kampanya-kareler">{kareler}</div></figure>{film}</div></section>')
         else:
             pano = ''

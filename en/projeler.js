@@ -74,15 +74,16 @@ window.MON_PROJECTS = [
     "alt": "A red Kremi lip balm tube on a cream background"
   },
   {
-    "id": "quinzell", "gorselOnly": true, "cover": "quinzell-beyaz-model",
+    "id": "quinzell", "video": "quinzell-film",
     "name": "QUINZELL",
     "title": "From hanger to stage.",
     "tag": "Brand collaboration",
+    "duration": "17 sec",
     "idea": "How far can a single product photo go? Starting from Quinzell’s ghost mannequin photos, we created on-model visuals and color alternatives. Showing the same products in different colors and scenes, the work also gave the team room to weigh their options before production.",
     "role": "Model styling, color work and video production moved forward in one process. The team can weigh production decisions by seeing the color alternatives on a model.",
     "outputs": "On-model product visuals, campaign visuals and a 17-second ad film. Format: vertical.",
     "status": "Made as part of a brand collaboration with Quinzell.",
-    "board": { "text": "The same product, first on the mannequin, then on a model: front and back.", "files": [["quinzell-front", "The white striped tracksuit from the front: first the real product, then on a model"], ["quinzell-back", "The white striped tracksuit from the back: first the real product, then on a model"]], "w": 800, "h": 632, "note": "Source photos were not altered.", "label": "On a model", "film": {"label": "Ad film", "video": "quinzell-film", "duration": "17 sec"}, "campaign": {"label": "Campaign visuals", "w": 720, "h": 960, "items": [["quinzell-kampanya-5", "A model walking between stone columns in the white striped tracksuit"], ["quinzell-kampanya-6", "A model standing in front of a stone-clad building in the white striped tracksuit"]]} },
+    "board": { "text": "The same product, first on the mannequin, then on a model: front and back.", "groups": [{"label": "Before · the real product", "items": [["quinzell-once-on", "A white striped tracksuit on a mannequin, from the front"], ["quinzell-once-arka", "A white striped tracksuit on a mannequin, from the back"]]}, {"label": "After · on a model", "items": [["quinzell-sonra-on", "The same tracksuit on a model, from the front"], ["quinzell-sonra-arka", "The same tracksuit on a model, from the back"]]}], "w": 480, "h": 720, "note": "Source photos were not altered.", "label": "On a model", "film": {"label": "Ad film", "video": "quinzell-film", "duration": "17 sec"}, "campaign": {"label": "Campaign visuals", "w": 720, "h": 960, "items": [["quinzell-kampanya-5", "A model walking between stone columns in the white striped tracksuit"], ["quinzell-kampanya-6", "A model standing in front of a stone-clad building in the white striped tracksuit"]]} },
     "stills": [],
     "alt": "A white striped tracksuit on a model"
   },
