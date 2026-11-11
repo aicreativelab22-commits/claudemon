@@ -155,7 +155,11 @@ const show = i => {
   playBtn.hidden = !p.src;
   document.body.classList.toggle('y-filmsiz', !p.src);
   apply(true);
+  // Adres seçili projeyi göstersin: kopyalanan link aynı projede açılır.
+  // replaceState geçmişi doldurmaz ve sayfayı kaydırmaz; ilk açılışta adrese dokunulmaz.
+  if (ready && location.hash !== '#' + p.id) history.replaceState(null, '', '#' + p.id);
 };
+let ready = false;
 
 // Sayfayı ancak her şey hazırken değiştir.
 const skip = document.querySelector('.skip');
@@ -168,6 +172,7 @@ const startId = location.hash.slice(1);
 const startAt = projects.findIndex(p => p.id === startId);
 measure();
 show(startAt < 0 ? 0 : startAt);
+ready = true;
 
 playBtn.addEventListener('click', () => { if (filmOn) { closeFilm(); apply(false); } else openFilm(); });
 prev.addEventListener('click', () => show(cur - 1));
