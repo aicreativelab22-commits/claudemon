@@ -122,9 +122,10 @@ window.MON_PROJECTS = [
     "tag": "Concept brand",
     "video": "luma-son",
     "duration": "14 sec",
+    "films": [["luma-son", "Light leaves a trace.", "14 sec"], ["luma-burgu-yuzuk", "Twisted pavé ring", "17 sec"]],
     "idea": "For LUMA, we centered on silver’s sculptural form and its surface that changes with light. Bringing workshop details, product close-ups and lifestyle scenes into one series, we treated jewelry as both a design object and a personal expression.",
     "role": "AI-assisted scene, visual and motion production.",
-    "outputs": "14-second film, nine-frame campaign visual series. Format: vertical film, 4:5 visual series.",
+    "outputs": "Two films: 14 and 17 seconds, a nine-frame campaign visual series. Format: vertical film, 4:5 visual series.",
     "status": "Concept brand work. Not created as part of a commercial brand collaboration.",
     "stills": [
       ["luma-pano", "LUMA × mon visual series", 1000, 1250]
