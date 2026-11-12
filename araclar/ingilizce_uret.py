@@ -293,8 +293,8 @@ def ortak(t):
 
 def site_sayfasi(kaynak, hedef, gecis_tr, gecis_en):
     t = cevir(oku(kaynak))
-    t = ortak(t).replace('="stil.css"', '="../stil.css"').replace('="hareket.css"', '="../hareket.css"').replace('="quinzell.css"', '="../quinzell.css"')
-    for b in ('ortak.js', 'site.js', 'asistan.js', 'ipek.js', 'hareket.js', 'quinzell.js'):
+    t = ortak(t).replace('="stil.css"', '="../stil.css"').replace('="hareket.css"', '="../hareket.css"').replace('="quinzell.css"', '="../quinzell.css"').replace('="evreler.css"', '="../evreler.css"')
+    for b in ('ortak.js', 'site.js', 'asistan.js', 'ipek.js', 'hareket.js', 'quinzell.js', 'evreler.js'):
         t = t.replace(f'src="{b}"', f'src="../{b}"')
     t = t.replace('"portfolyo/index.html"', '"../portfolyo/en/index.html"').replace('href="hizmetler.html"', 'href="services.html"')
     t = t.replace('href="projeler/', 'href="projects/')
