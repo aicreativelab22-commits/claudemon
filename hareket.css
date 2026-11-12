@@ -1,0 +1,10 @@
+/* Seçilmiş işler: her kare kendi filminden 3 saniyelik sessiz bir klip olarak oynar (hareket.js). */
+.feature-frames .kare{position:relative;display:block;overflow:hidden;background:var(--ink)}
+.feature-frames .kare img{display:block;width:100%;aspect-ratio:3/4;object-fit:cover}
+.kare-film{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .5s ease;pointer-events:none}
+.kare-film.on{opacity:1}
+.feature-frames .kare:nth-child(1) img,.feature-frames .kare:nth-child(1) video{object-position:50% 40%}
+.feature-frames .kare:nth-child(2) img,.feature-frames .kare:nth-child(2) video{object-position:50% 45%}
+.feature-frames .kare:nth-child(3) img,.feature-frames .kare:nth-child(3) video{object-position:50% 55%}
+.feature-link:hover .kare-film{filter:brightness(1.06)}
+@media(prefers-reduced-motion:reduce){.kare-film{display:none}}

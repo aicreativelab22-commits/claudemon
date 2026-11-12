@@ -201,7 +201,7 @@ TABLO = {
     '<span>1</span>Model üzerinde': '<span>1</span>On a model',
     '<span>2</span>Kampanya görselleri': '<span>2</span>Campaign visuals',
     '<span>3</span>Reklam filmi': '<span>3</span>Ad film',
-    'Quinzell projesini inceleyin': 'View the Quinzell project',
+    'Önce ve sonra: manken üzerindeki gerçek ürün ile model üzerindeki görsel arasında kaydırın': 'Before and after: drag between the real product on a mannequin and the image on a model',
     'Happy to Wear için iki moda filmi hazırladık. Markanın kombinlerini farklı sahnelere taşıdık: siyah fonda yakın planlar, altın aynalı bir Haussmann salonu ve gün ışığı alan eski bir dairede sakin anlar. Gerçek çekimle yapay zekayı aynı hikayede buluşturduk.': 'We made two fashion films for Happy to Wear, taking the brand’s outfits into different scenes: close-ups against a black backdrop, a Haussmann salon with a gold mirror, and quiet moments in a sunlit old apartment. Real shoot and AI come together in the same story.',
     'Marka çekiminden gelen görsellerle AI destekli sahne ve hareket üretimi, film kurgusu.': 'AI-assisted scene and motion production from the brand’s shoot images, film editing.',
     'İki moda filmi: 12 ve 13 saniye. Format: dikey, 9:16.': 'Two fashion films: 12 and 13 seconds. Format: vertical, 9:16.',
@@ -230,7 +230,7 @@ TABLO = {
     '>Web sitesi<': '>Website<',
     '<strong>Çıktı:</strong> planlanıp yayına alınan reklam kampanyaları.': '<strong>Output:</strong> planned and launched ad campaigns.',
     '<strong>Çıktı:</strong> markanıza özel, yayına hazır web sitesi.': '<strong>Output:</strong> a ready-to-launch website made for your brand.',
-    'Ben Monna, yapay zeka asistanınız. Buradan konuşabiliriz.': 'I’m Monna, your AI assistant. We can talk here.',
+    'Ben Mona, yapay zeka asistanınız. Buradan konuşabiliriz.': 'I’m Mona, your AI assistant. We can talk here.',
     'Fikirden yayına,<br><em>markanız için.</em>': 'Your brand,<br><em>its own world.</em>',
     'Fikirlerinizi görsellere, filmlere ve dijital çözümlere dönüştürüyoruz. Yaratıcı fikirleri AI destekli üretimle hayata geçiriyor, projeye göre gerçek çekimle birleştiriyoruz.': 'We turn your ideas into visuals, films and digital solutions. We bring creative ideas to life with AI-powered production, combining them with real shoots depending on the project.',
     # Altyazılar Türkçe olduğu için İngilizce sayfada altyazısız film
@@ -293,8 +293,8 @@ def ortak(t):
 
 def site_sayfasi(kaynak, hedef, gecis_tr, gecis_en):
     t = cevir(oku(kaynak))
-    t = ortak(t).replace('="stil.css"', '="../stil.css"')
-    for b in ('ortak.js', 'site.js', 'asistan.js', 'ipek.js'):
+    t = ortak(t).replace('="stil.css"', '="../stil.css"').replace('="hareket.css"', '="../hareket.css"').replace('="quinzell.css"', '="../quinzell.css"')
+    for b in ('ortak.js', 'site.js', 'asistan.js', 'ipek.js', 'hareket.js', 'quinzell.js'):
         t = t.replace(f'src="{b}"', f'src="../{b}"')
     t = t.replace('"portfolyo/index.html"', '"../portfolyo/en/index.html"').replace('href="hizmetler.html"', 'href="services.html"')
     t = t.replace('href="projeler/', 'href="projects/')

@@ -1,0 +1,56 @@
+/* Ana sayfa, Quinzell "Askıdan sahneye." bölümü: açık zemin, büyük başlık, sürüklenen önce/sonra (quinzell.js).
+   Kurallar .quinzell altında kalır; proje penceresindeki eski aşama düzenine dokunmaz. */
+.quinzell{--q-ink:#14241f;--q-muted:#3a4a3f;--q-tone:#dedccf;--q-gold:#d3b679;--q-gap:20px;
+  --q-body:clamp(1rem,.95rem + .22vw,1.125rem);--q-lead:clamp(1.25rem,1.05rem + .75vw,1.75rem);--q-ease:cubic-bezier(.2,.7,.2,1);
+  padding:clamp(72px,9vw,150px) 0;background:var(--paper);color:var(--q-ink);font-size:var(--q-body);line-height:1.55}
+.quinzell figure{margin:0;min-width:0}
+.quinzell :focus-visible{outline-color:var(--q-ink)}
+.q-grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:var(--q-gap);padding-inline:var(--gutter)}
+.quinzell h2{grid-column:1 / -1;font-size:clamp(2.625rem,.9rem + 6.5vw,7.5rem);line-height:.96;letter-spacing:-.025em}
+.q-one{margin-top:clamp(36px,4.4vw,72px);align-items:end}
+.q-asama figcaption{display:flex;align-items:baseline;gap:.5em;margin-bottom:14px;font-size:var(--q-lead);line-height:1.2;letter-spacing:-.01em}
+.q-drag{grid-column:1 / span 8;width:min(100%,calc(82svh * 4 / 3))}
+
+/* Önce/sonra: betik yoksa iki grup yan yana durur; betik varsa üst üste biner ve tutamakla açılır */
+.q-ba{position:relative;display:grid;grid-template-columns:1fr 1fr;gap:var(--q-gap);background:var(--q-tone);--pos:50%}
+.q-ba-layer{display:grid;grid-template-columns:1fr 1fr;min-width:0}
+.q-ba-layer img{width:100%;height:100%;aspect-ratio:2/3;object-fit:cover}
+.q-ba-handle,.q-ba-range,.q-ba-focus{display:none}
+.js .q-ba{display:block;aspect-ratio:4/3;overflow:hidden}
+.js .q-ba-layer{position:absolute;inset:0}
+.js .q-ba-before{clip-path:inset(0 calc(100% - var(--pos)) 0 0)}
+.js .q-ba-handle{display:block;position:absolute;top:0;bottom:0;left:var(--pos);width:4px;margin-left:-2px;background:var(--q-gold);pointer-events:none}
+.js .q-ba-handle::after{content:'←  →';white-space:pre;position:absolute;top:50%;left:50%;width:76px;height:52px;margin:-26px 0 0 -38px;background:var(--q-gold);color:var(--q-ink);display:grid;place-items:center;font-size:18px;line-height:1;transition:transform .25s var(--q-ease)}
+.js .q-ba:hover .q-ba-handle::after{transform:scale(1.07)}
+.js .q-ba-range{display:block;position:absolute;inset:0;width:100%;height:100%;margin:0;opacity:0;cursor:ew-resize;touch-action:pan-y}
+.js .q-ba-focus{display:block;position:absolute;inset:0;pointer-events:none}
+.js .q-ba-range:focus-visible + .q-ba-focus{outline:4px solid var(--q-ink);outline-offset:-8px}
+.q-legend{display:flex;justify-content:space-between;gap:var(--q-gap);margin-top:12px}
+.q-etiket{color:var(--q-muted)}
+
+.q-text{grid-column:9 / span 4}
+.q-story{max-width:34em}
+.q-tag{margin-top:16px;color:var(--q-muted)}
+.q-btn{display:inline-flex;align-items:center;justify-content:center;min-height:52px;margin-top:24px;padding:0 22px;background:var(--q-ink);color:var(--paper);font-weight:500;line-height:1.1;transition:background-color .25s var(--q-ease),transform .25s var(--q-ease)}
+.q-btn:hover{background:#274a40;transform:translateY(-2px)}
+.q-btn:active{transform:translateY(0) scale(.98)}
+
+.q-two{display:grid;grid-template-columns:minmax(0,2.72fr) minmax(0,1fr);column-gap:var(--q-gap);align-items:start;padding-inline:var(--gutter);margin-top:clamp(56px,7vw,112px)}
+.q-kampanya{display:grid;grid-template-columns:1fr 1fr;gap:var(--q-gap)}
+.q-kampanya img{width:100%;aspect-ratio:3/4;object-fit:cover}
+.q-film .film-play{left:0;bottom:0;transform:none}
+.q-film .media-error{color:var(--paper)}
+
+@media(max-width:1100px){
+.q-drag{grid-column:1 / -1}
+.q-text{grid-column:1 / span 10;margin-top:32px}
+}
+@media(max-width:700px){
+.quinzell{--q-gap:12px;padding-block:64px}
+.q-drag .q-ba{margin-inline:calc(var(--gutter) * -1)}
+.js .q-ba-handle::after{width:64px;height:48px;margin:-24px 0 0 -32px}
+.q-text{grid-column:1 / -1}
+.q-two{grid-template-columns:minmax(0,1fr);row-gap:48px}
+.q-film{max-width:62vw}
+}
+@media(prefers-reduced-motion:reduce){.q-btn,.js .q-ba-handle::after{transition:none}}

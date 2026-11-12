@@ -1,4 +1,4 @@
-/* Başvuru formu ve Monna sohbeti. Ana sayfa, hizmetler ve portfolyo kullanır; portfolyo/ altında aynı kopyası durur. */
+/* Başvuru formu ve Mona sohbeti. Ana sayfa, hizmetler ve portfolyo kullanır; portfolyo/ altında aynı kopyası durur. */
 .chat,.apply-form,.apply-done{--bg:#14241f;--panel:#1b332d;--paper:#f0eee6;--muted:#c6ccbf;--line:#3d5a50;--accent:#d3b679;--serif:'Bodoni Moda',Georgia,'Times New Roman',serif;--sans:'Instrument Sans',Arial,Helvetica,sans-serif}
 /* Portfolyo sayfasının genel kuralları farklı; bu bileşenler kendi temelini taşır. */
 .chat [hidden]{display:none!important}
@@ -28,14 +28,14 @@ html:not(.js) .apply-form{display:none}
 .apply-done{padding:48px 28px;background:#223f36;color:var(--paper)}.apply-done:focus{outline:0}.apply-done h3{margin:0 0 10px;font:400 clamp(30px,3vw,42px)/1.12 var(--serif);color:var(--paper)}.apply-done p{margin:0;font-size:17px;color:var(--muted)}
 @media(prefers-reduced-motion:reduce){.apply-field input,.apply-field textarea{transition:none}}
 
-/* Alttaki Monna'nın konuşma balonu: logonun üstünde, harflere binmez */
+/* Alttaki Mona'nın konuşma balonu: logonun üstünde, harflere binmez */
 .closing-mark{margin-top:108px}
 .closing-balon{position:absolute;z-index:1;left:50%;bottom:calc(110.7% + 12px);width:max-content;max-width:min(330px,76vw);padding:10px 14px;background:#f0eee6;color:#14241f;font:500 15px/1.4 'Instrument Sans',Arial,Helvetica,sans-serif;letter-spacing:0;text-align:center;box-shadow:0 8px 24px rgba(0,0,0,.3);transform:translateX(-50%)}
 .closing-balon::before{content:"";position:absolute;left:calc(50% - 6px);bottom:-5px;width:12px;height:12px;background:#f0eee6;transform:rotate(45deg)}
 .closing-monna:hover .closing-balon{background:#fff}.closing-monna:hover .closing-balon::before{background:#fff}
 @media(max-width:700px){.closing-mark{margin-top:120px}.closing-balon{max-width:230px;padding:8px 12px;font-size:14px}}
 
-/* Monna sohbeti */
+/* Mona sohbeti */
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
 .chat{position:fixed;right:20px;bottom:20px;z-index:20;display:flex;flex-direction:column;align-items:flex-end}
 .chat-open{display:inline-flex;align-items:center;gap:10px;min-height:60px;padding:6px 20px 6px 10px;border:1px solid var(--accent);border-radius:30px;background:var(--bg);text-align:left;box-shadow:0 8px 24px rgba(0,0,0,.35)}.chat-open:hover{border-color:var(--paper);background:#1f3b33}
@@ -43,7 +43,7 @@ html:not(.js) .apply-form{display:none}
 .chat-open:focus-visible,.monna-gelis button:focus-visible{outline:2px solid var(--bg);outline-offset:2px;box-shadow:0 0 0 2px var(--paper)}
 .chat-open .monna{height:46px}
 .chat-open-yazi strong{display:block;font-size:15px;font-weight:600;line-height:1.25}.chat-open-yazi small{display:block;font-size:12px;line-height:1.3;color:var(--muted)}
-/* Monna'nın gelişi: arka plansız, tek başına kenardan süzülür ve bir soru sorar. O sırada düğme çekilir. */
+/* Mona'nın gelişi: arka plansız, tek başına kenardan süzülür ve bir soru sorar. O sırada düğme çekilir. */
 .chat.is-gezinti .chat-open{opacity:0;pointer-events:none}
 .monna-gelis{position:fixed;display:flex;flex-direction:column;gap:12px;transition:opacity .34s,transform .34s ease-in}
 .monna-gelis.olcum{visibility:hidden}.monna-gelis.olcum *{animation:none!important}

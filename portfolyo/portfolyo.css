@@ -97,7 +97,7 @@ dt{font-weight:600;margin-top:12px}
 .reach{margin-top:20px;font-size:16px}.reach a{text-underline-offset:4px}
 .closing-mark{position:relative;width:100%;margin-top:64px}
 .closing-logo{display:block;width:100%;height:auto}
-/* Monna, logodaki O'nun iç boşluğunun ortasında durur */
+/* Mona, logodaki O'nun iç boşluğunun ortasında durur */
 .end .apply-form,.end .apply-done{width:100%;max-width:760px;margin-top:40px}
 .closing-monna{position:absolute;left:55.5%;top:51%;height:84%;padding:0;border:0;background:none;cursor:pointer;transform:translate(-50%,-50%);transition:transform .25s}.closing-monna:hover{transform:translate(-50%,-50%) scale(1.04)}
 .closing-monna img{display:block;width:auto;max-width:none;height:100%}

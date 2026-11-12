@@ -63,7 +63,7 @@
 .y-adlar{display:flex;flex:1 1 auto;justify-content:center}
 .still{margin:0;width:100%;max-width:none;align-self:start}
 }
-/* Geniş ekranda Monna düğmesi tam boy kalsın diye sağda yer açılır */
+/* Geniş ekranda Mona düğmesi tam boy kalsın diye sağda yer açılır */
 @media(min-width:1360px){.y-alt{padding-right:150px}}
 @media(prefers-reduced-motion:reduce){.y-panel,.y-sinema,.y-panel::after{transition:none}}
 @media(forced-colors:active){.y-izle{border:1px solid ButtonText}}
