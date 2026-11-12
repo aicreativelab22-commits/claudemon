@@ -7,10 +7,9 @@ window.MON_PROJECTS = [
     "tag": "Brand collaboration · Hybrid production",
     "video": "happy-to-wear-haussmann",
     "duration": "12 sec",
-    "films": [["happy-to-wear-haussmann", "Real shoot, limitless scenes.", "12 sec"], ["happy-to-wear-behind", "Be/Hind", "13 sec"]],
-    "idea": "We made two fashion films for Happy to Wear, taking the brand’s outfits into different scenes: close-ups against a black backdrop, a Haussmann salon with a gold mirror, and quiet moments in a sunlit old apartment. Real shoot and AI come together in the same story.",
+    "idea": "We made a fashion film for Happy to Wear, taking the brand’s outfits into different scenes: close-ups against a black backdrop, a Haussmann salon with a gold mirror, and quiet moments in a sunlit old apartment. Real shoot and AI come together in the same story.",
     "role": "AI-assisted scene and motion production from the brand’s shoot images, film editing.",
-    "outputs": "Two fashion films: 12 and 13 seconds. Format: vertical, 9:16.",
+    "outputs": "12-second fashion film. Format: vertical, 9:16.",
     "status": "Made as part of a brand collaboration with Happy to Wear. Photography: Happy to Wear.",
     "stills": [],
     "alt": "A woman in a white vest, wide-leg trousers and a beaded headpiece against a black backdrop"

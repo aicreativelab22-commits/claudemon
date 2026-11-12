@@ -7,10 +7,9 @@ window.MON_PROJECTS = [
     "tag": "Marka iş birliği · Hibrit üretim",
     "video": "happy-to-wear-haussmann",
     "duration": "12 sn",
-    "films": [["happy-to-wear-haussmann", "Gerçek çekim, sınırsız sahne.", "12 sn"], ["happy-to-wear-behind", "Be/Hind", "13 sn"]],
-    "idea": "Happy to Wear için iki moda filmi hazırladık. Markanın kombinlerini farklı sahnelere taşıdık: siyah fonda yakın planlar, altın aynalı bir Haussmann salonu ve gün ışığı alan eski bir dairede sakin anlar. Gerçek çekimle yapay zekayı aynı hikayede buluşturduk.",
+    "idea": "Happy to Wear için bir moda filmi hazırladık. Markanın kombinlerini farklı sahnelere taşıdık: siyah fonda yakın planlar, altın aynalı bir Haussmann salonu ve gün ışığı alan eski bir dairede sakin anlar. Gerçek çekimle yapay zekayı aynı hikayede buluşturduk.",
     "role": "Marka çekiminden gelen görsellerle AI destekli sahne ve hareket üretimi, film kurgusu.",
-    "outputs": "İki moda filmi: 12 ve 13 saniye. Format: dikey, 9:16.",
+    "outputs": "12 saniyelik moda filmi. Format: dikey, 9:16.",
     "status": "Happy to Wear ile marka iş birliği kapsamında hazırlandı. Fotoğraf çekimi: Happy to Wear.",
     "stills": [],
     "alt": "Siyah fonda beyaz yelek, geniş paça pantolon ve boncuklu başlıkla duran kadın"
